@@ -14,13 +14,11 @@
 
 <body>
 
-<!-- HEADER -->
-
 <header class="top-header">
 
 <div class="logo-section">
 
-<img src="assets/logo.png" class="logo" alt="AWANAD">
+<img src="assets/logo.png" class="logo">
 
 <div class="company">
 
@@ -38,7 +36,7 @@
 
 <input
 type="text"
-placeholder="Search vessels, BL, containers...">
+placeholder="Search vessels, BL, containers, invoices...">
 
 </div>
 
@@ -63,8 +61,6 @@ placeholder="Search vessels, BL, containers...">
 </div>
 
 </header>
-
-<!-- SIDEBAR -->
 
 <aside class="sidebar">
 
@@ -94,15 +90,13 @@ MAIN MENU
 
 </aside>
 
-<!-- MAIN -->
-
 <main class="main-content">
 
 <div class="page-header">
 
 <h2>Dashboard Overview</h2>
 
-<p>Welcome back, Daniel</p>
+<p>Welcome back, Daniel 👋</p>
 
 </div>
 
@@ -116,9 +110,9 @@ MAIN MENU
 
 <h3>Total Containers</h3>
 
-<h1 id="totalContainers">156</h1>
+<h1 id="totalContainers">128</h1>
 
-<p class="up">▲ 12% from last month</p>
+<p class="up">▲ 12% vs last 7 days</p>
 
 </div>
 
@@ -132,9 +126,9 @@ MAIN MENU
 
 <h3>RORO Units</h3>
 
-<h1 id="totalRoro">83</h1>
+<h1 id="totalRoro">76</h1>
 
-<p class="up">▲ 8% from last month</p>
+<p class="up">▲ 8% vs last 7 days</p>
 
 </div>
 
@@ -146,11 +140,11 @@ MAIN MENU
 
 <div>
 
-<h3>Expected Vessels</h3>
+<h3>Active Vessels</h3>
 
-<h1 id="totalVessels">12</h1>
+<h1 id="totalVessels">14</h1>
 
-<p>Next: MSC TIA V</p>
+<p class="up">▲ 7% vs last 7 days</p>
 
 </div>
 
@@ -164,9 +158,9 @@ MAIN MENU
 
 <h3>Pending Invoices</h3>
 
-<h1 id="pendingInvoices">24</h1>
+<h1 id="pendingInvoices">23</h1>
 
-<p>KES 3,245,000</p>
+<p style="color:red;">▼ 5% vs last 7 days</p>
 
 </div>
 
@@ -178,7 +172,13 @@ MAIN MENU
 
 <div class="panel">
 
-<h3>Today's Operations</h3>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+
+<h3>🚢 Today's Operations</h3>
+
+<button class="action-btn">View All →</button>
+
+</div>
 
 <table>
 
@@ -186,17 +186,117 @@ MAIN MENU
 
 <tr>
 
-<th>Vessel</th>
+<th>VESSEL</th>
 
-<th>Cargo</th>
+<th>CARGO</th>
 
-<th>Status</th>
+<th>ATA / ATD</th>
+
+<th>STATUS</th>
+
+<th>PROGRESS</th>
 
 </tr>
 
 </thead>
 
-<tbody id="todayOperations">
+<tbody>
+
+<tr>
+
+<td>MSC POLARIS</td>
+
+<td><span class="tag blue-tag">Container</span></td>
+
+<td>20 Jul 2026<br>08:30</td>
+
+<td><span class="status blue-status">Discharging</span></td>
+
+<td>
+
+<div class="progress">
+
+<div class="progress-bar" style="width:75%;"></div>
+
+</div>
+
+75%
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>CMA CGM XIAMEN</td>
+
+<td><span class="tag blue-tag">Container</span></td>
+
+<td>20 Jul 2026<br>09:15</td>
+
+<td><span class="status green-status">Discharged</span></td>
+
+<td>
+
+<div class="progress">
+
+<div class="progress-bar green" style="width:100%;"></div>
+
+</div>
+
+100%
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>GRANDE TEXAS</td>
+
+<td><span class="tag orange-tag">RORO</span></td>
+
+<td>20 Jul 2026<br>11:40</td>
+
+<td><span class="status blue-status">Discharging</span></td>
+
+<td>
+
+<div class="progress">
+
+<div class="progress-bar" style="width:60%;"></div>
+
+</div>
+
+60%
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>HOEGH TROTTER</td>
+
+<td><span class="tag orange-tag">RORO</span></td>
+
+<td>21 Jul 2026<br>06:00</td>
+
+<td><span class="status">Expected</span></td>
+
+<td>
+
+<div class="progress">
+
+<div class="progress-bar" style="width:0%;"></div>
+
+</div>
+
+0%
+
+</td>
+
+</tr>
 
 </tbody>
 
@@ -210,7 +310,15 @@ MAIN MENU
 
 <div id="activityFeed">
 
-<p>No activity yet.</p>
+<p>✅ Invoice 79247130 Paid</p>
+
+<p>🚢 MSC POLARIS Discharge Started</p>
+
+<p>📦 14 Containers Evacuated</p>
+
+<p>📑 New BL Registered</p>
+
+<p>💰 Payment Received</p>
 
 </div>
 
