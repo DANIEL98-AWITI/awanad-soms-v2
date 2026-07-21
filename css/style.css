@@ -672,3 +672,98 @@ width:100%!important;
 height:320px!important;
 
 }
+/* ===== PREMIUM HEADER ===== */
+
+.top-header{
+height:80px;
+background:#ffffff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 35px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+position:fixed;
+top:0;
+left:250px;
+right:0;
+z-index:1000;
+}
+
+.logo{
+width:55px;
+height:55px;
+border-radius:12px;
+}
+
+.company h1{
+font-size:24px;
+font-weight:700;
+color:#003366;
+margin:0;
+}
+
+.company p{
+font-size:13px;
+color:#777;
+margin-top:4px;
+}
+
+.search input{
+width:350px;
+padding:13px 18px;
+border:none;
+border-radius:40px;
+background:#f4f7fb;
+font-size:14px;
+outline:none;
+transition:.3s;
+}
+
+.search input:focus{
+background:#fff;
+box-shadow:0 0 0 3px rgba(21,101,192,.15);
+}
+
+.header-icons{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.header-icons span{
+font-size:22px;
+cursor:pointer;
+transition:.3s;
+}
+
+.header-icons span:hover{
+transform:scale(1.15);
+}
+
+.user-photo{
+width:48px;
+height:48px;
+border-radius:50%;
+border:3px solid #1565C0;
+object-fit:cover;
+}
+
+.user-details h4{
+margin:0;
+font-size:15px;
+color:#003366;
+}
+
+.user-details p{
+margin:2px 0 0;
+font-size:12px;
+color:#777;
+}
+
+.main-content{
+margin-left:250px;
+margin-top:100px;
+padding:30px;
+background:#f5f8fc;
+min-height:100vh;
+}
