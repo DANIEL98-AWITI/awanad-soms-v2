@@ -1230,3 +1230,44 @@ box-shadow:0 10px 25px rgba(21,101,192,.25);
 background:#0D47A1;
 transform:translateY(-3px);
 }
+/* ================= PREMIUM MINI CARDS ================= */
+
+.mini-card{
+display:flex;
+align-items:center;
+gap:20px;
+padding:25px;
+}
+
+.mini-icon{
+width:65px;
+height:65px;
+border-radius:18px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+color:#fff;
+}
+
+.weather .mini-icon{
+background:linear-gradient(135deg,#FF9800,#FFC107);
+}
+
+.wallet .mini-icon{
+background:linear-gradient(135deg,#18A957,#00C853);
+}
+
+.system .mini-icon{
+background:linear-gradient(135deg,#1565C0,#00BCD4);
+}
+
+.mini-card h2{
+margin:6px 0;
+font-size:30px;
+font-weight:700;
+}
+
+.mini-card:hover{
+transform:translateY(-6px);
+}
