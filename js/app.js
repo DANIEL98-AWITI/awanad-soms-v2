@@ -166,7 +166,7 @@ backgroundColor:"#18A957"
 },
 
 options:{
-
+animation:false,
 responsive:true,
 
 maintainAspectRatio:false
