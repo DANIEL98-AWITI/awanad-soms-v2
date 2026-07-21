@@ -1032,3 +1032,90 @@ color:#666;
 color:#999;
 font-size:11px;
 }
+/* ================= PAGE HEADER ================= */
+
+.page-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+}
+
+.page-header h2{
+font-size:34px;
+font-weight:700;
+color:#0B2C5F;
+margin:0;
+}
+
+.page-header p{
+margin-top:6px;
+font-size:15px;
+color:#6c757d;
+}
+
+/* ================= LIVE CLOCK ================= */
+
+.live-time{
+display:flex;
+flex-direction:column;
+align-items:flex-end;
+margin-right:15px;
+}
+
+#liveDate{
+font-size:13px;
+font-weight:600;
+color:#1565C0;
+}
+
+#liveClock{
+font-size:22px;
+font-weight:700;
+color:#0B2C5F;
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#edf2f8;
+}
+
+::-webkit-scrollbar-thumb{
+background:#1565C0;
+border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+background:#0D47A1;
+}
+
+/* ================= FADE ANIMATION ================= */
+
+.card,
+.panel,
+.mini-card{
+animation:fadeUp .6s ease;
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
