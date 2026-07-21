@@ -256,7 +256,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 font-size:36px;
-backdrop-filter: blur(12px);
+background:#fff;
 }
 
 .card h3{
