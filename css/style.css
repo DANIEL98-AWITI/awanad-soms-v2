@@ -782,3 +782,39 @@ padding:30px;
 background:#f5f8fc;
 min-height:100vh;
 }
+/* ================= TABLE ================= */
+
+table{
+width:100%;
+border-collapse:collapse;
+background:#fff;
+border-radius:15px;
+overflow:hidden;
+}
+
+thead{
+background:#1565C0;
+color:#fff;
+}
+
+th{
+padding:15px;
+text-align:left;
+font-size:13px;
+font-weight:600;
+letter-spacing:.5px;
+}
+
+td{
+padding:15px;
+font-size:14px;
+border-bottom:1px solid #eef2f7;
+}
+
+tbody tr{
+transition:.3s;
+}
+
+tbody tr:hover{
+background:#f5f9ff;
+}
