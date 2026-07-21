@@ -443,3 +443,150 @@ margin-bottom:6px;
 color:#888;
 font-size:14px;
 }
+/* ================= PREMIUM PANELS ================= */
+
+.panel{
+background:#ffffff;
+border-radius:18px;
+padding:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.35s;
+}
+
+.panel:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.panel-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.panel-header h3{
+font-size:22px;
+color:#003366;
+font-weight:700;
+}
+
+.live-badge{
+background:#18a957;
+color:white;
+padding:6px 14px;
+border-radius:25px;
+font-size:12px;
+font-weight:bold;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+opacity:1;
+}
+
+50%{
+transform:scale(1.08);
+opacity:.7;
+}
+
+100%{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+/* ================= ACTIVITY ================= */
+
+.activity-feed{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.activity-item{
+display:flex;
+align-items:flex-start;
+gap:18px;
+padding-bottom:18px;
+border-bottom:1px solid #edf2f7;
+}
+
+.activity-item:last-child{
+border-bottom:none;
+}
+
+.activity-icon{
+width:52px;
+height:52px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:22px;
+color:white;
+font-weight:bold;
+flex-shrink:0;
+}
+
+.success{
+background:#18a957;
+}
+
+.ship{
+background:#1565C0;
+}
+
+.container{
+background:#fb8c00;
+}
+
+.document{
+background:#8e24aa;
+}
+
+.money{
+background:#26a69a;
+}
+
+.activity-item h4{
+font-size:16px;
+margin-bottom:5px;
+color:#003366;
+}
+
+.activity-item p{
+font-size:14px;
+color:#666;
+margin-bottom:4px;
+}
+
+.activity-item small{
+color:#999;
+}
+
+/* ================= ANALYTICS ================= */
+
+.analytics{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:25px;
+margin-top:30px;
+}
+
+.chart-placeholder{
+height:320px;
+background:linear-gradient(135deg,#eef4fb,#dde8f8);
+border-radius:15px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:24px;
+font-weight:bold;
+color:#6b7a90;
+border:2px dashed #b7c7de;
+}
