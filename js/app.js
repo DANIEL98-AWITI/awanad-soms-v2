@@ -99,3 +99,23 @@ activity.innerHTML+=`
 `;
 
 }
+function updateClock(){
+
+const now=new Date();
+
+document.getElementById("liveDate").innerHTML=
+now.toLocaleDateString("en-GB",{
+weekday:"short",
+day:"2-digit",
+month:"short",
+year:"numeric"
+});
+
+document.getElementById("liveClock").innerHTML=
+now.toLocaleTimeString();
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
