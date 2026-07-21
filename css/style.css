@@ -42,50 +42,6 @@ z-index:1000;
 }
 
 
-.company-logo{
-
-width:95px;
-
-height:95px;
-
-object-fit:contain;
-
-}
-
-.company-info h1{
-
-font-size:34px;
-
-font-weight:800;
-
-color:#003366;
-
-margin:0;
-
-}
-
-.company-info h2{
-
-font-size:18px;
-
-font-weight:600;
-
-color:#1565C0;
-
-margin:3px 0;
-
-}
-
-.company-info p{
-
-font-size:13px;
-
-color:#777;
-
-margin:0;
-
-letter-spacing:.5px;
-
 }
 
 /* ================= SIDEBAR ================= */
