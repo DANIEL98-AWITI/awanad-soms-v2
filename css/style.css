@@ -1206,3 +1206,27 @@ box-shadow:0 10px 25px rgba(0,0,0,.15);
 .user-photo{
 box-shadow:0 8px 20px rgba(21,101,192,.25);
 }
+/* ================= HEADER BUTTONS ================= */
+
+.header-buttons{
+display:flex;
+gap:15px;
+}
+
+.header-btn{
+background:#1565C0;
+color:white;
+border:none;
+padding:12px 22px;
+border-radius:10px;
+font-size:14px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 10px 25px rgba(21,101,192,.25);
+}
+
+.header-btn:hover{
+background:#0D47A1;
+transform:translateY(-3px);
+}
