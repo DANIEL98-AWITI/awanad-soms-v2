@@ -178,3 +178,74 @@ maintainAspectRatio:false
 }
 
 }
+// ================= WEEKLY OPERATIONS CHART =================
+
+const weeklyChart = document.getElementById("weeklyChart");
+
+if (weeklyChart && typeof Chart !== "undefined") {
+
+new Chart(weeklyChart, {
+
+type: "line",
+
+data: {
+
+labels: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+
+datasets: [
+
+{
+
+label: "Containers",
+
+data: [52,68,71,80,76,92,88],
+
+borderColor: "#1565C0",
+
+backgroundColor: "rgba(21,101,192,0.15)",
+
+fill: true,
+
+tension: 0.4
+
+},
+
+{
+
+label: "RORO",
+
+data: [18,25,27,24,30,35,38],
+
+borderColor: "#18A957",
+
+backgroundColor: "rgba(24,169,87,0.15)",
+
+fill: true,
+
+tension: 0.4
+
+}
+
+]
+
+},
+
+options: {
+
+responsive: true,
+
+plugins: {
+
+legend: {
+
+position: "top"
+
+}
+
+}
+
+}
+
+});
+
+}
