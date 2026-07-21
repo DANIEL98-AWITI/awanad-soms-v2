@@ -590,3 +590,10 @@ font-weight:bold;
 color:#6b7a90;
 border:2px dashed #b7c7de;
 }
+canvas{
+
+width:100%!important;
+
+height:320px!important;
+
+}
