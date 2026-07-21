@@ -93,43 +93,65 @@ font-size:12px;
 
 /* ================= SIDEBAR ================= */
 
+/* ================= PREMIUM SIDEBAR ================= */
+
 .sidebar{
 position:fixed;
-top:80px;
+top:0;
 left:0;
-width:260px;
-height:calc(100vh - 80px);
-background:#0b2340;
+width:250px;
+height:100vh;
+background:linear-gradient(180deg,#06264d,#0b3d78,#1565C0);
 padding-top:25px;
-overflow:auto;
+box-shadow:8px 0 30px rgba(0,0,0,.18);
+overflow-y:auto;
+z-index:1200;
 }
 
 .menu-title{
-padding:0 25px 20px;
-font-size:13px;
-font-weight:bold;
-color:#9fb6d8;
-letter-spacing:1px;
+color:#9fc7ff;
+font-size:12px;
+font-weight:600;
+letter-spacing:2px;
+padding:15px 30px;
+margin-bottom:15px;
+text-transform:uppercase;
 }
 
 .sidebar a{
 display:flex;
 align-items:center;
-gap:15px;
-padding:15px 25px;
-color:white;
+gap:14px;
+padding:16px 30px;
+color:#ffffff;
 text-decoration:none;
-transition:.3s;
 font-size:15px;
+font-weight:500;
+transition:.3s;
+border-left:4px solid transparent;
+}
+
+.sidebar a span{
+flex:1;
 }
 
 .sidebar a:hover{
-background:#1565C0;
+background:rgba(255,255,255,.12);
+border-left:4px solid #ffffff;
+padding-left:36px;
 }
 
 .sidebar a.active{
-background:#1565C0;
-border-left:5px solid #FFD54F;
+background:#ffffff;
+color:#1565C0;
+font-weight:700;
+border-left:4px solid #1565C0;
+border-radius:0 30px 30px 0;
+box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.sidebar a.active:hover{
+padding-left:30px;
 }
 
 /* ================= MAIN ================= */
