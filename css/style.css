@@ -882,3 +882,64 @@ color:#1565C0;
 background:#E8F5E9;
 color:#18A957;
 }
+/* ================= PROGRESS BAR ================= */
+
+.progress{
+width:100%;
+height:10px;
+background:#e9edf4;
+border-radius:30px;
+overflow:hidden;
+margin:8px 0;
+}
+
+.progress-bar{
+height:100%;
+background:linear-gradient(90deg,#1565C0,#42A5F5);
+border-radius:30px;
+transition:width .6s ease;
+}
+
+.progress-bar.green{
+background:linear-gradient(90deg,#18A957,#66BB6A);
+}
+
+/* ================= MINI CARDS ================= */
+
+.top-widgets{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+margin:30px 0;
+}
+
+.mini-card{
+background:#fff;
+padding:22px;
+border-radius:18px;
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.mini-card:hover{
+transform:translateY(-5px);
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.mini-card h4{
+font-size:14px;
+color:#666;
+margin-bottom:12px;
+}
+
+.mini-card h2{
+font-size:28px;
+font-weight:700;
+color:#003366;
+margin-bottom:8px;
+}
+
+.mini-card p{
+font-size:13px;
+color:#888;
+}
