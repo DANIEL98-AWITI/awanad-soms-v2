@@ -121,25 +121,23 @@ setInterval(updateClock,1000);
 updateClock();
 // ================= WEEKLY CHART =================
 
-const chartCanvas = document.getElementById("weeklyChart");
+// ================= WEEKLY CHART =================
 
-if(chartCanvas){
+window.onload = function(){
 
-new Chart(chartCanvas,{
+const canvas = document.getElementById("weeklyChart");
+
+if(canvas){
+
+alert("Canvas Found");
+
+new Chart(canvas,{
 
 type:"bar",
 
 data:{
 
-labels:[
-"Mon",
-"Tue",
-"Wed",
-"Thu",
-"Fri",
-"Sat",
-"Sun"
-],
+labels:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
 
 datasets:[
 
@@ -147,11 +145,9 @@ datasets:[
 
 label:"Containers",
 
-data:[52,68,71,80,76,92,88],
+data:[10,20,30,40,50,60,70],
 
-backgroundColor:"#1565C0",
-
-borderRadius:8
+backgroundColor:"#1565C0"
 
 },
 
@@ -159,11 +155,9 @@ borderRadius:8
 
 label:"RORO",
 
-data:[21,26,24,29,31,35,33],
+data:[5,8,12,18,15,20,25],
 
-backgroundColor:"#18a957",
-
-borderRadius:8
+backgroundColor:"#18A957"
 
 }
 
@@ -175,24 +169,12 @@ options:{
 
 responsive:true,
 
-plugins:{
-
-legend:{
-position:"top"
-}
-
-},
-
-scales:{
-
-y:{
-beginAtZero:true
-}
-
-}
+maintainAspectRatio:false
 
 }
 
 });
+
+}
 
 }
