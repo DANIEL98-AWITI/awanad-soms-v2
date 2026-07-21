@@ -152,36 +152,111 @@ margin-bottom:30px;
 }
 /* ================= DASHBOARD CARDS ================= */
 
+/* ================= DASHBOARD CARDS ================= */
+
 .cards{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:25px;
-margin-bottom:35px;
+margin:30px 0;
 }
 
 .card{
-background:#fff;
-padding:25px;
-border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,.08);
-transition:.3s;
+position:relative;
+overflow:hidden;
+border-radius:22px;
+padding:28px;
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:space-between;
+box-shadow:0 20px 45px rgba(0,0,0,.15);
+transition:.35s ease;
 cursor:pointer;
+min-height:150px;
 }
 
 .card:hover{
-transform:translateY(-6px);
-box-shadow:0 15px 35px rgba(0,0,0,.15);
+transform:translateY(-10px);
+box-shadow:0 30px 60px rgba(0,0,0,.25);
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:-60px;
+right:-60px;
+width:170px;
+height:170px;
+background:rgba(255,255,255,.15);
+border-radius:50%;
+}
+
+.card::after{
+content:"";
+position:absolute;
+bottom:-70px;
+left:-70px;
+width:170px;
+height:170px;
+background:rgba(255,255,255,.08);
+border-radius:50%;
+}
+
+.blue{
+background:linear-gradient(135deg,#0d47a1,#1976d2);
+}
+
+.green{
+background:linear-gradient(135deg,#00695c,#00a152);
+}
+
+.purple{
+background:linear-gradient(135deg,#4527a0,#7b1fa2);
+}
+
+.orange{
+background:linear-gradient(135deg,#ef6c00,#fb8c00);
+}
+
+.card .icon{
+width:75px;
+height:75px;
+border-radius:20px;
+background:rgba(255,255,255,.18);
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:36px;
+backdrop-filter:blur(10px);
 }
 
 .card h3{
-font-size:16px;
-color:#666;
-margin-bottom:12px;
+font-size:15px;
+font-weight:500;
+opacity:.9;
+margin-bottom:10px;
 }
 
 .card h1{
 font-size:42px;
-color:#003366;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.card p{
+font-size:13px;
+opacity:.9;
+}
+
+.up{
+color:#b9ffb5;
+font-weight:600;
+}
+
+.down{
+color:#ffd1d1;
+font-weight:600;
 }
 
 /* ================= DASHBOARD GRID ================= */
