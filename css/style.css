@@ -1461,48 +1461,46 @@ align-items:flex-start;
 }
 
 }
-/* ===== AWANAD HEADER OVERRIDE ===== */
-
+/* ===== FINAL HEADER ===== */
 
 .branding{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    width:520px;
-}
-
-.company-info{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+display:flex;
+align-items:center;
+gap:18px;
 }
 
 .company-logo{
-    width:180px;
-    height:auto;
-    object-fit:contain;
-    flex-shrink:0;
-    filter:drop-shadow(0 6px 12px rgba(0,0,0,.15));
+width:150px;
+height:auto;
+object-fit:contain;
+flex-shrink:0;
+}
+
+.company-info{
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
 .company-info h1{
-    margin:0;
-    font-size:48px;
-    font-weight:900;
-    color:#0b376d;
-    line-height:1;
-    letter-spacing:.5px;
+margin:0;
+font-size:26px;
+font-weight:800;
+color:#0b376d;
+line-height:1.05;
 }
 
 .company-info h2{
-    margin-top:8px;
-    font-size:20px;
-    font-weight:500;
-    color:#607d8b;
+margin-top:4px;
+font-size:15px;
+font-weight:600;
+color:#1565C0;
+line-height:1.2;
+max-width:260px;
 }
 
 .company-info p{
-    display:none;
+display:none;
 }
 /* ===== MAIN MENU ===== */
 
