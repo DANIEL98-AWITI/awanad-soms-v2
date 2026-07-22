@@ -1550,10 +1550,11 @@ END OF FILE
 }
 
 .login-logo{
-    width:180px;
+    width:280px;        /* Increase logo size */
     height:auto;
     display:block;
-    margin:0 auto 15px;
+    margin:0 auto 20px;
+    object-fit:contain;
 }
 
 .login-card h1{
