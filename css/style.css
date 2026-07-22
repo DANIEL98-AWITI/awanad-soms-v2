@@ -72,11 +72,12 @@ margin-left:20px;
 }
 
 .company-info h1{
-font-size:44px;
+margin:0;
+font-size:36px;
 font-weight:900;
 color:#0b376d;
-margin:0;
 line-height:1;
+letter-spacing:.3px;
 }
 
 .company-info h1{
@@ -92,10 +93,12 @@ line-height:1;
 }
 
 .company-info h2{
-font-size:22px;
+margin-top:6px;
+font-size:16px;
 font-weight:600;
 color:#1565C0;
-margin-top:8px;
+line-height:1.25;
+max-width:280px;
 }
 
 .company-info p{
