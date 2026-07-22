@@ -1594,3 +1594,70 @@ END OF FILE
     display:block !important;
     margin:0 auto 25px !important;
 }
+/*===============================
+AWANAD HEADER FINAL LAYOUT
+================================*/
+
+.top-header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 35px;
+}
+
+.branding{
+display:flex;
+align-items:center;
+justify-content:flex-start;
+width:auto;
+}
+
+.company-info{
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.company-info h1{
+font-size:54px;
+font-weight:900;
+line-height:1;
+color:#0b376d;
+margin:0;
+}
+
+.company-info h2{
+margin-top:8px;
+font-size:18px;
+font-weight:600;
+color:#1565C0;
+}
+
+.company-info p{
+display:none;
+}
+
+.header-center-logo{
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0 35px;
+}
+
+.company-logo{
+width:90px;
+height:auto;
+object-fit:contain;
+margin:0;
+padding:0;
+filter:none;
+}
+
+.menu-title{
+font-size:18px;
+font-weight:900;
+letter-spacing:2px;
+color:#ffffff;
+padding:30px;
+text-transform:uppercase;
+}
