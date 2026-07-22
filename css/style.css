@@ -65,21 +65,18 @@ gap:20px;
 }
 
 .company-logo{
-
-width:90px;
-
-height:90px;
-
+width:160px;
+height:auto;
 object-fit:contain;
-
+margin-left:20px;
 }
 
-.company-info{
-
-display:flex;
-
-flex-direction:column;
-
+.company-info h1{
+font-size:44px;
+font-weight:900;
+color:#0b376d;
+margin:0;
+line-height:1;
 }
 
 .company-info h1{
@@ -95,15 +92,10 @@ line-height:1;
 }
 
 .company-info h2{
-
-font-size:15px;
-
+font-size:22px;
 font-weight:600;
-
 color:#1565C0;
-
-margin-top:6px;
-
+margin-top:8px;
 }
 
 .company-info p{
