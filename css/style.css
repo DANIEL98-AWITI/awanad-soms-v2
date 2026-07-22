@@ -240,43 +240,29 @@ color:#888;
 /* =======================================================
 SIDEBAR
 ======================================================= */
-
 .sidebar{
-
 position:fixed;
-
 top:0;
-
 left:0;
-
 width:250px;
-
 height:100vh;
-
 background:linear-gradient(180deg,#06264d 0%,#0d3d73 45%,#1565C0 100%);
-
 overflow-y:auto;
-
 box-shadow:8px 0 30px rgba(0,0,0,.18);
-
 z-index:1000;
-
-padding-top:25px;
-
+padding-top:0;
+display:flex;
+flex-direction:column;
 }
+
 
 /* Logo Space */
 
 .sidebar::before{
-
 content:"";
-
 display:block;
-
-height:70px;
-
+height:0;
 }
-
 /* MENU TITLE */
 
 .menu-title{
