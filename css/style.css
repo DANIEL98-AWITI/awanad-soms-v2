@@ -54,54 +54,50 @@ z-index:999;
 
 /* Left */
 
+/* ===== DASHBOARD HEADER ===== */
+
 .branding{
-display:flex;
-align-items:center;
-gap:35px;
+    display:flex;
+    align-items:center;
+    gap:28px;
+    width:auto;
 }
 
 .company-info{
-order:2;
-display:flex;
-flex-direction:column;
-justify-content:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    order:1;
 }
 
 .company-logo{
-order:1;
-width:78px;
-height:78px;
-object-fit:contain;
-margin:0;
-filter:drop-shadow(0 4px 10px rgba(0,0,0,.15));
+    order:2;
+    width:95px;
+    height:auto;
+    object-fit:contain;
+    margin-left:25px;
+    filter:none;
 }
 
 .company-info h1{
-font-size:52px;
-font-weight:900;
-color:#0b376d;
-line-height:1;
-margin:0;
+    margin:0;
+    font-size:34px;
+    font-weight:900;
+    color:#0b376d;
+    line-height:1;
 }
 
 .company-info h2{
-font-size:20px;
-font-weight:600;
-color:#1565C0;
-margin-top:8px;
+    margin-top:6px;
+    font-size:16px;
+    font-weight:600;
+    color:#1565C0;
+    line-height:1.35;
 }
 
 .company-info p{
-display:none;
+    display:none;
 }
-/* Search */
-
-.search{
-
-margin-left:auto;
-
-margin-right:35px;
-
 }
 
 .search input{
