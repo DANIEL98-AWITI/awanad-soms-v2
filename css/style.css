@@ -266,19 +266,12 @@ height:0;
 /* MENU TITLE */
 
 .menu-title{
-
-padding:18px 30px;
-
-font-size:12px;
-
-font-weight:700;
-
-letter-spacing:2px;
-
-color:#9fc7ff;
-
+padding:8px 30px 12px;
+font-size:24px;
+font-weight:900;
+letter-spacing:3px;
+color:#ffffff;
 text-transform:uppercase;
-
 }
 
 /* LINKS */
