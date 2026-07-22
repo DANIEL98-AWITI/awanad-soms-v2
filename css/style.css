@@ -253,9 +253,7 @@ background:linear-gradient(180deg,#06264d 0%,#0d3d73 45%,#1565C0 100%);
 overflow-y:auto;
 box-shadow:8px 0 30px rgba(0,0,0,.18);
 z-index:1000;
-padding-top:0;
-display:flex;
-flex-direction:column;
+padding-top:25px;
 }
 
 
