@@ -1521,6 +1521,14 @@ align-items:flex-start;
 .company-info p{
     display:none;
 }
+.menu-title{
+font-size:20px !important;
+font-weight:800 !important;
+letter-spacing:2px !important;
+color:#bcd6ff !important;
+padding:25px 30px 20px !important;
+text-transform:uppercase !important;
+}
 /* =======================================================
 END OF FILE
 ======================================================= */
