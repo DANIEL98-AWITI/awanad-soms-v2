@@ -1484,27 +1484,30 @@ align-items:flex-start;
 .branding{
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    width:520px;
+    gap:30px;
+    min-width:520px;
 }
 
 .company-info{
+    order:1;
     display:flex;
     flex-direction:column;
     justify-content:center;
 }
 
 .company-logo{
-    width:180px;
+    order:2;
+    width:170px;
     height:auto;
     object-fit:contain;
     flex-shrink:0;
     filter:drop-shadow(0 6px 12px rgba(0,0,0,.15));
+    margin-left:20px;
 }
 
 .company-info h1{
     margin:0;
-    font-size:48px;
+    font-size:52px;
     font-weight:900;
     color:#0b376d;
     line-height:1;
@@ -1514,21 +1517,26 @@ align-items:flex-start;
 .company-info h2{
     margin-top:8px;
     font-size:20px;
-    font-weight:500;
-    color:#607d8b;
+    font-weight:600;
+    color:#1565C0;
+    line-height:1.3;
 }
 
 .company-info p{
     display:none;
 }
+
+/* ===== MAIN MENU ===== */
+
 .menu-title{
-font-size:20px !important;
-font-weight:800 !important;
-letter-spacing:2px !important;
-color:#bcd6ff !important;
-padding:25px 30px 20px !important;
-text-transform:uppercase !important;
+    font-size:24px;
+    font-weight:900;
+    letter-spacing:3px;
+    color:#ffffff;
+    padding:28px 30px 24px;
+    text-transform:uppercase;
 }
+
 /* =======================================================
 END OF FILE
 ======================================================= */
