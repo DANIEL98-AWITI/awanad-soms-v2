@@ -1461,46 +1461,48 @@ align-items:flex-start;
 }
 
 }
-/* ===== FINAL HEADER ===== */
+/* ===== HEADER BRANDING ===== */
 
 .branding{
-display:flex;
-align-items:center;
-gap:18px;
+    display:flex;
+    align-items:center;
+    gap:18px;
 }
 
 .company-logo{
-width:150px;
-height:auto;
-object-fit:contain;
-flex-shrink:0;
+    width:140px;
+    height:auto;
+    object-fit:contain;
+    flex-shrink:0;
 }
 
 .company-info{
-display:flex;
-flex-direction:column;
-justify-content:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
 .company-info h1{
-margin:0;
-font-size:26px;
-font-weight:800;
-color:#0b376d;
-line-height:1.05;
+    margin:0;
+    font-size:34px;
+    font-weight:800;
+    color:#0b376d;
+    line-height:1;
+    letter-spacing:0;
 }
 
 .company-info h2{
-margin-top:4px;
-font-size:15px;
-font-weight:600;
-color:#1565C0;
-line-height:1.2;
-max-width:260px;
+    margin-top:4px;
+    font-size:15px;
+    font-weight:500;
+    color:#607d8b;
+    line-height:1.2;
+    max-width:260px;
 }
 
 .company-info p{
-display:none;
+    display:none;
+}
 }
 /* ===== MAIN MENU ===== */
 
