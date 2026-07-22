@@ -1608,3 +1608,12 @@ END OF FILE
     font-size:13px;
     color:#7d8794;
 }
+/* ===== FORCE LOGIN LOGO SIZE ===== */
+
+.login-card .login-logo{
+    width:320px !important;
+    max-width:100% !important;
+    height:auto !important;
+    display:block !important;
+    margin:0 auto 25px !important;
+}
