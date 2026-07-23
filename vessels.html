@@ -96,3 +96,100 @@ MAIN MENU
 </div>
 
 </div>
+<!-- KPI CARDS -->
+
+<div class="cards">
+
+    <div class="card blue">
+        <div class="icon">🚢</div>
+        <div>
+            <h3>Total Expected Vessels</h3>
+            <h1 id="totalVessels">0</h1>
+        </div>
+    </div>
+
+    <div class="card green">
+        <div class="icon">📦</div>
+        <div>
+            <h3>Container Vessels</h3>
+            <h1 id="containerCount">0</h1>
+        </div>
+    </div>
+
+    <div class="card orange">
+        <div class="icon">🚗</div>
+        <div>
+            <h3>RORO Vessels</h3>
+            <h1 id="roroCount">0</h1>
+        </div>
+    </div>
+
+    <div class="card teal">
+        <div class="icon">🏗️</div>
+        <div>
+            <h3>Bulk Cargo Vessels</h3>
+            <h1 id="bulkCount">0</h1>
+        </div>
+    </div>
+
+</div>
+
+<!-- IMPORT PANEL -->
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h3>📋 Import KPA 14-Day Vessel Schedule</h3>
+
+</div>
+
+<textarea
+id="vesselInput"
+placeholder="Paste the KPA 14-Day Vessel List here..."
+style="width:100%;height:220px;padding:15px;font-size:15px;border-radius:12px;border:1px solid #ddd;resize:vertical;"></textarea>
+
+<br><br>
+
+<button class="header-btn" onclick="importVessels()">
+
+IMPORT VESSELS
+
+</button>
+
+</div>
+<!-- EXPECTED VESSELS TABLE -->
+
+<div class="panel">
+
+    <div class="panel-header">
+
+        <h3>🚢 Expected Vessel Schedule (Next 14 Days)</h3>
+
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>VESSEL</th>
+
+                <th>ETA</th>
+
+                <th>CARGO TYPE</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="vesselTableBody">
+
+            <!-- Imported vessels will appear here -->
+
+        </tbody>
+
+    </table>
+
+</div>
