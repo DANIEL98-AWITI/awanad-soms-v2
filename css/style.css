@@ -1699,3 +1699,25 @@ box-shadow:0 25px 60px rgba(0,0,0,.35);
 text-align:center;
 
 }
+/* ===== COMPANY HEADER ===== */
+
+.company-info h1{
+margin:0;
+font-size:28px;
+font-weight:800;
+color:#0b376d;
+line-height:1;
+letter-spacing:.3px;
+}
+
+.company-info h2{
+margin-top:4px;
+font-size:14px;
+font-weight:500;
+color:#607d8b;
+line-height:1.3;
+}
+
+/* =======================================================
+END OF FILE
+======================================================= */
