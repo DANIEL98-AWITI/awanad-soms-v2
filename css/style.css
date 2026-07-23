@@ -722,7 +722,9 @@ flex-shrink:0;
 }
 
 .weather .mini-icon{
-
+.invoice .mini-icon{
+background:linear-gradient(135deg,#ef6c00,#ff9800);
+}
 background:linear-gradient(135deg,#ff9800,#ffc107);
 
 }
