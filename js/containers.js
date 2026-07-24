@@ -77,6 +77,13 @@ function changeStatus(index,status){
 
     containers[index].status = status;
 
+    // Automatically save evacuation date
+    if(status=="Evacuated"){
+
+        containers[index].evacuatedDate = new Date().toISOString();
+
+    }
+
     localStorage.setItem("containerOperations",JSON.stringify(containers));
 
     loadContainers();
