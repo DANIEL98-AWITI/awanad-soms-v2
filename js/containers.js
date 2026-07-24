@@ -76,7 +76,7 @@ document.getElementById("yardContainers").innerHTML = discharged - evacuated;
 
 function changeStatus(index,status){
 
-    let containers = JSON.parse(localStorage.getItem("containerOperations")) || [];
+    let containers = DB.get("containerOperations")
 
     containers[index].status = status;
 
@@ -95,7 +95,7 @@ function changeStatus(index,status){
 function toggleDischarged(index,value){
 
     let containers =
-    JSON.parse(localStorage.getItem("containerOperations")) || [];
+    DB.get("containerOperations")
 
     containers[index].discharged = value;
 
@@ -114,7 +114,7 @@ function toggleDischarged(index,value){
 function toggleEvacuated(index,value){
 
     let containers =
-    JSON.parse(localStorage.getItem("containerOperations")) || [];
+    DB.get("containerOperations")
 
     containers[index].evacuated = value;
 
