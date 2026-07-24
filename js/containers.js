@@ -71,7 +71,7 @@ onchange="toggleEvacuated(${index},this.checked)">
     document.getElementById("totalContainers").innerHTML = total;
     document.getElementById("dischargedContainers").innerHTML = discharged;
     document.getElementById("evacuatedContainers").innerHTML = evacuated;
-
+document.getElementById("yardContainers").innerHTML = discharged - evacuated;
 }
 
 function changeStatus(index,status){
