@@ -92,3 +92,40 @@ function changeStatus(index,status){
     loadContainers();
 
 }
+function toggleDischarged(index,value){
+
+    let containers =
+    JSON.parse(localStorage.getItem("containerOperations")) || [];
+
+    containers[index].discharged = value;
+
+    if(value){
+
+        containers[index].dischargedDate = new Date().toISOString();
+
+    }
+
+    localStorage.setItem("containerOperations",JSON.stringify(containers));
+
+    loadContainers();
+
+}
+
+function toggleEvacuated(index,value){
+
+    let containers =
+    JSON.parse(localStorage.getItem("containerOperations")) || [];
+
+    containers[index].evacuated = value;
+
+    if(value){
+
+        containers[index].evacuatedDate = new Date().toISOString();
+
+    }
+
+    localStorage.setItem("containerOperations",JSON.stringify(containers));
+
+    loadContainers();
+
+}
