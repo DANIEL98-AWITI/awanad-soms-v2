@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AWANAD SOMS | Cargo Documents</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="top-header">
+
+<div class="branding">
+
+<div class="company-info">
+<h1>AWANAD CFS</h1>
+<h2>Stevedoring Operations Management System</h2>
+</div>
+
+<img src="ael-logo.png" class="company-logo">
+
+</div>
+
+</header>
+
+<aside class="sidebar">
+
+<div class="menu-title">MAIN MENU</div>
+
+<a href="dashboard.html">🏠 Dashboard</a>
+
+<a href="vessels.html">🚢 Vessel Management</a>
+
+<a class="active" href="cargo-documents.html">📑 Cargo Documents</a>
+
+<a href="containers.html">📦 Container Operations</a>
+
+<a href="roro.html">🚗 RORO Operations</a>
+
+<a href="invoices.html">💰 Invoice Register</a>
+
+<a href="reports.html">📊 Reports</a>
+
+</aside>
+
+<main class="main-content">
+
+<div class="page-header">
+
+<h2>Cargo Documents Register</h2>
+
+<p>Register Bills of Lading and Shipping Manifests</p>
+
+</div>
+
+<div class="panel">
+
+<h3>Document Information</h3>
+
+<br>
+
+<label>Cargo Type</label>
+
+<select id="cargoType">
+
+<option>Container</option>
+
+<option>RORO</option>
+
+<option>Bulk Cargo</option>
+
+</select>
+
+<br><br>
+
+<label>Vessel</label>
+
+<input type="text" id="vessel">
+
+<br><br>
+
+<label>BL / Manifest Number</label>
+
+<input type="text" id="documentNo">
+
+<br><br>
+
+<label>Shipping Line</label>
+
+<input type="text" id="shippingLine">
+
+<br><br>
+
+<label>Customer</label>
+
+<input type="text" id="customer">
+
+<br><br>
+
+<label>20FT Containers</label>
+
+<input type="number" id="twenty">
+
+<br><br>
+
+<label>40FT Containers</label>
+
+<input type="number" id="forty">
+
+<br><br>
+
+<button onclick="saveDocument()">
+
+SAVE DOCUMENT
+
+</button>
+
+</div>
+
+</main>
+
+<script src="js/cargo-documents.js"></script>
+
+</body>
+
+</html>
