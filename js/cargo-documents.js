@@ -89,33 +89,4 @@ function saveDocument(){
 
 }
 
-    for (let i = 1; i <= forty; i++) {
-
-        containers.push({
-
-            containerNo: "PENDING",
-
-            size: "40FT",
-
-            vessel,
-
-            bl: documentNo,
-
-            customer,
-
-            shippingLine,
-
-            status: "Awaiting Container Number"
-
-        });
-
-    }
-
-    localStorage.setItem(
-        "containerOperations",
-        JSON.stringify(containers)
-    );
-
-    alert("Document Saved Successfully");
-
-}
+  
