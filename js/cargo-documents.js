@@ -1,65 +1,93 @@
-function saveDocument() {
+function saveDocument(){
 
-    let cargoType = document.getElementById("cargoType").value;
-    let vessel = document.getElementById("vessel").value;
-    let documentNo = document.getElementById("documentNo").value;
-    let shippingLine = document.getElementById("shippingLine").value;
-    let customer = document.getElementById("customer").value;
+    const cargoType = document.getElementById("cargoType").value;
+    const vessel = document.getElementById("vessel").value.trim();
+    const documentNo = document.getElementById("documentNo").value.trim();
+    const shippingLine = document.getElementById("shippingLine").value.trim();
+    const customer = document.getElementById("customer").value.trim();
 
-    let twenty = parseInt(document.getElementById("twenty").value) || 0;
-    let forty = parseInt(document.getElementById("forty").value) || 0;
+    const twenty = parseInt(document.getElementById("twenty").value) || 0;
+    const forty = parseInt(document.getElementById("forty").value) || 0;
 
-    // Save document
+    const containerText = document.getElementById("containerNumbers").value.trim();
 
-    let documents =
-        JSON.parse(localStorage.getItem("cargoDocuments")) || [];
+    // Save Cargo Document
+    let documents = DB.get("cargoDocuments");
 
     documents.push({
 
         cargoType,
-
         vessel,
-
         documentNo,
-
         shippingLine,
-
         customer,
-
         twenty,
-
-        forty
+        forty,
+        date:new Date().toISOString()
 
     });
 
-    localStorage.setItem("cargoDocuments", JSON.stringify(documents));
+    DB.save("cargoDocuments",documents);
 
-    // Generate Containers Automatically
+    // ==========================
+    // CONTAINER AUTOMATION
+    // ==========================
 
-    let containers =
-        JSON.parse(localStorage.getItem("containerOperations")) || [];
+    if(cargoType==="Container"){
 
-    for (let i = 1; i <= twenty; i++) {
+        let containers = DB.get("containerOperations");
 
-        containers.push({
+        let numbers = containerText
+            .split("\n")
+            .map(x=>x.trim())
+            .filter(x=>x!="");
 
-            containerNo: "PENDING",
+        numbers.forEach(number=>{
 
-            size: "20FT",
+            let size = "40FT";
 
-            vessel,
+            if(
+                number.startsWith("MSCU") ||
+                number.startsWith("TGHU") ||
+                number.startsWith("OOLU")
+            ){
+                // You can improve this later if needed
+                size = "40FT";
+            }
 
-            bl: documentNo,
+            containers.push({
 
-            customer,
+                containerNo:number,
 
-            shippingLine,
+                bl:documentNo,
 
-            status: "Awaiting Container Number"
+                vessel:vessel,
+
+                customer:customer,
+
+                shippingLine:shippingLine,
+
+                size:size,
+
+                discharged:false,
+
+                evacuated:false,
+
+                dischargedDate:null,
+
+                evacuatedDate:null
+
+            });
 
         });
 
+        DB.save("containerOperations",containers);
+
     }
+
+    alert("Cargo Document Saved Successfully.");
+
+}
 
     for (let i = 1; i <= forty; i++) {
 
