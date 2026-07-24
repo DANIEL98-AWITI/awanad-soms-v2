@@ -45,18 +45,21 @@ function loadContainers() {
 
 <td>
 
-<select onchange="changeStatus(${index},this.value)">
-
-<option value="Expected" ${c.status=="Expected"?"selected":""}>Expected</option>
-
-<option value="Discharged" ${c.status=="Discharged"?"selected":""}>Discharged</option>
-
-<option value="Evacuated" ${c.status=="Evacuated"?"selected":""}>Evacuated</option>
-
-</select>
+<input
+type="checkbox"
+${c.discharged ? "checked" : ""}
+onchange="toggleDischarged(${index},this.checked)">
 
 </td>
 
+<td>
+
+<input
+type="checkbox"
+${c.evacuated ? "checked" : ""}
+onchange="toggleEvacuated(${index},this.checked)">
+
+</td>
 </tr>
 
 `;
