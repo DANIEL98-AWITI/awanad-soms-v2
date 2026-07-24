@@ -1,1 +1,166 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AWANAD SOMS | Container Operations</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="top-header">
+
+<div class="branding">
+
+<div class="company-info">
+
+<h1>AWANAD CFS</h1>
+
+<h2>Stevedoring Operations Management System</h2>
+
+</div>
+
+<img src="ael-logo.png" class="company-logo">
+
+</div>
+
+</header>
+
+<aside class="sidebar">
+
+<div class="menu-title">
+
+MAIN MENU
+
+</div>
+
+<a href="dashboard.html">🏠 <span>Dashboard</span></a>
+
+<a href="vessels.html">🚢 <span>Vessel Management</span></a>
+
+<a href="cargo-documents.html">📑 <span>Cargo Documents</span></a>
+
+<a class="active" href="containers.html">📦 <span>Container Operations</span></a>
+
+<a href="roro.html">🚗 <span>RORO Operations</span></a>
+
+<a href="invoices.html">💰 <span>Invoice Register</span></a>
+
+<a href="reports.html">📊 <span>Reports</span></a>
+
+<a href="settings.html">⚙ <span>Settings</span></a>
+
+</aside>
+
+<main class="main-content">
+
+<div class="page-header">
+
+<h2>Container Operations</h2>
+
+<p>Generated Automatically from Cargo Documents</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card blue">
+
+<div class="icon">📦</div>
+
+<div>
+
+<h3>Total Containers</h3>
+
+<h1 id="totalContainers">0</h1>
+
+</div>
+
+</div>
+
+<div class="card green">
+
+<div class="icon">🟢</div>
+
+<div>
+
+<h3>Registered</h3>
+
+<h1 id="registeredContainers">0</h1>
+
+</div>
+
+</div>
+
+<div class="card orange">
+
+<div class="icon">⌛</div>
+
+<div>
+
+<h3>Awaiting Numbers</h3>
+
+<h1 id="pendingContainers">0</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h3>Container Register</h3>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Container No</th>
+
+<th>BL No</th>
+
+<th>Vessel</th>
+
+<th>Customer</th>
+
+<th>Shipping Line</th>
+
+<th>Size</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="containerTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</main>
+
+<script src="js/app.js"></script>
+
+<script src="js/containers.js"></script>
+
+</body>
+
+</html>
