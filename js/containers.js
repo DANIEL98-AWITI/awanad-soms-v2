@@ -1,7 +1,5 @@
 window.onload = function () {
-
     loadContainers();
-
 };
 
 function loadContainers() {
@@ -9,85 +7,77 @@ function loadContainers() {
     let containers = JSON.parse(localStorage.getItem("containerOperations")) || [];
 
     let table = document.getElementById("containerTable");
-
     table.innerHTML = "";
 
-    let registered = 0;
-    let pending = 0;
+    let total = containers.length;
+    let discharged = 0;
+    let evacuated = 0;
 
-    containers.forEach((c, index) => {
+    containers.forEach((c,index)=>{
 
-        if (c.containerNo == "PENDING") {
+        if(!c.status){
+            c.status="Expected";
+        }
 
-            pending++;
+        if(c.status==="Discharged"){
+            discharged++;
+        }
 
-        } else {
-
-            registered++;
-
+        if(c.status==="Evacuated"){
+            evacuated++;
         }
 
         table.innerHTML += `
 
-        <tr>
+<tr>
 
-        <td>
+<td>${c.containerNo}</td>
 
-        <input
-        type="text"
-        value="${c.containerNo}"
-        onchange="updateContainer(${index},this.value)"
-        style="width:140px;padding:6px;border-radius:6px;border:1px solid #ccc;">
+<td>${c.bl}</td>
 
-        </td>
+<td>${c.vessel}</td>
 
-        <td>${c.bl}</td>
+<td>${c.customer}</td>
 
-        <td>${c.vessel}</td>
+<td>${c.shippingLine}</td>
 
-        <td>${c.customer}</td>
+<td>${c.size}</td>
 
-        <td>${c.shippingLine}</td>
+<td>
 
-        <td>${c.size}</td>
+<select onchange="changeStatus(${index},this.value)">
 
-        <td>
+<option value="Expected" ${c.status=="Expected"?"selected":""}>Expected</option>
 
-        <span style="
-        padding:6px 12px;
-        border-radius:20px;
-        background:${c.containerNo=="PENDING" ? "#ff9800" : "#18A957"};
-        color:white;
-        font-size:12px;
-        font-weight:bold;">
+<option value="Discharged" ${c.status=="Discharged"?"selected":""}>Discharged</option>
 
-        ${c.containerNo=="PENDING" ? "Awaiting Number" : "Registered"}
+<option value="Evacuated" ${c.status=="Evacuated"?"selected":""}>Evacuated</option>
 
-        </span>
+</select>
 
-        </td>
+</td>
 
-        </tr>
+</tr>
 
-        `;
+`;
 
     });
 
-    document.getElementById("totalContainers").innerHTML = containers.length;
+    localStorage.setItem("containerOperations",JSON.stringify(containers));
 
-    document.getElementById("registeredContainers").innerHTML = registered;
-
-    document.getElementById("pendingContainers").innerHTML = pending;
+    document.getElementById("totalContainers").innerHTML = total;
+    document.getElementById("dischargedContainers").innerHTML = discharged;
+    document.getElementById("evacuatedContainers").innerHTML = evacuated;
 
 }
 
-function updateContainer(index, value) {
+function changeStatus(index,status){
 
     let containers = JSON.parse(localStorage.getItem("containerOperations")) || [];
 
-    containers[index].containerNo = value.toUpperCase();
+    containers[index].status = status;
 
-    localStorage.setItem("containerOperations", JSON.stringify(containers));
+    localStorage.setItem("containerOperations",JSON.stringify(containers));
 
     loadContainers();
 
