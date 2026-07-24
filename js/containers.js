@@ -4,7 +4,7 @@ window.onload = function () {
 
 function loadContainers() {
 
-    let containers = JSON.parse(localStorage.getItem("containerOperations")) || [];
+  let containers =DB.get("containerOperations")
 
     let table = document.getElementById("containerTable");
     table.innerHTML = "";
