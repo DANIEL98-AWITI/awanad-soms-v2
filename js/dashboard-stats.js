@@ -30,28 +30,27 @@ function updateDashboard() {
 
     ];
 
-    let containerCount = 0;
+ let totalContainers = containers.length;
 
-    containers.forEach(c=>{
+let dischargedContainers = 0;
 
-        if(c.status==="Evacuated"){
+let evacuatedContainers = 0;
 
-            if(c.evacuatedDate){
+containers.forEach(c=>{
 
-                let d=new Date(c.evacuatedDate);
+    if(c.discharged){
 
-                if(d.getMonth()==currentMonth && d.getFullYear()==currentYear){
+        dischargedContainers++;
 
-                    containerCount++;
+    }
 
-                }
+    if(c.evacuated){
 
-            }
+        evacuatedContainers++;
 
-        }
+    }
 
-    });
-
+});   
     document.getElementById("dashboardContainers").innerHTML=containerCount;
 
     document.getElementById("containerGrowth").innerHTML=
