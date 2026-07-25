@@ -62,7 +62,10 @@ onchange="toggleEvacuated(${index},this.checked)">
 
     });
 
-    localStorage.setItem("containerOperations",JSON.stringify(containers));
+   localStorage.setItem(
+    "containerOperations",
+    JSON.stringify(containers)
+);
 
     document.getElementById("totalContainers").innerHTML = total;
     document.getElementById("dischargedContainers").innerHTML = discharged;
