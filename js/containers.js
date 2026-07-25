@@ -11,21 +11,17 @@ let containers = JSON.parse(localStorage.getItem("containerOperations")) || [];
 
     let total = containers.length;
     let discharged = 0;
-    let evacuated = 0;
+let evacuated = 0;
 
-    containers.forEach((c,index)=>{
+containers.forEach((c,index)=>{
 
-        if(!c.status){
-            c.status="Expected";
-        }
+    if(c.discharged){
+        discharged++;
+    }
 
-        if(c.status==="Discharged"){
-            discharged++;
-        }
-
-        if(c.status==="Evacuated"){
-            evacuated++;
-        }
+    if(c.evacuated){
+        evacuated++;
+    }
 
         table.innerHTML += `
 
