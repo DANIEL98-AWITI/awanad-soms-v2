@@ -30,31 +30,31 @@ function updateDashboard() {
 
     ];
 
- let totalContainers = containers.length;
-
-let dischargedContainers = 0;
-
 let evacuatedContainers = 0;
 
-containers.forEach(c=>{
+containers.forEach(c => {
 
-    if(c.discharged){
+    if(c.evacuated && c.evacuatedDate){
 
-        dischargedContainers++;
+        let d = new Date(c.evacuatedDate);
+
+        if(
+            d.getMonth() == currentMonth &&
+            d.getFullYear() == currentYear
+        ){
+
+            evacuatedContainers++;
+
+        }
 
     }
 
-    if(c.evacuated){
+});
 
-        evacuatedContainers++;
-
-    }
-
-});   
 document.getElementById("dashboardContainers").innerHTML = evacuatedContainers;
-    document.getElementById("containerGrowth").innerHTML=
 
-        months[currentMonth]+" "+currentYear;
+document.getElementById("containerGrowth").innerHTML =
+months[currentMonth] + " " + currentYear;
 
     let roroCount=0;
 
