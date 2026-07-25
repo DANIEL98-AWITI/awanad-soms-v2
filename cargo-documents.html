@@ -177,7 +177,32 @@ SAVE DOCUMENT
 <script src="js/app.js"></script>
 <script src="js/data.js"></script>
 <script src="js/cargo-documents.js"></script>
+<script>
 
+function changeCargoType(){
+
+    let cargo=document.getElementById("cargoType").value;
+
+    document.getElementById("containerSection").style.display="none";
+    document.getElementById("roroSection").style.display="none";
+
+    if(cargo=="Container"){
+
+        document.getElementById("containerSection").style.display="block";
+
+    }
+
+    if(cargo=="RORO"){
+
+        document.getElementById("roroSection").style.display="block";
+
+    }
+
+}
+
+changeCargoType();
+
+</script>
 </body>
 
 </html>
