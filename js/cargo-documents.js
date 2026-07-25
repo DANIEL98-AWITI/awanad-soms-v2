@@ -1,21 +1,27 @@
+function DBGet(key){
+    return JSON.parse(localStorage.getItem(key)) || [];
+}
+
+function DBSave(key,data){
+    localStorage.setItem(key,JSON.stringify(data));
+}
+
 function saveDocument(){
 
-    const cargoType = document.getElementById("cargoType").value;
-    const vessel = document.getElementById("vessel").value.trim();
-    const documentNo = document.getElementById("documentNo").value.trim();
-    const shippingLine = document.getElementById("shippingLine").value.trim();
-    const customer = document.getElementById("customer").value.trim();
+    const cargoType=document.getElementById("cargoType").value;
+    const vessel=document.getElementById("vessel").value.trim();
+    const documentNo=document.getElementById("documentNo").value.trim();
+    const shippingLine=document.getElementById("shippingLine").value.trim();
+    const customer=document.getElementById("customer").value.trim();
 
-    const twenty = parseInt(document.getElementById("twenty").value) || 0;
-    const forty = parseInt(document.getElementById("forty").value) || 0;
+    const twenty=parseInt(document.getElementById("twenty").value)||0;
+    const forty=parseInt(document.getElementById("forty").value)||0;
 
-    const containerText = document.getElementById("containerNumbers").value.trim();
+    const containerText=document.getElementById("containerNumbers").value.trim();
 
-    // Save Cargo Document
-    let documents = DB.get("cargoDocuments");
+    let documents=DBGet("cargoDocuments");
 
     documents.push({
-
         cargoType,
         vessel,
         documentNo,
@@ -24,36 +30,22 @@ function saveDocument(){
         twenty,
         forty,
         date:new Date().toISOString()
-
     });
 
-    DB.save("cargoDocuments",documents);
-
-    // ==========================
-    // CONTAINER AUTOMATION
-    // ==========================
+    DBSave("cargoDocuments",documents);
 
     if(cargoType==="Container"){
 
-        let containers = DB.get("containerOperations");
+        let containers=DBGet("containerOperations");
 
-        let numbers = containerText
+        let numbers=containerText
             .split("\n")
             .map(x=>x.trim())
             .filter(x=>x!="");
 
         numbers.forEach(number=>{
 
-            let size = "40FT";
-
-            if(
-                number.startsWith("MSCU") ||
-                number.startsWith("TGHU") ||
-                number.startsWith("OOLU")
-            ){
-                // You can improve this later if needed
-                size = "40FT";
-            }
+            let size=number.includes("20") ? "20FT":"40FT";
 
             containers.push({
 
@@ -61,13 +53,13 @@ function saveDocument(){
 
                 bl:documentNo,
 
-                vessel:vessel,
+                vessel,
 
-                customer:customer,
+                customer,
 
-                shippingLine:shippingLine,
+                shippingLine,
 
-                size:size,
+                size,
 
                 discharged:false,
 
@@ -81,12 +73,10 @@ function saveDocument(){
 
         });
 
-        DB.save("containerOperations",containers);
+        DBSave("containerOperations",containers);
 
     }
 
-    alert("Cargo Document Saved Successfully.");
+    alert("Cargo Document Saved Successfully");
 
 }
-
-  
