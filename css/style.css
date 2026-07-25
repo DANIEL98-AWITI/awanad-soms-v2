@@ -1662,3 +1662,23 @@ background:linear-gradient(135deg,#00838f,#26c6da);
 /* =======================================================
 END OF FILE
 ======================================================= */
+.trend{
+    margin-top:10px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:14px;
+    font-weight:700;
+}
+
+.trend.up{
+    color:#00e676;
+}
+
+.trend.down{
+    color:#ff5252;
+}
+
+.trend.flat{
+    color:#ffffff;
+}
