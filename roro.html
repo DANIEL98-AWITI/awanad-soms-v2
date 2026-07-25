@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AWANAD SOMS | RORO Operations</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="top-header">
+
+<div class="branding">
+
+<div class="company-info">
+
+<h1>AWANAD CFS</h1>
+
+<h2>Stevedoring Operations Management System</h2>
+
+</div>
+
+<img src="ael-logo.png" class="company-logo">
+
+</div>
+
+</header>
+
+<aside class="sidebar">
+
+<div class="menu-title">
+
+MAIN MENU
+
+</div>
+
+<a href="dashboard.html">🏠 Dashboard</a>
+
+<a href="vessels.html">🚢 Vessel Management</a>
+
+<a href="cargo-documents.html">📑 Cargo Documents</a>
+
+<a href="containers.html">📦 Container Operations</a>
+
+<a class="active" href="roro.html">🚗 RORO Operations</a>
+
+<a href="invoices.html">💰 Invoice Register</a>
+
+<a href="reports.html">📊 Reports</a>
+
+<a href="settings.html">⚙ Settings</a>
+
+</aside>
+
+<main class="main-content">
+
+<div class="page-header">
+
+<h2>RORO Operations</h2>
+
+<p>Automatically Generated From Manifest Register</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card blue">
+
+<div class="icon">🚗</div>
+
+<div>
+
+<h3>Total Units</h3>
+
+<h1 id="totalUnits">0</h1>
+
+</div>
+
+</div>
+
+<div class="card green">
+
+<div class="icon">⚓</div>
+
+<div>
+
+<h3>Discharged</h3>
+
+<h1 id="dischargedUnits">0</h1>
+
+</div>
+
+</div>
+
+<div class="card orange">
+
+<div class="icon">🚚</div>
+
+<div>
+
+<h3>Evacuated</h3>
+
+<h1 id="evacuatedUnits">0</h1>
+
+</div>
+
+</div>
+
+<div class="card purple">
+
+<div class="icon">🏗️</div>
+
+<div>
+
+<h3>Units In Yard</h3>
+
+<h1 id="yardUnits">0</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h3>RORO Register</h3>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Unit No</th>
+
+<th>Manifest</th>
+
+<th>Vessel</th>
+
+<th>Customer</th>
+
+<th>Shipping Line</th>
+
+<th>Vehicle Type</th>
+
+<th>Discharged</th>
+
+<th>Evacuated</th>
+
+</tr>
+
+</thead>
+
+<tbody id="roroTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</main>
+
+<script src="js/app.js"></script>
+
+<script src="js/roro.js"></script>
+
+</body>
+
+</html>
