@@ -104,29 +104,28 @@ if(change>0){
 
 }
 
-    let roroCount=0;
+ let roroCount = 0;
 
-    roro.forEach(r=>{
+roro.forEach(r=>{
 
-        if(r.status==="Evacuated"){
+    if(r.evacuated && r.evacuatedDate){
 
-            if(r.evacuatedDate){
+        let d = new Date(r.evacuatedDate);
 
-                let d=new Date(r.evacuatedDate);
+        if(
+            d.getMonth() == currentMonth &&
+            d.getFullYear() == currentYear
+        ){
 
-                if(d.getMonth()==currentMonth && d.getFullYear()==currentYear){
-
-                    roroCount++;
-
-                }
-
-            }
+            roroCount++;
 
         }
 
-    });
+    }
 
-    document.getElementById("dashboardRoro").innerHTML=roroCount;
+});
+
+document.getElementById("dashboardRoro").innerHTML = roroCount;
 
     document.getElementById("roroGrowth").innerHTML=
 
