@@ -51,8 +51,7 @@ containers.forEach(c=>{
     }
 
 });   
-    document.getElementById("dashboardContainers").innerHTML=containerCount;
-
+document.getElementById("dashboardContainers").innerHTML = evacuatedContainers;
     document.getElementById("containerGrowth").innerHTML=
 
         months[currentMonth]+" "+currentYear;
