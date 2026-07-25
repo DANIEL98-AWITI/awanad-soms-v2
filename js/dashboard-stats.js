@@ -30,20 +30,40 @@ function updateDashboard() {
 
     ];
 
-let evacuatedContainers = 0;
+let currentMonthCount = 0;
+let lastMonthCount = 0;
 
-containers.forEach(c => {
+containers.forEach(c=>{
 
     if(c.evacuated && c.evacuatedDate){
 
         let d = new Date(c.evacuatedDate);
 
         if(
-            d.getMonth() == currentMonth &&
-            d.getFullYear() == currentYear
+            d.getMonth()==currentMonth &&
+            d.getFullYear()==currentYear
         ){
 
-            evacuatedContainers++;
+            currentMonthCount++;
+
+        }
+
+        let lastMonth=currentMonth-1;
+        let lastYear=currentYear;
+
+        if(lastMonth<0){
+
+            lastMonth=11;
+            lastYear--;
+
+        }
+
+        if(
+            d.getMonth()==lastMonth &&
+            d.getFullYear()==lastYear
+        ){
+
+            lastMonthCount++;
 
         }
 
@@ -51,10 +71,38 @@ containers.forEach(c => {
 
 });
 
-document.getElementById("dashboardContainers").innerHTML = evacuatedContainers;
+document.getElementById("dashboardContainers").innerHTML=currentMonthCount;
 
-document.getElementById("containerGrowth").innerHTML =
-months[currentMonth] + " " + currentYear;
+document.getElementById("containerGrowth").innerHTML=
+months[currentMonth]+" "+currentYear;
+
+let change=0;
+
+if(lastMonthCount>0){
+
+    change=((currentMonthCount-lastMonthCount)/lastMonthCount)*100;
+
+}
+
+let trend=document.getElementById("containerTrendText");
+let icon=document.getElementById("containerTrendIcon");
+
+if(change>0){
+
+    icon.innerHTML="▲";
+    trend.innerHTML=Math.round(change)+"% vs Last Month";
+
+}else if(change<0){
+
+    icon.innerHTML="▼";
+    trend.innerHTML=Math.abs(Math.round(change))+"% vs Last Month";
+
+}else{
+
+    icon.innerHTML="●";
+    trend.innerHTML="No Change";
+
+}
 
     let roroCount=0;
 
