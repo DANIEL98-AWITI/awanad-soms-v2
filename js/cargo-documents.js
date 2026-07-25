@@ -78,5 +78,56 @@ function saveDocument(){
     }
 
     alert("Cargo Document Saved Successfully");
+// ==========================================
+// RORO AUTOMATION
+// ==========================================
 
+if(cargoType=="RORO"){
+
+    let roro = JSON.parse(localStorage.getItem("roroOperations")) || [];
+
+    let units = document.getElementById("roroNumbers").value
+        .split("\n")
+        .map(x=>x.trim())
+        .filter(x=>x!="");
+
+    units.forEach(line=>{
+
+        let parts = line.split(",");
+
+        let unitNo = parts[0] || "";
+        let vehicleType = parts[1] || "Vehicle";
+
+        roro.push({
+
+            unitNo: unitNo,
+
+            manifest: documentNo,
+
+            vessel: vessel,
+
+            customer: customer,
+
+            shippingLine: shippingLine,
+
+            vehicleType: vehicleType,
+
+            discharged:false,
+
+            evacuated:false,
+
+            dischargedDate:null,
+
+            evacuatedDate:null
+
+        });
+
+    });
+
+    localStorage.setItem(
+        "roroOperations",
+        JSON.stringify(roro)
+    );
+
+}
 }
