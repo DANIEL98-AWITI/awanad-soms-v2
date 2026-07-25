@@ -4,7 +4,7 @@ window.onload = function () {
 
 function loadContainers() {
 
-  let containers =DB.get("containerOperations")
+let containers = JSON.parse(localStorage.getItem("containerOperations")) || [];
 
     let table = document.getElementById("containerTable");
     table.innerHTML = "";
@@ -76,7 +76,7 @@ document.getElementById("yardContainers").innerHTML = discharged - evacuated;
 
 function changeStatus(index,status){
 
-    let containers = DB.get("containerOperations")
+    let containers = JSON.parse(localStorage.getItem("containerOperations")) || [];
 
     containers[index].status = status;
 
@@ -94,8 +94,7 @@ function changeStatus(index,status){
 }
 function toggleDischarged(index,value){
 
-    let containers =
-    DB.get("containerOperations")
+  let containers = JSON.parse(localStorage.getItem("containerOperations")) || [];
 
     containers[index].discharged = value;
 
@@ -113,8 +112,7 @@ function toggleDischarged(index,value){
 
 function toggleEvacuated(index,value){
 
-    let containers =
-    DB.get("containerOperations")
+  let containers = JSON.parse(localStorage.getItem("containerOperations")) || [];
 
     containers[index].evacuated = value;
 
