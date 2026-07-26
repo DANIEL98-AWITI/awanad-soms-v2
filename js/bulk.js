@@ -1,0 +1,108 @@
+window.onload = function(){
+
+    loadBulk();
+
+};
+
+function loadBulk(){
+
+    let bulk = JSON.parse(localStorage.getItem("bulkOperations")) || [];
+
+    let table = document.getElementById("bulkTable");
+
+    table.innerHTML = "";
+
+    let total = bulk.length;
+    let discharged = 0;
+    let delivered = 0;
+
+    bulk.forEach((b,index)=>{
+
+        if(b.discharged) discharged++;
+
+        if(b.delivered) delivered++;
+
+        table.innerHTML += `
+
+<tr>
+
+<td>${b.manifest}</td>
+
+<td>${b.vessel}</td>
+
+<td>${b.cargo}</td>
+
+<td>${b.customer}</td>
+
+<td>${b.quantity}</td>
+
+<td>
+
+<input
+type="checkbox"
+${b.discharged ? "checked" : ""}
+onchange="toggleBulkDischarged(${index},this.checked)">
+
+</td>
+
+<td>
+
+<input
+type="checkbox"
+${b.delivered ? "checked" : ""}
+onchange="toggleBulkDelivered(${index},this.checked)">
+
+</td>
+
+</tr>
+
+`;
+
+    });
+
+    document.getElementById("totalBulk").innerHTML = total;
+
+    document.getElementById("bulkDischarged").innerHTML = discharged;
+
+    document.getElementById("bulkDelivered").innerHTML = delivered;
+
+    document.getElementById("bulkYard").innerHTML =
+        discharged - delivered;
+
+}
+
+function toggleBulkDischarged(index,value){
+
+    let bulk = JSON.parse(localStorage.getItem("bulkOperations")) || [];
+
+    bulk[index].discharged = value;
+
+    if(value){
+
+        bulk[index].dischargedDate = new Date().toISOString();
+
+    }
+
+    localStorage.setItem("bulkOperations",JSON.stringify(bulk));
+
+    loadBulk();
+
+}
+
+function toggleBulkDelivered(index,value){
+
+    let bulk = JSON.parse(localStorage.getItem("bulkOperations")) || [];
+
+    bulk[index].delivered = value;
+
+    if(value){
+
+        bulk[index].deliveredDate = new Date().toISOString();
+
+    }
+
+    localStorage.setItem("bulkOperations",JSON.stringify(bulk));
+
+    loadBulk();
+
+}
