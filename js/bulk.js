@@ -39,18 +39,26 @@ function loadBulk(){
 <td>
 
 <input
-type="checkbox"
-${b.discharged ? "checked" : ""}
-onchange="toggleBulkDischarged(${index},this.checked)">
+type="number"
+value="${b.dischargedQty || 0}"
+style="width:90px"
+onchange="updateDischarged(${index},this.value)">
 
 </td>
 
 <td>
 
 <input
-type="checkbox"
-${b.delivered ? "checked" : ""}
-onchange="toggleBulkDelivered(${index},this.checked)">
+type="number"
+value="${b.deliveredQty || 0}"
+style="width:90px"
+onchange="updateDelivered(${index},this.value)">
+
+</td>
+
+<td>
+
+${(b.quantity||0) - (b.deliveredQty||0)}
 
 </td>
 
