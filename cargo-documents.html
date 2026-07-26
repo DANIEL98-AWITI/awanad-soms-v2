@@ -199,10 +199,11 @@ SAVE DOCUMENT
 
 function changeCargoType(){
 
-    let cargo=document.getElementById("cargoType").value;
+    let cargo = document.getElementById("cargoType").value;
 
-    document.getElementById("containerSection").style.display="none";
-    document.getElementById("roroSection").style.display="none";
+    document.getElementById("containerSection").style.display = "none";
+    document.getElementById("roroSection").style.display = "none";
+    document.getElementById("bulkSection").style.display = "none";
 
     if(cargo=="Container"){
 
@@ -213,6 +214,12 @@ function changeCargoType(){
     if(cargo=="RORO"){
 
         document.getElementById("roroSection").style.display="block";
+
+    }
+
+    if(cargo=="Bulk Cargo"){
+
+        document.getElementById("bulkSection").style.display="block";
 
     }
 
