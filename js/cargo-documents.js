@@ -76,7 +76,44 @@ function saveDocument(){
         DBSave("containerOperations",containers);
 
     }
+// ===============================
+// BULK AUTOMATION
+// ===============================
 
+if(cargoType=="Bulk Cargo"){
+
+    let bulk = JSON.parse(localStorage.getItem("bulkOperations")) || [];
+
+    bulk.push({
+
+        manifest: documentNo,
+
+        vessel: vessel,
+
+        cargo: document.getElementById("bulkCargo").value,
+
+        customer: customer,
+
+        shippingLine: shippingLine,
+
+        quantity: document.getElementById("bulkQuantity").value,
+
+        discharged:false,
+
+        delivered:false,
+
+        dischargedDate:null,
+
+        deliveredDate:null
+
+    });
+
+    localStorage.setItem(
+        "bulkOperations",
+        JSON.stringify(bulk)
+    );
+
+}
     alert("Cargo Document Saved Successfully");
 // ==========================================
 // RORO AUTOMATION
