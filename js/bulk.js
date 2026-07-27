@@ -36,7 +36,7 @@ function loadBulk(){
 
 <td>${b.customer}</td>
 
-<td>${b.quantity}</td>
+<td>${b.quantity} ${b.unit}</td>
 
 <td>
 
