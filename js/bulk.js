@@ -28,6 +28,8 @@ function loadBulk(){
 
 <td>${b.manifest}</td>
 
+<td>${b.cargoType}</td>
+
 <td>${b.vessel}</td>
 
 <td>${b.cargo}</td>
