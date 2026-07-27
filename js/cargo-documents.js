@@ -168,3 +168,96 @@ if(cargoType=="RORO"){
 
 }
 }
+// =======================================
+// MASTER CARGO CATALOGUE
+// =======================================
+
+const cargoCatalogue = {
+
+    Bulk: [
+
+        {name:"Clinker",unit:"MT"},
+        {name:"Coal",unit:"MT"},
+        {name:"Gypsum",unit:"MT"},
+        {name:"Wheat",unit:"MT"},
+        {name:"Maize",unit:"MT"},
+        {name:"Rice",unit:"MT"},
+        {name:"Fertilizer",unit:"MT"},
+        {name:"Salt",unit:"MT"},
+        {name:"Sugar",unit:"MT"},
+        {name:"Steel Billets",unit:"MT"}
+
+    ],
+
+    Packages: [
+
+        {name:"Steel Coils",unit:"Coils"},
+        {name:"Aluminium Coils",unit:"Coils"},
+        {name:"Pallets",unit:"Pallets"},
+        {name:"Cartons",unit:"Cartons"},
+        {name:"Bags",unit:"Bags"},
+        {name:"Drums",unit:"Drums"},
+        {name:"Crates",unit:"Crates"},
+        {name:"Machinery",unit:"Units"},
+        {name:"Steel Pipes",unit:"Bundles"},
+        {name:"Timber",unit:"Bundles"},
+        {name:"General Cargo",unit:"Units"}
+
+    ]
+
+};
+
+function loadCommodityList(){
+
+    let type = document.getElementById("commodityType").value;
+
+    let commodity = document.getElementById("bulkCargo");
+
+    commodity.innerHTML = "";
+
+    if(!cargoCatalogue[type]) return;
+
+    cargoCatalogue[type].forEach(item=>{
+
+        commodity.innerHTML +=
+        `<option value="${item.name}">
+            ${item.name}
+        </option>`;
+
+    });
+
+    updateUnit();
+
+}
+
+function updateUnit(){
+
+    let type = document.getElementById("commodityType").value;
+
+    let commodity = document.getElementById("bulkCargo").value;
+
+    let unit = "";
+
+    cargoCatalogue[type].forEach(item=>{
+
+        if(item.name==commodity){
+
+            unit = item.unit;
+
+        }
+
+    });
+
+    document.getElementById("bulkUnit").value = unit;
+
+}
+
+document.addEventListener("change",function(e){
+
+    if(e.target.id=="bulkCargo"){
+
+        updateUnit();
+
+    }
+
+});
