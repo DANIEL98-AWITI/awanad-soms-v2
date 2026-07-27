@@ -148,21 +148,45 @@ KDA890P,Nissan Xtrail"></textarea>
 </div>
 <div id="bulkSection" style="display:none;">
 
-<label>Bulk Cargo Type</label>
+<label>Commodity Type</label>
 
-<input
-type="text"
-id="bulkCargo"
-placeholder="Example: Clinker">
+<select id="commodityType" onchange="loadCommodityList()">
+
+<option value="">Select</option>
+
+<option value="Bulk">Bulk Cargo</option>
+
+<option value="Packages">Packages</option>
+
+</select>
 
 <br><br>
 
-<label>Quantity (MT)</label>
+<label>Commodity</label>
+
+<select id="bulkCargo">
+
+<option>Select Commodity</option>
+
+</select>
+
+<br><br>
+
+<label>Quantity</label>
 
 <input
 type="number"
 id="bulkQuantity"
-placeholder="Metric Tonnes">
+placeholder="Enter Quantity">
+
+<br><br>
+
+<label>Unit of Measure</label>
+
+<input
+type="text"
+id="bulkUnit"
+readonly>
 
 </div>
 <br><br>
