@@ -84,30 +84,33 @@ if(cargoType=="Bulk Cargo"){
 
     let bulk = JSON.parse(localStorage.getItem("bulkOperations")) || [];
 
-    bulk.push({
+  bulk.push({
 
-        manifest: documentNo,
+    manifest: documentNo,
 
-        vessel: vessel,
+    cargoType: document.getElementById("commodityType").value,
 
-        cargo: document.getElementById("bulkCargo").value,
+    vessel: vessel,
 
-        customer: customer,
+    cargo: document.getElementById("bulkCargo").value,
 
-        shippingLine: shippingLine,
+    unit: document.getElementById("bulkUnit").value,
 
-        quantity: document.getElementById("bulkQuantity").value,
+    customer: customer,
 
-        discharged:false,
+    shippingLine: shippingLine,
 
-        delivered:false,
+    quantity: Number(document.getElementById("bulkQuantity").value),
 
-        dischargedDate:null,
+    dischargedQty: 0,
 
-        deliveredDate:null
+    deliveredQty: 0,
 
-    });
+    dischargedDate: null,
 
+    deliveredDate: null
+
+});
     localStorage.setItem(
         "bulkOperations",
         JSON.stringify(bulk)
