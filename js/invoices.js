@@ -2,6 +2,8 @@ window.onload = function(){
 
     loadVessels();
 
+    loadInvoices();
+
     document
         .getElementById("invoiceVessel")
         .addEventListener("change",loadInvoiceDetails);
