@@ -288,3 +288,11 @@ function loadInvoices(filter=""){
     });
 
 }
+function searchInvoices(){
+
+    let value =
+    document.getElementById("invoiceSearch").value;
+
+    loadInvoices(value);
+
+}
