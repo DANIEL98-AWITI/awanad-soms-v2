@@ -231,7 +231,7 @@ loadInvoices();
 // LOAD INVOICE TABLE
 // ===============================
 
-function loadInvoices(){
+function loadInvoices(filter=""){
 
     let invoices =
     JSON.parse(localStorage.getItem("invoiceRegister")) || [];
@@ -239,11 +239,25 @@ function loadInvoices(){
     let table =
     document.getElementById("invoiceTable");
 
-    table.innerHTML = "";
+    table.innerHTML="";
+
+    filter = filter.toLowerCase();
 
     invoices.forEach(inv=>{
 
-        table.innerHTML += `
+        if(
+
+            inv.invoiceNo.toLowerCase().includes(filter) ||
+
+            inv.vessel.toLowerCase().includes(filter) ||
+
+            inv.customer.toLowerCase().includes(filter) ||
+
+            inv.commodity.toLowerCase().includes(filter)
+
+        ){
+
+            table.innerHTML += `
 
 <tr>
 
@@ -268,6 +282,8 @@ function loadInvoices(){
 </tr>
 
 `;
+
+        }
 
     });
 
