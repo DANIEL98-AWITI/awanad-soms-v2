@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AWANAD SOMS | Invoice Register</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="top-header">
+
+<div class="branding">
+
+<div class="company-info">
+
+<h1>AWANAD CFS</h1>
+
+<h2>Stevedoring Operations Management System</h2>
+
+</div>
+
+<img src="ael-logo.png" class="company-logo">
+
+</div>
+
+</header>
+
+<aside class="sidebar">
+
+<div class="menu-title">MAIN MENU</div>
+
+<a href="dashboard.html">🏠 Dashboard</a>
+
+<a href="vessels.html">🚢 Vessel Management</a>
+
+<a href="cargo-documents.html">📑 Cargo Documents</a>
+
+<a href="containers.html">📦 Container Operations</a>
+
+<a href="roro.html">🚗 RORO Operations</a>
+
+<a href="bulk.html">🏗️ Bulk & Packages</a>
+
+<a class="active" href="invoices.html">💰 Invoice Register</a>
+
+<a href="reports.html">📊 Reports</a>
+
+</aside>
+
+<main class="main-content">
+
+<div class="page-header">
+
+<h2>Invoice Register</h2>
+
+<p>Create and Manage Customer Invoices</p>
+
+</div>
+
+<div class="panel">
+
+<h3>Invoice Information</h3>
+
+<br>
+
+<label>Invoice Number</label>
+
+<input type="text" id="invoiceNo">
+
+<br><br>
+
+<label>Invoice Date</label>
+
+<input type="date" id="invoiceDate">
+
+<br><br>
+
+<label>Vessel</label>
+
+<select id="invoiceVessel">
+
+<option>Select Vessel</option>
+
+</select>
+
+<br><br>
+
+<label>Customer</label>
+
+<input type="text" id="invoiceCustomer">
+
+<br><br>
+
+<label>Cargo Category</label>
+
+<input type="text" id="invoiceCategory">
+
+<br><br>
+
+<label>Commodity</label>
+
+<input type="text" id="invoiceCommodity">
+
+<br><br>
+
+<label>Quantity</label>
+
+<input type="number" id="invoiceQuantity">
+
+<br><br>
+
+<label>Unit</label>
+
+<input type="text" id="invoiceUnit">
+
+<br><br>
+
+<label>Invoice Amount</label>
+
+<input type="number" id="invoiceAmount">
+
+<br><br>
+
+<label>Status</label>
+
+<select id="invoiceStatus">
+
+<option>Pending</option>
+
+<option>Paid</option>
+
+</select>
+
+<br><br>
+
+<button>
+
+SAVE INVOICE
+
+</button>
+
+</div>
+
+</main>
+
+<script src="js/app.js"></script>
+
+<script src="js/invoices.js"></script>
+
+</body>
+
+</html>
