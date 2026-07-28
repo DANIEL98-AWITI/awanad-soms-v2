@@ -138,3 +138,92 @@ function loadInvoiceDetails(){
     }
 
 }
+// ===============================
+// SAVE INVOICE
+// ===============================
+
+function saveInvoice(){
+
+    let invoiceNo = document.getElementById("invoiceNo").value.trim();
+
+    let invoiceDate = document.getElementById("invoiceDate").value;
+
+    let vessel = document.getElementById("invoiceVessel").value;
+
+    let customer = document.getElementById("invoiceCustomer").value;
+
+    let category = document.getElementById("invoiceCategory").value;
+
+    let commodity = document.getElementById("invoiceCommodity").value;
+
+    let quantity = Number(document.getElementById("invoiceQuantity").value);
+
+    let remaining = Number(document.getElementById("remainingQuantity").value);
+
+    let unit = document.getElementById("invoiceUnit").value;
+
+    let amount = Number(document.getElementById("invoiceAmount").value);
+
+    let status = document.getElementById("invoiceStatus").value;
+
+    if(invoiceNo==""){
+
+        alert("Enter Invoice Number");
+
+        return;
+
+    }
+
+    if(quantity<=0){
+
+        alert("Enter Invoice Quantity");
+
+        return;
+
+    }
+
+    if(quantity>remaining){
+
+        alert("Invoice Quantity exceeds Remaining Cargo.");
+
+        return;
+
+    }
+
+    let invoices =
+    JSON.parse(localStorage.getItem("invoiceRegister")) || [];
+
+    invoices.push({
+
+        invoiceNo,
+
+        invoiceDate,
+
+        vessel,
+
+        customer,
+
+        category,
+
+        commodity,
+
+        quantity,
+
+        unit,
+
+        amount,
+
+        status
+
+    });
+
+    localStorage.setItem(
+        "invoiceRegister",
+        JSON.stringify(invoices)
+    );
+
+    alert("Invoice Saved Successfully.");
+
+    loadInvoiceDetails();
+
+}
