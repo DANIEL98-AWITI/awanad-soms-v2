@@ -1682,3 +1682,36 @@ END OF FILE
 .trend.flat{
     color:#ffffff;
 }
+.search-bar{
+
+    width:100%;
+    display:flex;
+    justify-content:flex-end;
+    margin:15px 0;
+
+}
+
+.search-bar input{
+
+    width:420px;
+    padding:12px 18px;
+
+    border:1px solid #cfd8dc;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    transition:.3s;
+
+    outline:none;
+
+}
+
+.search-bar input:focus{
+
+    border-color:#1565C0;
+
+    box-shadow:0 0 8px rgba(21,101,192,.25);
+
+}
