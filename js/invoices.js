@@ -226,3 +226,48 @@ function saveInvoice(){
     loadInvoiceDetails();
 
 }
+// ===============================
+// LOAD INVOICE TABLE
+// ===============================
+
+function loadInvoices(){
+
+    let invoices =
+    JSON.parse(localStorage.getItem("invoiceRegister")) || [];
+
+    let table =
+    document.getElementById("invoiceTable");
+
+    table.innerHTML = "";
+
+    invoices.forEach(inv=>{
+
+        table.innerHTML += `
+
+<tr>
+
+<td>${inv.invoiceNo}</td>
+
+<td>${inv.invoiceDate}</td>
+
+<td>${inv.vessel}</td>
+
+<td>${inv.customer}</td>
+
+<td>${inv.category}</td>
+
+<td>${inv.commodity}</td>
+
+<td>${inv.quantity} ${inv.unit}</td>
+
+<td>${Number(inv.amount).toLocaleString()}</td>
+
+<td>${inv.status}</td>
+
+</tr>
+
+`;
+
+    });
+
+}
