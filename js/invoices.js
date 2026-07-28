@@ -50,71 +50,90 @@ function loadInvoiceDetails(){
 
     if(vessel=="") return;
 
-    let containers=JSON.parse(localStorage.getItem("containerOperations"))||[];
-    let roro=JSON.parse(localStorage.getItem("roroOperations"))||[];
-    let bulk=JSON.parse(localStorage.getItem("bulkOperations"))||[];
+    let invoices=
+    JSON.parse(localStorage.getItem("invoiceRegister")) || [];
 
-    // ==========================
-    // CONTAINERS
-    // ==========================
+    let containers=
+    JSON.parse(localStorage.getItem("containerOperations")) || [];
+
+    let roro=
+    JSON.parse(localStorage.getItem("roroOperations")) || [];
+
+    let bulk=
+    JSON.parse(localStorage.getItem("bulkOperations")) || [];
+
+    let totalQty=0;
+    let category="";
+    let commodity="";
+    let customer="";
+    let unit="";
+
+    // ================= CONTAINERS =================
 
     let c=containers.filter(x=>x.vessel==vessel);
 
     if(c.length>0){
 
-        document.getElementById("invoiceCustomer").value=c[0].customer;
-
-        document.getElementById("invoiceCategory").value="Containers";
-
-        document.getElementById("invoiceCommodity").value="Containers";
-
-        document.getElementById("invoiceQuantity").value=c.length;
-
-        document.getElementById("invoiceUnit").value="Containers";
-
-        return;
+        totalQty=c.length;
+        category="Containers";
+        commodity="Containers";
+        customer=c[0].customer;
+        unit="Containers";
 
     }
 
-    // ==========================
-    // RORO
-    // ==========================
+    // ================= RORO =================
 
     let r=roro.filter(x=>x.vessel==vessel);
 
     if(r.length>0){
 
-        document.getElementById("invoiceCustomer").value=r[0].customer;
-
-        document.getElementById("invoiceCategory").value="RORO";
-
-        document.getElementById("invoiceCommodity").value="Vehicles";
-
-        document.getElementById("invoiceQuantity").value=r.length;
-
-        document.getElementById("invoiceUnit").value="Units";
-
-        return;
+        totalQty=r.length;
+        category="RORO";
+        commodity="Vehicles";
+        customer=r[0].customer;
+        unit="Units";
 
     }
 
-    // ==========================
-    // BULK
-    // ==========================
+    // ================= BULK =================
 
     let b=bulk.find(x=>x.vessel==vessel);
 
     if(b){
 
-        document.getElementById("invoiceCustomer").value=b.customer;
+        totalQty=b.quantity;
+        category=b.cargoType;
+        commodity=b.cargo;
+        customer=b.customer;
+        unit=b.unit;
 
-        document.getElementById("invoiceCategory").value=b.cargoType;
+    }
 
-        document.getElementById("invoiceCommodity").value=b.cargo;
+    let already=0;
 
-        document.getElementById("invoiceQuantity").value=b.quantity;
+    invoices.forEach(inv=>{
 
-        document.getElementById("invoiceUnit").value=b.unit;
+        if(inv.vessel==vessel){
+
+            already += Number(inv.quantity);
+
+        }
+
+    });
+
+    let remaining=totalQty-already;
+
+    document.getElementById("invoiceCustomer").value=customer;
+    document.getElementById("invoiceCategory").value=category;
+    document.getElementById("invoiceCommodity").value=commodity;
+    document.getElementById("invoiceUnit").value=unit;
+
+    document.getElementById("invoiceQuantity").value="";
+    document.getElementById("alreadyInvoiced").value=already;
+    document.getElementById("remainingQuantity").value=remaining;
+
+}
 
     }
 
