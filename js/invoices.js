@@ -221,10 +221,11 @@ function saveInvoice(){
         JSON.stringify(invoices)
     );
 
-    alert("Invoice Saved Successfully.");
+alert("Invoice Saved Successfully.");
 
-    loadInvoiceDetails();
+loadInvoiceDetails();
 
+loadInvoices();    
 }
 // ===============================
 // LOAD INVOICE TABLE
