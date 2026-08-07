@@ -4,9 +4,14 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AWANAD SOMS</title>
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
+
+<title>AWANAD SOMS | Login</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -16,31 +21,96 @@
 
 <div class="login-container">
 
-<div class="login-card">
+    <div class="login-card">
 
-<img src="ael-logo.png" class="login-logo" alt="AEL Logo">
+        <!-- LOGO -->
+        <img
+            src="ael-logo.png"
+            class="login-logo"
+            alt="AWANAD CFS Logo"
+        >
 
-<h1>AWANAD SOMS</h1>
+        <!-- TITLE -->
+        <h1>AWANAD SOMS</h1>
 
-<p>Stevedoring Operations Management System</p>
+        <p class="login-subtitle">
+            Stevedoring Operations Management System
+        </p>
 
-<input type="text" id="username" placeholder="Username">
 
-<input type="password" id="password" placeholder="Password">
+        <!-- LOGIN FORM -->
+        <form id="loginForm">
 
-<button onclick="login()">LOGIN</button>
+            <div class="input-group">
 
-<div class="login-footer">
+                <label for="username">
+                    Username
+                </label>
 
-© 2026 AWANAD CFS
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter username"
+                    autocomplete="username"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button
+                type="submit"
+                class="login-button"
+            >
+                LOGIN
+            </button>
+
+        </form>
+
+
+        <!-- LOGIN MESSAGE -->
+
+        <div
+            id="loginMessage"
+            class="login-message"
+        ></div>
+
+
+        <!-- FOOTER -->
+
+        <div class="login-footer">
+
+            © 2026 AWANAD CFS
+
+        </div>
+
+    </div>
 
 </div>
 
-</div>
-
-</div>
 
 <script src="js/app.js"></script>
+
+<script src="js/login.js"></script>
 
 </body>
 
