@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
+
+<title>AWANAD SOMS | RORO Vessel Updates</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="top-header">
+
+    <div class="branding">
+
+        <div class="company-info">
+
+            <h1>AWANAD CFS</h1>
+
+            <h2>
+                Stevedoring Operations Management System
+            </h2>
+
+        </div>
+
+        <img
+            src="ael-logo.png"
+            class="company-logo"
+            alt="AEL Logo"
+        >
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================================
+     SIDEBAR
+========================================== -->
+
+<aside class="sidebar">
+
+    <div class="menu-title">
+        RORO DEPARTMENT
+    </div>
+
+
+    <a href="roro.html">
+        🚗 <span>RORO Operations</span>
+    </a>
+
+
+    <a class="active" href="roro-vessels.html">
+        🚢 <span>Vessel Updates</span>
+    </a>
+
+
+    <a href="cargo-documents.html">
+        📑 <span>Cargo Documents</span>
+    </a>
+
+
+    <a href="reports.html">
+        📊 <span>RORO Reports</span>
+    </a>
+
+
+    <a href="#" onclick="awanadLogout(); return false;">
+        🚪 <span>Logout</span>
+    </a>
+
+</aside>
+
+
+
+<!-- ==========================================
+     MAIN CONTENT
+========================================== -->
+
+<main class="main-content">
+
+
+    <div class="page-header">
+
+        <div>
+
+            <h2>RORO Vessel Updates</h2>
+
+            <p>
+                Manage and monitor RORO vessels
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         SUMMARY CARDS
+    ========================================== -->
+
+    <div class="cards">
+
+
+        <div class="card blue">
+
+            <div class="icon">
+                🚢
+            </div>
+
+            <div>
+
+                <h3>Total RORO Vessels</h3>
+
+                <h1 id="roroVesselTotal">
+                    0
+                </h1>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card green">
+
+            <div class="icon">
+                ⚓
+            </div>
+
+            <div>
+
+                <h3>Arrived</h3>
+
+                <h1 id="roroVesselArrived">
+                    0
+                </h1>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card orange">
+
+            <div class="icon">
+                ⏳
+            </div>
+
+            <div>
+
+                <h3>Expected</h3>
+
+                <h1 id="roroVesselExpected">
+                    0
+                </h1>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card teal">
+
+            <div class="icon">
+                🚗
+            </div>
+
+            <div>
+
+                <h3>RORO Units</h3>
+
+                <h1 id="roroVesselUnits">
+                    0
+                </h1>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         ADD / UPDATE VESSEL
+    ========================================== -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h3>
+                🚢 Add / Update RORO Vessel
+            </h3>
+
+        </div>
+
+
+        <div style="
+            display:grid;
+            grid-template-columns:
+            repeat(auto-fit,minmax(200px,1fr));
+            gap:15px;
+            padding:20px;
+        ">
+
+
+            <div>
+
+                <label>
+                    Vessel Name
+                </label>
+
+                <input
+                    type="text"
+                    id="roroVesselName"
+                    placeholder="Enter vessel name"
+                >
+
+            </div>
+
+
+
+            <div>
+
+                <label>
+                    ETA
+                </label>
+
+                <input
+                    type="datetime-local"
+                    id="roroVesselETA"
+                >
+
+            </div>
+
+
+
+            <div>
+
+                <label>
+                    ATA
+                </label>
+
+                <input
+                    type="datetime-local"
+                    id="roroVesselATA"
+                >
+
+            </div>
+
+
+
+            <div>
+
+                <label>
+                    Total RORO Units
+                </label>
+
+                <input
+                    type="number"
+                    id="roroVesselUnitsInput"
+                    min="0"
+                    placeholder="0"
+                >
+
+            </div>
+
+
+        </div>
+
+
+        <div style="padding:0 20px 20px 20px;">
+
+            <button
+                class="header-btn"
+                onclick="saveRoroVessel()"
+            >
+                SAVE VESSEL
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         RORO VESSEL REGISTER
+    ========================================== -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h3>
+                🚢 RORO Vessel Register
+            </h3>
+
+        </div>
+
+
+        <div style="overflow-x:auto;">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>VESSEL</th>
+
+                        <th>ETA</th>
+
+                        <th>ATA</th>
+
+                        <th>RORO UNITS</th>
+
+                        <th>STATUS</th>
+
+                        <th>ACTION</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="roroVesselTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ==========================================
+     SCRIPTS
+========================================== -->
+
+<script src="js/app.js"></script>
+
+<script src="js/auth.js"></script>
+
+
+<script>
+
+
+// ==========================================
+// LOAD RORO VESSELS
+// ==========================================
+
+function loadRoroVessels() {
+
+    let vessels =
+        JSON.parse(
+            localStorage.getItem("roroVessels")
+        ) || [];
+
+
+    let table =
+        document.getElementById(
+            "roroVesselTable"
+        );
+
+
+    table.innerHTML = "";
+
+
+    let arrived = 0;
+
+    let expected = 0;
+
+    let totalUnits = 0;
+
+
+    vessels.forEach(function(vessel, index) {
+
+
+        let status = "Expected";
+
+
+        if (vessel.ata) {
+
+            status = "Arrived";
+
+            arrived++;
+
+        }
+
+        else {
+
+            expected++;
+
+        }
+
+
+        totalUnits +=
+            Number(vessel.units) || 0;
+
+
+        table.innerHTML += `
+
+        <tr>
+
+            <td>
+                <strong>
+                    ${vessel.name}
+                </strong>
+            </td>
+
+            <td>
+                ${vessel.eta || "-"}
+            </td>
+
+            <td>
+                ${vessel.ata || "-"}
+            </td>
+
+            <td>
+                ${vessel.units || 0}
+            </td>
+
+            <td>
+
+                <span class="status">
+
+                    ${status}
+
+                </span>
+
+            </td>
+
+            <td>
+
+                <button
+                    class="action-btn"
+                    onclick="editRoroVessel(${index})"
+                >
+                    Edit
+                </button>
+
+            </td>
+
+        </tr>
+
+        `;
+
+    });
+
+
+    document.getElementById(
+        "roroVesselTotal"
+    ).textContent = vessels.length;
+
+
+    document.getElementById(
+        "roroVesselArrived"
+    ).textContent = arrived;
+
+
+    document.getElementById(
+        "roroVesselExpected"
+    ).textContent = expected;
+
+
+    document.getElementById(
+        "roroVesselUnits"
+    ).textContent = totalUnits;
+
+}
+
+
+
+// ==========================================
+// SAVE RORO VESSEL
+// ==========================================
+
+function saveRoroVessel() {
+
+
+    let name =
+        document
+        .getElementById(
+            "roroVesselName"
+        )
+        .value
+        .trim();
+
+
+    let eta =
+        document
+        .getElementById(
+            "roroVesselETA"
+        )
+        .value;
+
+
+    let ata =
+        document
+        .getElementById(
+            "roroVesselATA"
+        )
+        .value;
+
+
+    let units =
+        Number(
+            document
+            .getElementById(
+                "roroVesselUnitsInput"
+            )
+            .value
+        ) || 0;
+
+
+    if (!name) {
+
+        alert(
+            "Please enter the vessel name."
+        );
+
+        return;
+
+    }
+
+
+    let vessels =
+        JSON.parse(
+            localStorage.getItem(
+                "roroVessels"
+            )
+        ) || [];
+
+
+    vessels.push({
+
+        name: name,
+
+        eta: eta,
+
+        ata: ata,
+
+        units: units
+
+    });
+
+
+    localStorage.setItem(
+
+        "roroVessels",
+
+        JSON.stringify(vessels)
+
+    );
+
+
+    alert(
+        "RORO vessel saved successfully."
+    );
+
+
+    document.getElementById(
+        "roroVesselName"
+    ).value = "";
+
+
+    document.getElementById(
+        "roroVesselETA"
+    ).value = "";
+
+
+    document.getElementById(
+        "roroVesselATA"
+    ).value = "";
+
+
+    document.getElementById(
+        "roroVesselUnitsInput"
+    ).value = "";
+
+
+    loadRoroVessels();
+
+}
+
+
+
+// ==========================================
+// EDIT RORO VESSEL
+// ==========================================
+
+function editRoroVessel(index) {
+
+
+    let vessels =
+        JSON.parse(
+            localStorage.getItem(
+                "roroVessels"
+            )
+        ) || [];
+
+
+    let vessel =
+        vessels[index];
+
+
+    if (!vessel) {
+
+        return;
+
+    }
+
+
+    document.getElementById(
+        "roroVesselName"
+    ).value = vessel.name;
+
+
+    document.getElementById(
+        "roroVesselETA"
+    ).value = vessel.eta || "";
+
+
+    document.getElementById(
+        "roroVesselATA"
+    ).value = vessel.ata || "";
+
+
+    document.getElementById(
+        "roroVesselUnitsInput"
+    ).value = vessel.units || "";
+
+
+    vessels.splice(index, 1);
+
+
+    localStorage.setItem(
+
+        "roroVessels",
+
+        JSON.stringify(vessels)
+
+    );
+
+
+    loadRoroVessels();
+
+}
+
+
+
+// ==========================================
+// START
+// ==========================================
+
+window.addEventListener(
+    "load",
+    loadRoroVessels
+);
+
+</script>
+
+
+</body>
+
+</html>
