@@ -871,3 +871,61 @@ function resetInvoiceForm(){
     }
 
 }
+
+// ==========================================
+// ARCHIVE INVOICE
+// ==========================================
+
+function archiveInvoice(index){
+
+    let invoices =
+        JSON.parse(
+            localStorage.getItem("invoiceRegister")
+        ) || [];
+
+    let invoice = invoices[index];
+
+    if(!invoice){
+
+        alert("Invoice could not be found.");
+
+        return;
+
+    }
+
+    let confirmed = confirm(
+        "Are you sure you want to archive Invoice " +
+        invoice.invoiceNo +
+        "?"
+    );
+
+    if(!confirmed){
+
+        return;
+
+    }
+
+    // Mark invoice as archived
+    invoice.status = "Archived";
+
+    invoice.archived = true;
+
+    invoice.archivedDate =
+        new Date().toISOString();
+
+    // Save
+    localStorage.setItem(
+        "invoiceRegister",
+        JSON.stringify(invoices)
+    );
+
+    alert(
+        "Invoice " +
+        invoice.invoiceNo +
+        " has been archived."
+    );
+
+    // Refresh table
+    loadInvoices();
+
+}
