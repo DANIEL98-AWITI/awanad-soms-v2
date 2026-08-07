@@ -1219,9 +1219,9 @@ RESPONSIVE
 
 @media(max-width:1200px){
 
-.cards{
-grid-template-columns:repeat(3,1fr);
-}
+    .cards{
+        grid-template-columns:repeat(3,1fr);
+    }
 
 }
 
