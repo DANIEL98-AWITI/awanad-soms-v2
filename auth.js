@@ -1,6 +1,6 @@
 // ==========================================
 // AWANAD SOMS
-// DEPARTMENT ACCESS CONTROL
+// USER ACCESS CONTROL
 // ==========================================
 
 (function () {
@@ -13,7 +13,7 @@
 
 
     // ==========================================
-    // NO LOGIN = RETURN TO LOGIN PAGE
+    // CHECK LOGIN
     // ==========================================
 
     if (
@@ -21,8 +21,7 @@
         !role
     ) {
 
-        window.location.href =
-            "./index.html";
+        window.location.href = "./index.html";
 
         return;
 
@@ -46,51 +45,87 @@
 
     const permissions = {
 
+        // ADMIN ONLY
         "dashboard.html": [
             "ADMIN"
         ],
 
+        // CONTAINER
         "containers.html": [
             "ADMIN",
             "CONTAINER"
         ],
 
+        // RORO
         "roro.html": [
             "ADMIN",
             "RORO"
         ],
 
+        "roro-vessels.html": [
+            "ADMIN",
+            "RORO"
+        ],
+
+        // BULK
         "bulk.html": [
             "ADMIN",
             "BULK"
         ],
 
+        // FINANCE
         "invoices.html": [
             "ADMIN",
             "FINANCE"
+        ],
+
+        // COMMON DOCUMENT PAGE
+        "cargo-documents.html": [
+            "ADMIN",
+            "RORO",
+            "CONTAINER",
+            "BULK"
+        ],
+
+        // REPORTS
+        "reports.html": [
+            "ADMIN",
+            "RORO",
+            "CONTAINER",
+            "BULK",
+            "FINANCE"
+        ],
+
+        // SETTINGS
+        "settings.html": [
+            "ADMIN"
+        ],
+
+        // VESSEL MANAGEMENT
+        "vessels.html": [
+            "ADMIN"
         ]
 
     };
 
 
     // ==========================================
-    // CHECK PAGE
+    // CHECK ACCESS
     // ==========================================
 
     if (permissions[page]) {
 
-        if (
-            !permissions[page]
-                .includes(role)
-        ) {
+        if (!permissions[page].includes(role)) {
 
             alert(
-                "Access denied.\n\n" +
+                "ACCESS DENIED\n\n" +
                 "You do not have permission " +
-                "to access this department."
+                "to access this page."
             );
 
-            redirectUser(role);
+            redirectUser();
+
+            return;
 
         }
 
@@ -98,10 +133,10 @@
 
 
     // ==========================================
-    // REDIRECT USER TO THEIR DEPARTMENT
+    // REDIRECT USER
     // ==========================================
 
-    function redirectUser(role) {
+    function redirectUser() {
 
         if (role === "ADMIN") {
 
@@ -110,17 +145,17 @@
 
         }
 
-        else if (role === "CONTAINER") {
-
-            window.location.href =
-                "./containers.html";
-
-        }
-
         else if (role === "RORO") {
 
             window.location.href =
                 "./roro.html";
+
+        }
+
+        else if (role === "CONTAINER") {
+
+            window.location.href =
+                "./containers.html";
 
         }
 
@@ -151,7 +186,7 @@
 
 
     // ==========================================
-    // LOGOUT FUNCTION
+    // LOGOUT
     // ==========================================
 
     window.awanadLogout = function () {
@@ -165,7 +200,7 @@
 
 
     // ==========================================
-    // USER INFORMATION
+    // GLOBAL USER ROLE
     // ==========================================
 
     window.awanadUserRole = role;
