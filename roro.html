@@ -4,9 +4,14 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AWANAD SOMS | RORO Operations</title>
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
+
+<title>AWANAD SOMS | RORO Department</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -16,166 +21,259 @@
 
 <header class="top-header">
 
-<div class="branding">
+    <div class="branding">
 
-<div class="company-info">
+        <div class="company-info">
 
-<h1>AWANAD CFS</h1>
+            <h1>AWANAD CFS</h1>
 
-<h2>Stevedoring Operations Management System</h2>
+            <h2>
+                Stevedoring Operations Management System
+            </h2>
 
-</div>
+        </div>
 
-<img src="ael-logo.png" class="company-logo">
+        <img
+            src="ael-logo.png"
+            class="company-logo"
+            alt="AEL Logo"
+        >
 
-</div>
+    </div>
 
 </header>
 
+
+<!-- ==========================================
+     RORO DEPARTMENT SIDEBAR
+========================================== -->
+
 <aside class="sidebar">
 
-<div class="menu-title">
+    <div class="menu-title">
+        RORO DEPARTMENT
+    </div>
 
-MAIN MENU
 
-</div>
+    <a class="active" href="roro.html">
+        🚗 <span>RORO Operations</span>
+    </a>
 
-<a href="dashboard.html">🏠 Dashboard</a>
 
-<a href="vessels.html">🚢 Vessel Management</a>
+    <a href="vessels.html">
+        🚢 <span>Vessel Updates</span>
+    </a>
 
-<a href="cargo-documents.html">📑 Cargo Documents</a>
 
-<a href="containers.html">📦 Container Operations</a>
+    <a href="cargo-documents.html">
+        📑 <span>Cargo Documents</span>
+    </a>
 
-<a class="active" href="roro.html">🚗 RORO Operations</a>
 
-<a href="invoices.html">💰 Invoice Register</a>
+    <a href="reports.html">
+        📊 <span>RORO Reports</span>
+    </a>
 
-<a href="reports.html">📊 Reports</a>
 
-<a href="settings.html">⚙ Settings</a>
+    <a href="#" onclick="awanadLogout(); return false;">
+        🚪 <span>Logout</span>
+    </a>
 
 </aside>
 
+
+<!-- ==========================================
+     MAIN CONTENT
+========================================== -->
+
 <main class="main-content">
 
-<div class="page-header">
+    <div class="page-header">
 
-<h2>RORO Operations</h2>
+        <div>
 
-<p>Automatically Generated From Manifest Register</p>
+            <h2>RORO Department</h2>
 
-</div>
+            <p>
+                RORO Vessel & Cargo Operations
+            </p>
 
-<div class="cards">
+        </div>
 
-<div class="card blue">
+    </div>
 
-<div class="icon">🚗</div>
 
-<div>
+    <!-- ==========================================
+         SUMMARY CARDS
+    ========================================== -->
 
-<h3>Total Units</h3>
+    <div class="cards">
 
-<h1 id="totalUnits">0</h1>
 
-</div>
+        <!-- TOTAL -->
 
-</div>
+        <div class="card blue">
 
-<div class="card green">
+            <div class="icon">
+                🚗
+            </div>
 
-<div class="icon">⚓</div>
+            <div>
 
-<div>
+                <h3>Total RORO Units</h3>
 
-<h3>Discharged</h3>
+                <h1 id="totalUnits">
+                    0
+                </h1>
 
-<h1 id="dischargedUnits">0</h1>
+            </div>
 
-</div>
+        </div>
 
-</div>
 
-<div class="card orange">
+        <!-- DISCHARGED -->
 
-<div class="icon">🚚</div>
+        <div class="card green">
 
-<div>
+            <div class="icon">
+                ⚓
+            </div>
 
-<h3>Evacuated</h3>
+            <div>
 
-<h1 id="evacuatedUnits">0</h1>
+                <h3>Discharged</h3>
 
-</div>
+                <h1 id="dischargedUnits">
+                    0
+                </h1>
 
-</div>
+            </div>
 
-<div class="card purple">
+        </div>
 
-<div class="icon">🏗️</div>
 
-<div>
+        <!-- EVACUATED -->
 
-<h3>Units In Yard</h3>
+        <div class="card orange">
 
-<h1 id="yardUnits">0</h1>
+            <div class="icon">
+                🚚
+            </div>
 
-</div>
+            <div>
 
-</div>
+                <h3>Evacuated</h3>
 
-</div>
+                <h1 id="evacuatedUnits">
+                    0
+                </h1>
 
-<div class="panel">
+            </div>
 
-<div class="panel-header">
+        </div>
 
-<h3>RORO Register</h3>
 
-</div>
+        <!-- YARD -->
 
-<table>
+        <div class="card purple">
 
-<thead>
+            <div class="icon">
+                🏗️
+            </div>
 
-<tr>
+            <div>
 
-<th>Unit No</th>
+                <h3>Units In Yard</h3>
 
-<th>Manifest</th>
+                <h1 id="yardUnits">
+                    0
+                </h1>
 
-<th>Vessel</th>
+            </div>
 
-<th>Customer</th>
+        </div>
 
-<th>Shipping Line</th>
+    </div>
 
-<th>Vehicle Type</th>
 
-<th>Discharged</th>
+    <!-- ==========================================
+         RORO REGISTER
+    ========================================== -->
 
-<th>Evacuated</th>
+    <div class="panel">
 
-</tr>
+        <div class="panel-header">
 
-</thead>
+            <div>
 
-<tbody id="roroTable">
+                <h3>
+                    🚗 RORO Operations Register
+                </h3>
 
-</tbody>
+                <p>
+                    Manage RORO units, vessel operations
+                    and evacuation status.
+                </p>
 
-</table>
+            </div>
 
-</div>
+        </div>
+
+
+        <div style="overflow-x:auto;">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Unit No</th>
+
+                        <th>Manifest</th>
+
+                        <th>Vessel</th>
+
+                        <th>Customer</th>
+
+                        <th>Shipping Line</th>
+
+                        <th>Vehicle Type</th>
+
+                        <th>Discharged</th>
+
+                        <th>Evacuated</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="roroTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
 
 </main>
+
+
+<!-- ==========================================
+     EXISTING SYSTEM SCRIPTS
+========================================== -->
 
 <script src="js/app.js"></script>
 
 <script src="js/roro.js"></script>
+
 <script src="js/auth.js"></script>
+
+
 </body>
 
 </html>
