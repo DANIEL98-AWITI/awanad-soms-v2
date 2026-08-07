@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AWANAD SOMS</title>
+<title>AWANAD SOMS | Dashboard</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -14,275 +14,420 @@
 
 <body>
 
+<!-- =====================================================
+     TOP HEADER
+===================================================== -->
+
 <header class="top-header">
 
-<div class="branding">
+    <div class="branding">
 
-    <div class="company-info">
+        <div class="company-info">
 
-        <h1>AWANAD CFS</h1>
+            <h1>AWANAD CFS</h1>
 
-        <h2>Stevedoring Operations Management System</h2>
+            <h2>Stevedoring Operations Management System</h2>
+
+        </div>
+
+        <img
+            src="ael-logo.png"
+            class="company-logo"
+            alt="AEL Logo"
+        >
 
     </div>
 
-</div>
+    <div class="header-right">
 
-<div class="header-center-logo">
+        <div class="search-box">
+            🔍
+            <input
+                type="text"
+                placeholder="Search vessels, BL, containers..."
+            >
+        </div>
 
-    <img src="ael-logo.png" class="company-logo" alt="AEL Logo">
+        <div class="header-date">
 
-</div>
-<div class="header-right">
+            <span>Fri, 07 Aug 2026</span>
 
-<div class="search">
-<input type="text" placeholder="Search vessels, BL, Containers...">
-</div>
+            <strong id="liveClock">12:00:00</strong>
 
-<div class="header-icons">
+        </div>
 
-<div class="live-time">
-<div id="liveDate"></div>
-<div id="liveClock"></div>
-</div>
+        <div class="header-icon">🔔</div>
 
-<span>🔔</span>
-<span>⚙️</span>
+        <div class="header-icon">⚙️</div>
 
-<div class="user-box">
+        <div class="user-info">
 
-<div class="user-name">Daniel Wachenje</div>
+            <strong>Daniel Wachenje</strong>
 
-<div class="user-role">Stevedoring Manager</div>
+            <small>Stevedoring Manager</small>
 
-</div>
+        </div>
 
-</div>
-
-</div>
+    </div>
 
 </header>
 
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
 <aside class="sidebar">
 
-<div class="menu-title">
-MAIN MENU
-</div>
+    <div class="menu-title">
 
-<a class="active" href="dashboard.html">🏠 <span>Dashboard</span></a>
+        MAIN MENU
 
-<a href="vessels.html">🚢 <span>Vessel Management</span></a>
+    </div>
 
-<a href="cargo-documents.html">📑 <span>Cargo Documents</span></a>
-<a href="containers.html">📦 <span>Container Operations</span></a>
+    <a class="active" href="dashboard.html">
+        🏠 <span>Dashboard</span>
+    </a>
 
-<a href="roro.html">🚗 <span>RORO Operations</span></a>
+    <a href="vessels.html">
+        🚢 <span>Vessel Management</span>
+    </a>
 
-<a href="bulk.html">🏗️ <span>Bulk Cargo & Packages</span></a>
+    <a href="cargo-documents.html">
+        📑 <span>Cargo Documents</span>
+    </a>
 
-<a href="invoices.html">💰 <span>Invoice Register</span></a>
+    <a href="containers.html">
+        📦 <span>Container Operations</span>
+    </a>
 
-<a href="customers.html">👥 <span>Customers</span></a>
+    <a href="roro.html">
+        🚗 <span>RORO Operations</span>
+    </a>
 
-<a href="reports.html">📊 <span>Reports</span></a>
+    <a href="bulk.html">
+        🏗️ <span>Bulk Cargo & Packages</span>
+    </a>
 
-<a href="settings.html">⚙ <span>Settings</span></a>
+    <a href="invoices.html">
+        💰 <span>Invoice Register</span>
+    </a>
 
-<a href="index.html" onclick="logout()">🚪 <span>Logout</span></a>
+    <a href="customers.html">
+        👥 <span>Customers</span>
+    </a>
+
+    <a href="reports.html">
+        📊 <span>Reports</span>
+    </a>
+
+    <a href="settings.html">
+        ⚙ <span>Settings</span>
+    </a>
+
+    <a href="index.html">
+        🚪 <span>Logout</span>
+    </a>
 
 </aside>
 
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
 <main class="main-content">
-<div class="page-header">
 
-    <div>
-        <h2>Dashboard Overview</h2>
-        <p>Real-time Port Operations Monitoring</p>
-    </div>
 
-    <div class="header-buttons">
-        <button class="header-btn">+ New Vessel</button>
-        <button class="header-btn">+ New Invoice</button>
-        <button class="header-btn">Export Report</button>
-    </div>
+    <!-- PAGE HEADER -->
 
-</div>
-
-<!-- DASHBOARD CARDS -->
-
-<div class="cards">
-
-    <!-- Containers -->
-<div class="card blue">
-
-    <div class="icon">📦</div>
-
-    <div class="card-info">
-
-        <h3>Containers Evacuated</h3>
-
-        <h1 id="dashboardContainers">0</h1>
-
-        <p id="containerGrowth">July 2026</p>
-
-        <div class="trend">
-
-            <span id="containerTrendIcon">▲</span>
-
-            <span id="containerTrendText">0% vs Last Month</span>
-
-        </div>
-
-    </div>
-
-</div>
-
-    <!-- RORO -->
-   <div class="card green">
-
-    <div class="icon">🚗</div>
-
-    <div>
-
-        <h3>RORO Units Evacuated</h3>
-
-        <h1 id="dashboardRoro">0</h1>
-
-        <p id="roroGrowth">July 2026</p>
-
-    </div>
-
-</div>
-    <!-- Active Vessels -->
-    <div class="card purple">
-        <div class="icon">🚢</div>
-        <div>
-            <h3>Active Vessels</h3>
-            <h1 id="totalVessels">14</h1>
-            <p class="up">▲ 7% vs last 7 days</p>
-        </div>
-    </div>
-
-    <!-- Bulk Cargo -->
-  <div class="card teal">
-
-    <div class="icon">🏗️</div>
-
-    <div>
-
-        <h3>Bulk Cargo & Packages</h3>
-
-        <h1 id="dashboardBulk">0</h1>
-
-        <p id="bulkGrowth">July 2026</p>
-
-    </div>
-
-</div>
-
-  <!-- Pending Invoices -->
-<div class="card orange finance-card">
-
-    <div class="icon">⏳</div>
-
-    <div>
-
-        <h3>Unpaid Invoices</h3>
-
-        <h1 id="pendingInvoices">0</h1>
-
-        <p id="pendingInvoiceAmount">
-            KES 0
-        </p>
-
-        <small>Awaiting Payment</small>
-
-    </div>
-
-</div>
-<!-- Paid Invoices -->
-<div class="card green finance-card">
-
-    <div class="icon">💰</div>
-
-    <div>
-
-        <h3>Paid Invoices</h3>
-
-        <h1 id="paidInvoices">0</h1>
-
-        <p id="paidInvoiceAmount">
-            KES 0
-        </p>
-
-        <small>Successfully Paid</small>
-
-    </div>
-
-</div>  
-<!-- KPA WALLET -->
-<div class="card teal finance-card">
-
-    <div class="icon">💰</div>
-
-    <div>
-
-        <h3>KPA Wallet Balance</h3>
-
-        <h1 id="kpaWalletAmount">
-            KES 0
-        </h1>
-
-        <p>Available Balance</p>
-
-    </div>
-
-</div>
-<!-- TOP WIDGETS -->
-
-<div class="top-widgets">
-
-<div class="mini-card invoice">
-
-    <div class="mini-icon">📄</div>
-
-    <div>
-        <h4>Pending Invoices</h4>
-        <h2 id="pendingMini">23</h2>
-        <p>Awaiting Payment</p>
-    </div>
-
-</div>  
-
-
-    <div class="mini-card system">
-
-        <div class="mini-icon">🖥</div>
+    <div class="page-header">
 
         <div>
-            <h4>System Status</h4>
-            <h2>ONLINE</h2>
-            <p>All Modules Active</p>
+
+            <h2>Dashboard Overview</h2>
+
+            <p>
+                Real-time Port Operations Monitoring
+            </p>
+
+        </div>
+
+        <div class="header-buttons">
+
+            <button class="header-btn">
+                + New Vessel
+            </button>
+
+            <button
+                class="header-btn"
+                onclick="window.location.href='invoices.html'"
+            >
+                + New Invoice
+            </button>
+
+            <button class="header-btn">
+                Export Report
+            </button>
+
         </div>
 
     </div>
 
-</div>
-<div class="dashboard-grid">
 
-    <!-- TODAY'S OPERATIONS -->
+
+    <!-- =================================================
+         MAIN COLOURED SUMMARY CARDS
+    ================================================== -->
+
+    <div class="cards">
+
+
+        <!-- CONTAINERS -->
+
+        <div class="card blue">
+
+            <div class="icon">
+                📦
+            </div>
+
+            <div class="card-info">
+
+                <h3>
+                    Containers Evacuated
+                </h3>
+
+                <h1 id="dashboardContainers">
+                    0
+                </h1>
+
+                <p id="containerGrowth">
+                    August 2026
+                </p>
+
+                <div class="trend">
+
+                    <span id="containerTrendIcon">
+                        ●
+                    </span>
+
+                    <span id="containerTrendText">
+                        No Change
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RORO -->
+
+        <div class="card green">
+
+            <div class="icon">
+                🚗
+            </div>
+
+            <div>
+
+                <h3>
+                    RORO Units Evacuated
+                </h3>
+
+                <h1 id="dashboardRoro">
+                    0
+                </h1>
+
+                <p id="roroGrowth">
+                    August 2026
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ACTIVE VESSELS -->
+
+        <div class="card purple">
+
+            <div class="icon">
+                🚢
+            </div>
+
+            <div>
+
+                <h3>
+                    Active Vessels
+                </h3>
+
+                <h1 id="dashboardVessels">
+                    0
+                </h1>
+
+                <div class="trend">
+
+                    <span>
+                        ▲
+                    </span>
+
+                    <span>
+                        7% vs last 7 days
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BULK -->
+
+        <div class="card teal">
+
+            <div class="icon">
+                🏗️
+            </div>
+
+            <div>
+
+                <h3>
+                    Bulk Cargo & Packages
+                </h3>
+
+                <h1 id="dashboardBulk">
+                    0
+                </h1>
+
+                <p id="bulkGrowth">
+                    August 2026
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- UNPAID INVOICES -->
+
+        <div class="card orange finance-card">
+
+            <div class="icon">
+                ⏳
+            </div>
+
+            <div>
+
+                <h3>
+                    Unpaid Invoices
+                </h3>
+
+                <h1 id="pendingInvoices">
+                    0
+                </h1>
+
+                <p id="pendingInvoiceAmount">
+                    KES 0
+                </p>
+
+                <small>
+                    Awaiting Payment
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PAID INVOICES -->
+
+        <div class="card green finance-card">
+
+            <div class="icon">
+                💰
+            </div>
+
+            <div>
+
+                <h3>
+                    Paid Invoices
+                </h3>
+
+                <h1 id="paidInvoices">
+                    0
+                </h1>
+
+                <p id="paidInvoiceAmount">
+                    KES 0
+                </p>
+
+                <small>
+                    Successfully Paid
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- KPA WALLET -->
+
+        <div class="card teal finance-card">
+
+            <div class="icon">
+                💰
+            </div>
+
+            <div>
+
+                <h3>
+                    KPA Wallet Balance
+                </h3>
+
+                <h1 id="kpaWalletAmount">
+                    KES 0
+                </h1>
+
+                <p>
+                    Available Balance
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         TODAY'S OPERATIONS
+    ================================================== -->
 
     <div class="panel">
 
         <div class="panel-header">
 
-            <h3>🚢 Today's Operations</h3>
+            <h3>
+                🚢 Today's Operations
+            </h3>
 
             <button class="action-btn">
                 View All →
             </button>
 
         </div>
+
 
         <table>
 
@@ -304,26 +449,43 @@ MAIN MENU
 
             </thead>
 
+
             <tbody>
 
                 <tr>
 
-                    <td>MSC POLARIS</td>
-
-                    <td><span class="tag blue-tag">Container</span></td>
-
-                    <td>20 Jul 2026<br>08:30</td>
+                    <td>
+                        MSC POLARIS
+                    </td>
 
                     <td>
+                        <span class="tag blue-tag">
+                            Container
+                        </span>
+                    </td>
+
+                    <td>
+                        20 Jul 2026<br>
+                        08:30
+                    </td>
+
+                    <td>
+
                         <span class="status blue-status">
                             Discharging
                         </span>
+
                     </td>
 
                     <td>
 
                         <div class="progress">
-                            <div class="progress-bar" style="width:75%"></div>
+
+                            <div
+                                class="progress-bar"
+                                style="width:75%"
+                            ></div>
+
                         </div>
 
                         75%
@@ -332,24 +494,43 @@ MAIN MENU
 
                 </tr>
 
+
                 <tr>
 
-                    <td>CMA CGM XIAMEN</td>
-
-                    <td><span class="tag blue-tag">Container</span></td>
-
-                    <td>20 Jul 2026<br>09:15</td>
+                    <td>
+                        CMA CGM XIAMEN
+                    </td>
 
                     <td>
+
+                        <span class="tag blue-tag">
+                            Container
+                        </span>
+
+                    </td>
+
+                    <td>
+                        20 Jul 2026<br>
+                        09:15
+                    </td>
+
+                    <td>
+
                         <span class="status green-status">
                             Discharged
                         </span>
+
                     </td>
 
                     <td>
 
                         <div class="progress">
-                            <div class="progress-bar green" style="width:100%"></div>
+
+                            <div
+                                class="progress-bar green"
+                                style="width:100%"
+                            ></div>
+
                         </div>
 
                         100%
@@ -358,13 +539,25 @@ MAIN MENU
 
                 </tr>
 
+
                 <tr>
 
-                    <td>GRANDE TEXAS</td>
+                    <td>
+                        GRANDE TEXAS
+                    </td>
 
-                    <td><span class="tag orange-tag">RORO</span></td>
+                    <td>
 
-                    <td>20 Jul 2026<br>11:40</td>
+                        <span class="tag orange-tag">
+                            RORO
+                        </span>
+
+                    </td>
+
+                    <td>
+                        20 Jul 2026<br>
+                        11:40
+                    </td>
 
                     <td>
 
@@ -377,7 +570,12 @@ MAIN MENU
                     <td>
 
                         <div class="progress">
-                            <div class="progress-bar" style="width:60%"></div>
+
+                            <div
+                                class="progress-bar"
+                                style="width:60%"
+                            ></div>
+
                         </div>
 
                         60%
@@ -386,13 +584,25 @@ MAIN MENU
 
                 </tr>
 
+
                 <tr>
 
-                    <td>HOEGH TROTTER</td>
+                    <td>
+                        HOEGH TROTTER
+                    </td>
 
-                    <td><span class="tag orange-tag">RORO</span></td>
+                    <td>
 
-                    <td>21 Jul 2026<br>06:00</td>
+                        <span class="tag orange-tag">
+                            RORO
+                        </span>
+
+                    </td>
+
+                    <td>
+                        21 Jul 2026<br>
+                        06:00
+                    </td>
 
                     <td>
 
@@ -405,7 +615,12 @@ MAIN MENU
                     <td>
 
                         <div class="progress">
-                            <div class="progress-bar" style="width:0%"></div>
+
+                            <div
+                                class="progress-bar"
+                                style="width:0%"
+                            ></div>
+
                         </div>
 
                         0%
@@ -420,19 +635,31 @@ MAIN MENU
 
     </div>
 
-    <!-- LIVE ACTIVITY -->
+
+
+    <!-- =================================================
+         LIVE ACTIVITY
+    ================================================== -->
 
     <div class="panel">
 
         <div class="panel-header">
 
-            <h3>⚡ Live Activity Feed</h3>
+            <h3>
+                ⚡ Live Activity Feed
+            </h3>
 
-            <span class="live-badge">LIVE</span>
+            <span class="live-badge">
+                LIVE
+            </span>
 
         </div>
 
-        <div class="activity-feed" id="activityFeed">
+
+        <div
+            class="activity-feed"
+            id="activityFeed"
+        >
 
             <!-- Filled automatically by app.js -->
 
@@ -440,16 +667,19 @@ MAIN MENU
 
     </div>
 
-</div>
-<section class="analytics">
 
-    <!-- WEEKLY PERFORMANCE -->
+
+    <!-- =================================================
+         WEEKLY PERFORMANCE
+    ================================================== -->
 
     <div class="panel">
 
         <div class="panel-header">
 
-            <h3>📈 Weekly Operations Performance</h3>
+            <h3>
+                📈 Weekly Operations Performance
+            </h3>
 
             <button class="action-btn">
                 View Statistics
@@ -461,17 +691,26 @@ MAIN MENU
 
     </div>
 
-    <!-- EXPECTED VESSELS -->
+
+
+    <!-- =================================================
+         EXPECTED VESSELS
+    ================================================== -->
 
     <div class="panel">
 
         <div class="panel-header">
 
-            <h3>🚢 Expected Vessels</h3>
+            <h3>
+                🚢 Expected Vessels
+            </h3>
 
-            <span class="live-badge">NEXT 5</span>
+            <span class="live-badge">
+                NEXT 5
+            </span>
 
         </div>
+
 
         <table>
 
@@ -487,31 +726,71 @@ MAIN MENU
 
             </thead>
 
+
             <tbody>
 
                 <tr>
-                    <td>MSC TIA V</td>
-                    <td>22 Jul</td>
+
+                    <td>
+                        MSC TIA V
+                    </td>
+
+                    <td>
+                        22 Jul
+                    </td>
+
                 </tr>
 
-                <tr>
-                    <td>APL FLORIDA</td>
-                    <td>23 Jul</td>
-                </tr>
 
                 <tr>
-                    <td>MSC TUXPAN</td>
-                    <td>24 Jul</td>
+
+                    <td>
+                        APL FLORIDA
+                    </td>
+
+                    <td>
+                        23 Jul
+                    </td>
+
                 </tr>
 
-                <tr>
-                    <td>HOLSATIA</td>
-                    <td>24 Jul</td>
-                </tr>
 
                 <tr>
-                    <td>LADY JANE</td>
-                    <td>25 Jul</td>
+
+                    <td>
+                        MSC TUXPAN
+                    </td>
+
+                    <td>
+                        24 Jul
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        HOLSATIA
+                    </td>
+
+                    <td>
+                        24 Jul
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        LADY JANE
+                    </td>
+
+                    <td>
+                        25 Jul
+                    </td>
+
                 </tr>
 
             </tbody>
@@ -520,12 +799,20 @@ MAIN MENU
 
     </div>
 
-</section>
 
 </main>
 
-<script src="chart.umd.min.js"></script>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script src="js/app.js"></script>
-<script src="js/dashboard-stats.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+
 </body>
+
 </html>
