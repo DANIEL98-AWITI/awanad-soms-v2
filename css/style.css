@@ -1774,3 +1774,32 @@ END OF FILE
 .finance-card small {
     font-size: 12px;
 }
+/* ==========================================
+   INVOICE FINANCE CARDS
+========================================== */
+
+.finance-card{
+    min-height:170px !important;
+    height:170px !important;
+    padding:24px !important;
+    align-self:start !important;
+}
+
+.finance-card h3{
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.finance-card h1{
+    font-size:40px;
+    margin-bottom:8px;
+}
+
+.finance-card p{
+    font-size:13px;
+    margin:4px 0;
+}
+
+.finance-card small{
+    font-size:12px;
+}
