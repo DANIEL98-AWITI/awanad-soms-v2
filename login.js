@@ -1,16 +1,10 @@
-// ==========================================
-// AWANAD SOMS - LOGIN & DEPARTMENT ROLES
-// ==========================================
-
 document.addEventListener("DOMContentLoaded", function () {
 
-    const loginForm = document.getElementById("loginForm");
+    const form = document.getElementById("loginForm");
 
-    if (!loginForm) return;
+    form.addEventListener("submit", function (event) {
 
-    loginForm.addEventListener("submit", function (e) {
-
-        e.preventDefault();
+        event.preventDefault();
 
         const username =
             document.getElementById("username").value.trim().toLowerCase();
@@ -22,115 +16,66 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("loginMessage");
 
 
-        // ==========================================
-        // TEMPORARY USER ACCOUNTS
-        // ==========================================
+        if (username === "admin" && password === "admin123") {
 
-        const users = {
+            sessionStorage.setItem("awanadRole", "ADMIN");
+            sessionStorage.setItem("awanadLoggedIn", "true");
 
-            admin: {
-                password: "admin123",
-                role: "ADMIN",
-                name: "Administrator",
-                page: "dashboard.html"
-            },
-
-            container: {
-                password: "container123",
-                role: "CONTAINER",
-                name: "Container Department",
-                page: "containers.html"
-            },
-
-            roro: {
-                password: "roro123",
-                role: "RORO",
-                name: "RORO Department",
-                page: "roro.html"
-            },
-
-            bulk: {
-                password: "bulk123",
-                role: "BULK",
-                name: "Bulk Department",
-                page: "bulk.html"
-            },
-
-            finance: {
-                password: "finance123",
-                role: "FINANCE",
-                name: "Finance Department",
-                page: "invoices.html"
-            }
-
-        };
-
-
-        // ==========================================
-        // CHECK USER
-        // ==========================================
-
-        const user = users[username];
-
-
-        if (!user || user.password !== password) {
-
-            message.textContent =
-                "Invalid username or password.";
-
-            message.className =
-                "login-message error";
+            window.location.href = "dashboard.html";
 
             return;
-
         }
 
 
-        // ==========================================
-        // SAVE LOGIN SESSION
-        // ==========================================
+        if (username === "roro" && password === "roro123") {
 
-        sessionStorage.setItem(
-            "awanadLoggedIn",
-            "true"
-        );
+            sessionStorage.setItem("awanadRole", "RORO");
+            sessionStorage.setItem("awanadLoggedIn", "true");
 
-        sessionStorage.setItem(
-            "awanadUsername",
-            username
-        );
+            window.location.href = "roro.html";
 
-        sessionStorage.setItem(
-            "awanadRole",
-            user.role
-        );
-
-        sessionStorage.setItem(
-            "awanadUserName",
-            user.name
-        );
+            return;
+        }
 
 
-        // ==========================================
-        // SUCCESS MESSAGE
-        // ==========================================
+        if (username === "container" && password === "container123") {
+
+            sessionStorage.setItem("awanadRole", "CONTAINER");
+            sessionStorage.setItem("awanadLoggedIn", "true");
+
+            window.location.href = "containers.html";
+
+            return;
+        }
+
+
+        if (username === "bulk" && password === "bulk123") {
+
+            sessionStorage.setItem("awanadRole", "BULK");
+            sessionStorage.setItem("awanadLoggedIn", "true");
+
+            window.location.href = "bulk.html";
+
+            return;
+        }
+
+
+        if (username === "finance" && password === "finance123") {
+
+            sessionStorage.setItem("awanadRole", "FINANCE");
+            sessionStorage.setItem("awanadLoggedIn", "true");
+
+            window.location.href = "invoices.html";
+
+            return;
+        }
+
 
         message.textContent =
-            "Login successful. Opening system...";
+            "Invalid username or password.";
 
         message.className =
-            "login-message success";
-
-
-        // ==========================================
-        // OPEN DEPARTMENT
-        // ==========================================
-
-        setTimeout(function () {
-
-            window.location.href = user.page;
-
-        }, 500);
+            "login-message error";
 
     });
 
