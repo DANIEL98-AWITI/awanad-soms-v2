@@ -620,7 +620,13 @@ onclick="editInvoice(${index})">
 ✏️ Edit
 
 </button>
+<button
+class="archive-invoice-btn"
+onclick="archiveInvoice(${index})">
 
+🗄️ Archive
+
+</button>
 </td>
 
 </tr>
