@@ -24,13 +24,16 @@
     <div class="login-card">
 
         <!-- LOGO -->
+
         <img
             src="ael-logo.png"
             class="login-logo"
             alt="AWANAD CFS Logo"
         >
 
+
         <!-- TITLE -->
+
         <h1>AWANAD SOMS</h1>
 
         <p class="login-subtitle">
@@ -39,6 +42,7 @@
 
 
         <!-- LOGIN FORM -->
+
         <form id="loginForm">
 
             <div class="input-group">
@@ -75,8 +79,6 @@
             </div>
 
 
-            <!-- LOGIN BUTTON -->
-
             <button
                 type="submit"
                 class="login-button"
@@ -108,30 +110,220 @@
 </div>
 
 
+<!-- LOGIN SCRIPT -->
+
 <script>
-document.getElementById("loginForm").addEventListener("submit", function(e){
 
-    e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
 
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
+    const form = document.getElementById("loginForm");
 
-    if(username === "admin" && password === "admin123"){
+    const message = document.getElementById("loginMessage");
 
-        sessionStorage.setItem("awanadRole","ADMIN");
-        sessionStorage.setItem("awanadLoggedIn","true");
 
-        window.location.href = "./dashboard.html";
+    form.addEventListener("submit", function (event) {
 
-    } else {
+        event.preventDefault();
 
-        document.getElementById("loginMessage").innerHTML =
-        "Invalid username or password.";
 
-    }
+        const username =
+            document
+                .getElementById("username")
+                .value
+                .trim()
+                .toLowerCase();
+
+
+        const password =
+            document
+                .getElementById("password")
+                .value
+                .trim();
+
+
+        /*
+        ==========================================
+        ADMIN
+        ==========================================
+        */
+
+        if (
+            username === "admin" &&
+            password === "admin123"
+        ) {
+
+            sessionStorage.setItem(
+                "awanadLoggedIn",
+                "true"
+            );
+
+            sessionStorage.setItem(
+                "awanadRole",
+                "ADMIN"
+            );
+
+            sessionStorage.setItem(
+                "awanadUsername",
+                "admin"
+            );
+
+            window.location.href =
+                "./dashboard.html";
+
+            return;
+        }
+
+
+        /*
+        ==========================================
+        RORO
+        ==========================================
+        */
+
+        if (
+            username === "roro" &&
+            password === "roro123"
+        ) {
+
+            sessionStorage.setItem(
+                "awanadLoggedIn",
+                "true"
+            );
+
+            sessionStorage.setItem(
+                "awanadRole",
+                "RORO"
+            );
+
+            sessionStorage.setItem(
+                "awanadUsername",
+                "roro"
+            );
+
+            window.location.href =
+                "./roro.html";
+
+            return;
+        }
+
+
+        /*
+        ==========================================
+        CONTAINER
+        ==========================================
+        */
+
+        if (
+            username === "container" &&
+            password === "container123"
+        ) {
+
+            sessionStorage.setItem(
+                "awanadLoggedIn",
+                "true"
+            );
+
+            sessionStorage.setItem(
+                "awanadRole",
+                "CONTAINER"
+            );
+
+            sessionStorage.setItem(
+                "awanadUsername",
+                "container"
+            );
+
+            window.location.href =
+                "./containers.html";
+
+            return;
+        }
+
+
+        /*
+        ==========================================
+        BULK
+        ==========================================
+        */
+
+        if (
+            username === "bulk" &&
+            password === "bulk123"
+        ) {
+
+            sessionStorage.setItem(
+                "awanadLoggedIn",
+                "true"
+            );
+
+            sessionStorage.setItem(
+                "awanadRole",
+                "BULK"
+            );
+
+            sessionStorage.setItem(
+                "awanadUsername",
+                "bulk"
+            );
+
+            window.location.href =
+                "./bulk.html";
+
+            return;
+        }
+
+
+        /*
+        ==========================================
+        FINANCE
+        ==========================================
+        */
+
+        if (
+            username === "finance" &&
+            password === "finance123"
+        ) {
+
+            sessionStorage.setItem(
+                "awanadLoggedIn",
+                "true"
+            );
+
+            sessionStorage.setItem(
+                "awanadRole",
+                "FINANCE"
+            );
+
+            sessionStorage.setItem(
+                "awanadUsername",
+                "finance"
+            );
+
+            window.location.href =
+                "./invoices.html";
+
+            return;
+        }
+
+
+        /*
+        ==========================================
+        WRONG LOGIN
+        ==========================================
+        */
+
+        message.textContent =
+            "Invalid username or password.";
+
+        message.className =
+            "login-message error";
+
+    });
 
 });
+
 </script>
+
 
 </body>
 
