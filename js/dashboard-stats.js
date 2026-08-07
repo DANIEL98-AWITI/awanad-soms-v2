@@ -155,8 +155,127 @@ document.getElementById("dashboardRoro").innerHTML = roroCount;
 
     document.getElementById("dashboardBulk").innerHTML=bulkCount;
 
-    document.getElementById("bulkGrowth").innerHTML=
+ document.getElementById("bulkGrowth").innerHTML =
 
-        months[currentMonth]+" "+currentYear;
+    months[currentMonth]+" "+currentYear;
+
+
+// ==========================================
+// INVOICE SUMMARY
+// ==========================================
+
+let invoices =
+    JSON.parse(
+        localStorage.getItem("invoiceRegister")
+    ) || [];
+
+let paidInvoiceCount = 0;
+let unpaidInvoiceCount = 0;
+
+let paidInvoiceAmount = 0;
+let unpaidInvoiceAmount = 0;
+
+
+invoices.forEach(inv => {
+
+    // Do not include archived invoices
+    if(inv.archived === true){
+
+        return;
+
+    }
+
+
+    let amount =
+        Number(inv.amount) || 0;
+
+
+    let status =
+        String(inv.status || "")
+        .toLowerCase()
+        .trim();
+
+
+    if(status === "paid"){
+
+        paidInvoiceCount++;
+
+        paidInvoiceAmount += amount;
+
+    }
+
+    else{
+
+        unpaidInvoiceCount++;
+
+        unpaidInvoiceAmount += amount;
+
+    }
+
+});
+
+
+// ==========================================
+// UNPAID INVOICES
+// ==========================================
+
+let pendingElement =
+    document.getElementById(
+        "pendingInvoices"
+    );
+
+let pendingAmountElement =
+    document.getElementById(
+        "pendingInvoiceAmount"
+    );
+
+
+if(pendingElement){
+
+    pendingElement.innerHTML =
+        unpaidInvoiceCount;
+
+}
+
+
+if(pendingAmountElement){
+
+    pendingAmountElement.innerHTML =
+        "KES " +
+        unpaidInvoiceAmount.toLocaleString();
+
+}
+
+
+// ==========================================
+// PAID INVOICES
+// ==========================================
+
+let paidElement =
+    document.getElementById(
+        "paidInvoices"
+    );
+
+let paidAmountElement =
+    document.getElementById(
+        "paidInvoiceAmount"
+    );
+
+
+if(paidElement){
+
+    paidElement.innerHTML =
+        paidInvoiceCount;
+
+}
+
+
+if(paidAmountElement){
+
+    paidAmountElement.innerHTML =
+        "KES " +
+        paidInvoiceAmount.toLocaleString();
+
+}
 
 }
