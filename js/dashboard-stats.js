@@ -104,28 +104,92 @@ if(change>0){
 
 }
 
- let roroCount = 0;
+// ==========================================
+// RORO SUMMARY
+// ==========================================
 
-roro.forEach(r=>{
+let roroTotal = roro.length;
 
-    if(r.evacuated && r.evacuatedDate){
+let roroDischarged = 0;
+let roroEvacuated = 0;
+let roroYard = 0;
 
-        let d = new Date(r.evacuatedDate);
 
-        if(
-            d.getMonth() == currentMonth &&
-            d.getFullYear() == currentYear
-        ){
+// Count RORO units
+roro.forEach(r => {
 
-            roroCount++;
+    // ------------------------------
+    // DISCHARGED
+    // ------------------------------
 
-        }
+    if (
+        r.discharged === true ||
+        r.discharged === "true" ||
+        String(r.discharged).toLowerCase() === "yes" ||
+        String(r.discharged).toLowerCase() === "discharged"
+    ) {
+
+        roroDischarged++;
+
+    }
+
+
+    // ------------------------------
+    // EVACUATED
+    // ------------------------------
+
+    if (
+        r.evacuated === true ||
+        r.evacuated === "true" ||
+        String(r.evacuated).toLowerCase() === "yes" ||
+        String(r.evacuated).toLowerCase() === "evacuated"
+    ) {
+
+        roroEvacuated++;
 
     }
 
 });
 
-document.getElementById("dashboardRoro").innerHTML = roroCount;
+
+// Units remaining in yard
+roroYard = roroDischarged - roroEvacuated;
+
+if (roroYard < 0) {
+
+    roroYard = 0;
+
+}
+
+
+// ==========================================
+// MAIN DASHBOARD RORO CARD
+// ==========================================
+
+let dashboardRoro =
+    document.getElementById("dashboardRoro");
+
+if (dashboardRoro) {
+
+    dashboardRoro.innerHTML = roroTotal;
+
+}
+
+
+// ==========================================
+// RORO MONTH / PERIOD LABEL
+// ==========================================
+
+let roroGrowth =
+    document.getElementById("roroGrowth");
+
+if (roroGrowth) {
+
+    roroGrowth.innerHTML =
+        roroTotal +
+        " Registered Units";
+
+}
 
     document.getElementById("roroGrowth").innerHTML=
 
