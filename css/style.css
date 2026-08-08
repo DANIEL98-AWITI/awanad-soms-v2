@@ -2,11 +2,11 @@
    AWANAD SOMS
    RESPONSIVE ENTERPRISE STYLE
    DESKTOP + TABLET + MOBILE
-========================================================= */
+   ========================================================= */
 
-/* =========================
-   GLOBAL
-========================= */
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
 
 * {
     margin: 0;
@@ -27,6 +27,7 @@ body {
 
 img {
     max-width: 100%;
+    display: block;
 }
 
 button,
@@ -36,9 +37,14 @@ textarea {
     font: inherit;
 }
 
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
 /* =========================================================
    HEADER
-========================================================= */
+   ========================================================= */
 
 .top-header {
     position: fixed;
@@ -51,7 +57,7 @@ textarea {
     align-items: center;
     justify-content: space-between;
     padding: 0 28px;
-    box-shadow: 0 3px 15px rgba(0,0,0,.08);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
     z-index: 999;
 }
 
@@ -59,12 +65,14 @@ textarea {
     display: flex;
     align-items: center;
     gap: 18px;
+    min-width: 0;
 }
 
 .company-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 0;
 }
 
 .company-info h1 {
@@ -86,9 +94,13 @@ textarea {
     width: 82px;
     height: auto;
     object-fit: contain;
+    flex-shrink: 0;
 }
 
-/* HEADER RIGHT */
+
+/* =========================================================
+   HEADER RIGHT
+   ========================================================= */
 
 .header-right {
     display: flex;
@@ -105,6 +117,11 @@ textarea {
 
 .header-icons span {
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.header-icons span:hover {
+    transform: scale(1.1);
 }
 
 .live-time {
@@ -138,9 +155,10 @@ textarea {
     color: #888;
 }
 
+
 /* =========================================================
    SIDEBAR
-========================================================= */
+   ========================================================= */
 
 .sidebar {
     position: fixed;
@@ -155,7 +173,7 @@ textarea {
         #1565c0 100%
     );
     overflow-y: auto;
-    box-shadow: 5px 0 20px rgba(0,0,0,.15);
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.15);
     z-index: 1000;
     padding-top: 20px;
 }
@@ -179,7 +197,7 @@ textarea {
     font-size: 14px;
     font-weight: 500;
     border-left: 4px solid transparent;
-    transition: .2s;
+    transition: 0.2s;
 }
 
 .sidebar a span {
@@ -187,7 +205,7 @@ textarea {
 }
 
 .sidebar a:hover {
-    background: rgba(255,255,255,.10);
+    background: rgba(255, 255, 255, 0.10);
     border-left-color: #ffffff;
 }
 
@@ -199,9 +217,17 @@ textarea {
     border-radius: 0 25px 25px 0;
 }
 
+.sidebar hr {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 15px 20px;
+}
+
+
 /* =========================================================
    MAIN CONTENT
-========================================================= */
+   ========================================================= */
 
 .main-content {
     margin-left: 250px;
@@ -211,9 +237,10 @@ textarea {
     background: #f4f7fb;
 }
 
+
 /* =========================================================
    PAGE HEADER
-========================================================= */
+   ========================================================= */
 
 .page-header {
     display: flex;
@@ -243,18 +270,25 @@ textarea {
 
 .header-btn {
     background: #1565c0;
-    color: #fff;
+    color: #ffffff;
     border: none;
     padding: 10px 17px;
     border-radius: 9px;
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
+    transition: 0.2s;
 }
+
+.header-btn:hover {
+    background: #0d47a1;
+    transform: translateY(-2px);
+}
+
 
 /* =========================================================
    MAIN DASHBOARD CARDS
-========================================================= */
+   ========================================================= */
 
 .cards {
     display: grid;
@@ -275,7 +309,7 @@ textarea {
     padding: 20px;
     border-radius: 18px;
     color: #ffffff;
-    box-shadow: 0 10px 28px rgba(0,0,0,.12);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
 }
 
 .card::before {
@@ -285,7 +319,7 @@ textarea {
     right: -60px;
     width: 150px;
     height: 150px;
-    background: rgba(255,255,255,.10);
+    background: rgba(255, 255, 255, 0.10);
     border-radius: 50%;
 }
 
@@ -296,7 +330,7 @@ textarea {
     left: -65px;
     width: 150px;
     height: 150px;
-    background: rgba(255,255,255,.06);
+    background: rgba(255, 255, 255, 0.06);
     border-radius: 50%;
 }
 
@@ -305,7 +339,7 @@ textarea {
     height: 58px;
     min-width: 58px;
     border-radius: 15px;
-    background: rgba(255,255,255,.18);
+    background: rgba(255, 255, 255, 0.18);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -331,32 +365,33 @@ textarea {
 }
 
 .blue {
-    background: linear-gradient(135deg,#0d47a1,#1976d2);
+    background: linear-gradient(135deg, #0d47a1, #1976d2);
 }
 
 .green {
-    background: linear-gradient(135deg,#00796b,#18a957);
+    background: linear-gradient(135deg, #00796b, #18a957);
 }
 
 .purple {
-    background: linear-gradient(135deg,#5b2ca0,#8e24aa);
+    background: linear-gradient(135deg, #5b2ca0, #8e24aa);
 }
 
 .orange {
-    background: linear-gradient(135deg,#ef6c00,#ff9800);
+    background: linear-gradient(135deg, #ef6c00, #ff9800);
 }
 
 .teal {
-    background: linear-gradient(135deg,#00838f,#26c6da);
+    background: linear-gradient(135deg, #00838f, #26c6da);
 }
+
 
 /* =========================================================
    TOP MINI CARDS
-========================================================= */
+   ========================================================= */
 
 .top-widgets {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0,1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
     margin-bottom: 28px;
 }
@@ -368,7 +403,7 @@ textarea {
     padding: 20px;
     background: #ffffff;
     border-radius: 16px;
-    box-shadow: 0 8px 22px rgba(0,0,0,.07);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
 }
 
 .mini-icon {
@@ -380,19 +415,19 @@ textarea {
     justify-content: center;
     align-items: center;
     font-size: 25px;
-    color: #fff;
+    color: #ffffff;
 }
 
 .invoice .mini-icon {
-    background: linear-gradient(135deg,#ef6c00,#ff9800);
+    background: linear-gradient(135deg, #ef6c00, #ff9800);
 }
 
 .wallet .mini-icon {
-    background: linear-gradient(135deg,#18a957,#00c853);
+    background: linear-gradient(135deg, #18a957, #00c853);
 }
 
 .system .mini-icon {
-    background: linear-gradient(135deg,#1565c0,#00bcd4);
+    background: linear-gradient(135deg, #1565c0, #00bcd4);
 }
 
 .mini-card h4 {
@@ -413,9 +448,10 @@ textarea {
     margin-top: 3px;
 }
 
+
 /* =========================================================
    DASHBOARD GRID
-========================================================= */
+   ========================================================= */
 
 .dashboard-grid {
     display: grid;
@@ -431,15 +467,16 @@ textarea {
     margin-top: 25px;
 }
 
+
 /* =========================================================
    PANELS
-========================================================= */
+   ========================================================= */
 
 .panel {
     background: #ffffff;
     border-radius: 17px;
     padding: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.07);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
     position: relative;
     overflow: hidden;
     margin-bottom: 22px;
@@ -474,9 +511,10 @@ textarea {
     color: #003366;
 }
 
+
 /* =========================================================
    BUTTONS
-========================================================= */
+   ========================================================= */
 
 .action-btn {
     background: #1565c0;
@@ -489,9 +527,10 @@ textarea {
     cursor: pointer;
 }
 
+
 /* =========================================================
    TABLES
-========================================================= */
+   ========================================================= */
 
 table {
     width: 100%;
@@ -522,25 +561,36 @@ tbody tr:hover {
     background: #f5f9ff;
 }
 
+
 /* =========================================================
    TABLE WRAPPERS
-========================================================= */
+   ========================================================= */
 
-.roro-table-wrapper,
 .table-wrapper,
-.table-responsive {
+.table-responsive,
+.roro-table-wrapper {
     width: 100%;
     overflow-x: auto;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
 }
 
-.roro-table {
-    min-width: 850px;
+.table-wrapper table,
+.table-responsive table,
+.roro-table-wrapper table {
+    min-width: 700px;
 }
+
+.roro-table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+}
+
 
 /* =========================================================
    STATUS
-========================================================= */
+   ========================================================= */
 
 .status {
     display: inline-block;
@@ -586,9 +636,10 @@ tbody tr:hover {
     color: #1261b5;
 }
 
+
 /* =========================================================
    TAGS
-========================================================= */
+   ========================================================= */
 
 .tag {
     display: inline-block;
@@ -608,9 +659,10 @@ tbody tr:hover {
     color: #ef6c00;
 }
 
+
 /* =========================================================
    PROGRESS
-========================================================= */
+   ========================================================= */
 
 .progress {
     width: 100%;
@@ -623,17 +675,18 @@ tbody tr:hover {
 
 .progress-bar {
     height: 100%;
-    background: linear-gradient(90deg,#1565c0,#42a5f5);
+    background: linear-gradient(90deg, #1565c0, #42a5f5);
     border-radius: 20px;
 }
 
 .progress-bar.green {
-    background: linear-gradient(90deg,#18a957,#66bb6a);
+    background: linear-gradient(90deg, #18a957, #66bb6a);
 }
+
 
 /* =========================================================
    LIVE ACTIVITY
-========================================================= */
+   ========================================================= */
 
 .live-badge {
     background: #18a957;
@@ -672,11 +725,25 @@ tbody tr:hover {
     color: #ffffff;
 }
 
-.success { background:#18a957; }
-.ship { background:#1565c0; }
-.container { background:#fb8c00; }
-.document { background:#8e24aa; }
-.money { background:#00acc1; }
+.success {
+    background: #18a957;
+}
+
+.ship {
+    background: #1565c0;
+}
+
+.container {
+    background: #fb8c00;
+}
+
+.document {
+    background: #8e24aa;
+}
+
+.money {
+    background: #00acc1;
+}
 
 .activity-item h4 {
     font-size: 14px;
@@ -694,9 +761,10 @@ tbody tr:hover {
     color: #999;
 }
 
+
 /* =========================================================
    SEARCH
-========================================================= */
+   ========================================================= */
 
 .search {
     position: relative;
@@ -727,9 +795,10 @@ tbody tr:hover {
     outline: none;
 }
 
+
 /* =========================================================
    CHART
-========================================================= */
+   ========================================================= */
 
 canvas {
     width: 100% !important;
@@ -737,9 +806,10 @@ canvas {
     height: 300px !important;
 }
 
+
 /* =========================================================
    TREND
-========================================================= */
+   ========================================================= */
 
 .trend {
     margin-top: 8px;
@@ -762,11 +832,13 @@ canvas {
     color: #777;
 }
 
+
 /* =========================================================
    RORO DASHBOARD
-========================================================= */
+   ========================================================= */
 
 .roro-dashboard {
+    width: 100%;
     max-width: 1400px;
     margin: auto;
 }
@@ -802,7 +874,7 @@ canvas {
 
 .roro-stats {
     display: grid;
-    grid-template-columns: repeat(4,minmax(0,1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px;
     margin-bottom: 25px;
 }
@@ -813,11 +885,22 @@ canvas {
     min-height: 135px;
     padding: 20px;
     border-radius: 17px;
-    color: white;
+    color: #ffffff;
     display: flex;
     align-items: center;
     gap: 15px;
-    box-shadow: 0 10px 28px rgba(0,0,0,.10);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+}
+
+.roro-stat::after {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    right: -45px;
+    top: -45px;
+    background: rgba(255,255,255,.10);
+    border-radius: 50%;
 }
 
 .roro-stat-icon {
@@ -863,15 +946,20 @@ canvas {
     background: linear-gradient(135deg,#6330a8,#8e35b5);
 }
 
+
+/* =========================================================
+   RORO QUICK ACTIONS
+   ========================================================= */
+
 .roro-actions {
     display: grid;
-    grid-template-columns: repeat(3,minmax(0,1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 15px;
     margin-bottom: 25px;
 }
 
 .roro-action {
-    background: white;
+    background: #ffffff;
     border-radius: 15px;
     padding: 16px;
     border: 1px solid #e7edf5;
@@ -881,6 +969,12 @@ canvas {
     text-decoration: none;
     color: #12365d;
     box-shadow: 0 6px 20px rgba(0,0,0,.05);
+    transition: .2s;
+}
+
+.roro-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.09);
 }
 
 .roro-action-icon {
@@ -907,8 +1001,13 @@ canvas {
     margin-top: 3px;
 }
 
+
+/* =========================================================
+   RORO REGISTER
+   ========================================================= */
+
 .roro-register {
-    background: white;
+    background: #ffffff;
     border-radius: 17px;
     box-shadow: 0 8px 25px rgba(0,0,0,.07);
     overflow: hidden;
@@ -932,15 +1031,10 @@ canvas {
     font-size: 11px;
 }
 
-.roro-table {
-    width: 100%;
-    min-width: 850px;
-    border-collapse: collapse;
-}
 
 /* =========================================================
    FINANCE CARDS
-========================================================= */
+   ========================================================= */
 
 .finance-card {
     min-height: 145px !important;
@@ -967,9 +1061,10 @@ canvas {
     font-size: 11px;
 }
 
+
 /* =========================================================
    LOGIN PAGE
-========================================================= */
+   ========================================================= */
 
 body.login-page {
     min-height: 100vh;
@@ -1007,7 +1102,6 @@ body.login-page {
     width: 230px;
     max-width: 75%;
     height: auto;
-    display: block;
     margin: 0 auto 20px;
 }
 
@@ -1035,6 +1129,11 @@ body.login-page {
     outline: none;
 }
 
+.login-card input:focus {
+    border-color: #1565c0;
+    box-shadow: 0 0 0 3px rgba(21,101,192,.12);
+}
+
 .login-card button {
     width: 100%;
     padding: 13px;
@@ -1058,9 +1157,10 @@ body.login-page {
     color: #7d8794;
 }
 
+
 /* =========================================================
    SCROLLBAR
-========================================================= */
+   ========================================================= */
 
 ::-webkit-scrollbar {
     width: 7px;
@@ -1076,22 +1176,23 @@ body.login-page {
     border-radius: 20px;
 }
 
+
 /* =========================================================
    TABLET
-========================================================= */
+   ========================================================= */
 
 @media (max-width: 1200px) {
 
     .cards {
-        grid-template-columns: repeat(2,minmax(0,1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .roro-stats {
-        grid-template-columns: repeat(2,minmax(0,1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .top-widgets {
-        grid-template-columns: repeat(2,minmax(0,1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .dashboard-grid,
@@ -1102,11 +1203,20 @@ body.login-page {
     .search input {
         width: 250px;
     }
+
+    .top-header {
+        padding: 0 20px;
+    }
+
+    .main-content {
+        padding: 22px;
+    }
 }
 
+
 /* =========================================================
-   MOBILE
-========================================================= */
+   MOBILE — 768px
+   ========================================================= */
 
 @media (max-width: 768px) {
 
@@ -1118,8 +1228,10 @@ body.login-page {
 
     .top-header {
         left: 0;
-        height: 64px;
-        padding: 8px 12px;
+        right: 0;
+        top: 0;
+        height: 62px;
+        padding: 7px 10px;
         justify-content: space-between;
     }
 
@@ -1128,8 +1240,13 @@ body.login-page {
         min-width: 0;
     }
 
+    .company-info {
+        min-width: 0;
+    }
+
     .company-info h1 {
-        font-size: 17px;
+        font-size: 16px;
+        white-space: nowrap;
     }
 
     .company-info h2 {
@@ -1137,15 +1254,16 @@ body.login-page {
     }
 
     .company-logo {
-        width: 48px;
+        width: 45px;
+        max-height: 45px;
     }
 
     .header-right {
-        gap: 8px;
+        gap: 7px;
     }
 
     .header-icons {
-        gap: 8px;
+        gap: 7px;
         font-size: 17px;
     }
 
@@ -1155,13 +1273,15 @@ body.login-page {
         display: none;
     }
 
+
     /* SIDEBAR */
 
     .sidebar {
-        top: 64px;
-        width: 64px;
-        height: calc(100vh - 64px);
-        padding-top: 8px;
+        top: 62px;
+        left: 0;
+        width: 58px;
+        height: calc(100vh - 62px);
+        padding-top: 6px;
     }
 
     .menu-title {
@@ -1170,8 +1290,9 @@ body.login-page {
 
     .sidebar a {
         justify-content: center;
-        padding: 15px 5px;
-        font-size: 21px;
+        gap: 0;
+        padding: 14px 4px;
+        font-size: 20px;
         border-left: 0;
     }
 
@@ -1184,217 +1305,284 @@ body.login-page {
         border-radius: 0;
     }
 
+
     /* MAIN */
 
     .main-content {
-        margin-left: 64px;
-        margin-top: 64px;
-        padding: 15px;
-        min-height: calc(100vh - 64px);
+        margin-left: 58px;
+        margin-top: 62px;
+        padding: 13px;
+        min-height: calc(100vh - 62px);
     }
+
 
     /* PAGE HEADER */
 
     .page-header {
         display: block;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
 
     .page-header h2 {
-        font-size: 22px;
+        font-size: 21px;
     }
 
     .page-header p {
-        font-size: 12px;
+        font-size: 11px;
+        line-height: 1.4;
     }
 
     .header-buttons {
         display: none;
     }
 
-    /* CARDS */
+
+    /* DASHBOARD CARDS */
 
     .cards {
-        grid-template-columns: repeat(2,minmax(0,1fr));
-        gap: 10px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
         margin-bottom: 18px;
     }
 
     .card {
-        min-height: 115px;
-        padding: 14px;
-        gap: 10px;
+        min-height: 112px;
+        padding: 12px;
+        gap: 9px;
         border-radius: 14px;
     }
 
     .card .icon {
-        width: 43px;
-        height: 43px;
-        min-width: 43px;
-        border-radius: 11px;
-        font-size: 20px;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        border-radius: 10px;
+        font-size: 19px;
     }
 
     .card h3 {
-        font-size: 11px;
+        font-size: 10px;
         margin-bottom: 4px;
+        line-height: 1.25;
     }
 
     .card h1 {
-        font-size: 25px;
+        font-size: 24px;
     }
 
     .card p {
-        font-size: 10px;
+        font-size: 9px;
     }
+
 
     /* MINI CARDS */
 
     .top-widgets {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 9px;
     }
 
     .mini-card {
-        padding: 14px;
-        gap: 12px;
+        padding: 13px;
+        gap: 11px;
         border-radius: 13px;
     }
 
     .mini-icon {
-        width: 45px;
-        height: 45px;
-        min-width: 45px;
-        font-size: 21px;
+        width: 43px;
+        height: 43px;
+        min-width: 43px;
+        font-size: 20px;
     }
+
+    .mini-card h4 {
+        font-size: 12px;
+    }
+
+    .mini-card h2 {
+        font-size: 22px;
+    }
+
 
     /* PANELS */
 
     .panel {
-        padding: 14px;
-        border-radius: 14px;
-        margin-bottom: 15px;
+        padding: 13px;
+        border-radius: 13px;
+        margin-bottom: 14px;
     }
 
     .panel-header {
-        margin-bottom: 13px;
+        margin-bottom: 12px;
+        align-items: flex-start;
     }
 
     .panel-header h3 {
-        font-size: 14px;
+        font-size: 13px;
+        line-height: 1.3;
     }
 
     .action-btn {
-        padding: 7px 10px;
-        font-size: 10px;
+        padding: 6px 9px;
+        font-size: 9px;
+        white-space: nowrap;
     }
 
-    /* TABLE */
+
+    /* TABLES */
+
+    .table-wrapper,
+    .table-responsive,
+    .roro-table-wrapper {
+        overflow-x: auto;
+    }
 
     th {
-        padding: 10px;
-        font-size: 10px;
+        padding: 9px;
+        font-size: 9px;
     }
 
     td {
-        padding: 10px;
-        font-size: 11px;
+        padding: 9px;
+        font-size: 10px;
     }
+
 
     /* CHART */
 
     canvas {
-        height: 230px !important;
+        height: 220px !important;
     }
 
-    /* RORO */
+
+    /* RORO HEADER */
 
     .roro-header {
         display: block;
-        margin-bottom: 18px;
+        margin-bottom: 17px;
     }
 
     .roro-title h2 {
-        font-size: 22px;
+        font-size: 21px;
     }
 
     .roro-title p {
-        font-size: 11px;
+        font-size: 10px;
         line-height: 1.4;
     }
 
     .department-badge {
         display: inline-block;
-        margin-top: 10px;
-        font-size: 10px;
-        padding: 7px 11px;
+        margin-top: 9px;
+        font-size: 9px;
+        padding: 6px 10px;
     }
 
+
+    /* RORO STATS */
+
     .roro-stats {
-        grid-template-columns: repeat(2,minmax(0,1fr));
-        gap: 10px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
     }
 
     .roro-stat {
-        min-height: 110px;
-        padding: 13px;
-        gap: 9px;
+        min-height: 108px;
+        padding: 11px;
+        gap: 8px;
         border-radius: 13px;
     }
 
     .roro-stat-icon {
-        width: 40px;
-        height: 40px;
-        min-width: 40px;
-        font-size: 19px;
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        font-size: 18px;
         border-radius: 10px;
     }
 
     .roro-stat h4 {
-        font-size: 10px;
-        margin-bottom: 4px;
+        font-size: 9px;
+        margin-bottom: 3px;
+        line-height: 1.2;
     }
 
     .roro-stat h1 {
-        font-size: 23px;
+        font-size: 22px;
     }
 
     .roro-stat p {
-        font-size: 9px;
+        font-size: 8px;
     }
+
+
+    /* RORO ACTIONS */
 
     .roro-actions {
         grid-template-columns: 1fr;
-        gap: 9px;
+        gap: 8px;
     }
 
     .roro-action {
-        padding: 13px;
+        padding: 12px;
         border-radius: 12px;
     }
 
     .roro-action-icon {
-        width: 38px;
-        height: 38px;
-        min-width: 38px;
-        font-size: 17px;
+        width: 37px;
+        height: 37px;
+        min-width: 37px;
+        font-size: 16px;
     }
 
     .roro-action strong {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .roro-action span {
-        font-size: 10px;
+        font-size: 9px;
     }
 
+
+    /* RORO REGISTER */
+
     .roro-register-header {
-        padding: 14px;
+        padding: 13px;
     }
 
     .roro-register-header h3 {
-        font-size: 14px;
+        font-size: 13px;
     }
+
+    .roro-register-header p {
+        font-size: 9px;
+    }
+
+
+    /* FINANCE */
+
+    .finance-card {
+        min-height: 112px !important;
+        height: 112px !important;
+        padding: 12px !important;
+    }
+
+    .finance-card h3 {
+        font-size: 10px;
+    }
+
+    .finance-card h1 {
+        font-size: 23px;
+    }
+
+    .finance-card p {
+        font-size: 9px;
+    }
+
+    .finance-card small {
+        font-size: 8px;
+    }
+
 
     /* LOGIN */
 
@@ -1406,125 +1594,240 @@ body.login-page {
     }
 
     .login-logo {
-        width: 190px;
+        width: 185px;
     }
 
     .login-card h1 {
         font-size: 25px;
     }
+
+    .login-card p {
+        font-size: 12px;
+    }
 }
 
+
 /* =========================================================
-   SMALL PHONES
-========================================================= */
+   SMALL PHONES — 480px
+   ========================================================= */
 
 @media (max-width: 480px) {
 
     .top-header {
-        height: 60px;
+        height: 58px;
+        padding: 6px 8px;
     }
 
     .sidebar {
-        top: 60px;
-        width: 55px;
-        height: calc(100vh - 60px);
+        top: 58px;
+        width: 52px;
+        height: calc(100vh - 58px);
     }
 
     .sidebar a {
-        font-size: 19px;
-        padding: 14px 3px;
+        font-size: 18px;
+        padding: 13px 2px;
     }
 
     .main-content {
-        margin-left: 55px;
-        margin-top: 60px;
-        padding: 10px;
+        margin-left: 52px;
+        margin-top: 58px;
+        padding: 9px;
     }
 
     .company-info h1 {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .company-logo {
-        width: 42px;
+        width: 40px;
+        max-height: 40px;
     }
+
+
+    /* CARDS */
 
     .cards {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-    }
-
-    .card {
-        min-height: 105px;
-        padding: 11px;
-        gap: 8px;
-    }
-
-    .card .icon {
-        width: 36px;
-        height: 36px;
-        min-width: 36px;
-        font-size: 17px;
-    }
-
-    .card h3 {
-        font-size: 10px;
-    }
-
-    .card h1 {
-        font-size: 22px;
-    }
-
-    .card p {
-        font-size: 9px;
-    }
-
-    .panel {
-        padding: 11px;
-    }
-
-    .panel-header h3 {
-        font-size: 13px;
-    }
-
-    .roro-stats {
-        gap: 8px;
-    }
-
-    .roro-stat {
-        min-height: 100px;
-        padding: 10px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 7px;
     }
 
-    .roro-stat-icon {
+    .card {
+        min-height: 100px;
+        padding: 9px;
+        gap: 7px;
+        border-radius: 12px;
+    }
+
+    .card .icon {
         width: 34px;
         height: 34px;
         min-width: 34px;
         font-size: 16px;
     }
 
-    .roro-stat h4 {
+    .card h3 {
         font-size: 9px;
     }
 
-    .roro-stat h1 {
+    .card h1 {
         font-size: 21px;
     }
 
-    .roro-stat p {
+    .card p {
         font-size: 8px;
     }
 
+
+    /* PANELS */
+
+    .panel {
+        padding: 10px;
+    }
+
+    .panel-header h3 {
+        font-size: 12px;
+    }
+
+
+    /* RORO */
+
+    .roro-stats {
+        gap: 7px;
+    }
+
+    .roro-stat {
+        min-height: 96px;
+        padding: 9px;
+        gap: 6px;
+    }
+
+    .roro-stat-icon {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        font-size: 15px;
+    }
+
+    .roro-stat h4 {
+        font-size: 8px;
+    }
+
+    .roro-stat h1 {
+        font-size: 20px;
+    }
+
+    .roro-stat p {
+        font-size: 7px;
+    }
+
+
+    /* LOGIN */
+
     .login-card {
-        padding: 25px 18px;
+        padding: 24px 17px;
     }
 
     .login-logo {
-        width: 170px;
+        width: 165px;
+    }
+
+    .login-card h1 {
+        font-size: 23px;
+    }
+
+    .login-card p {
+        font-size: 11px;
+        margin-bottom: 20px;
+    }
+
+    .login-card input {
+        padding: 12px;
+    }
+
+    .login-card button {
+        padding: 12px;
     }
 }
 
+
 /* =========================================================
-   END
-========================================================= */
+   VERY SMALL PHONES — 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .top-header {
+        height: 54px;
+    }
+
+    .sidebar {
+        top: 54px;
+        width: 48px;
+        height: calc(100vh - 54px);
+    }
+
+    .main-content {
+        margin-left: 48px;
+        margin-top: 54px;
+        padding: 7px;
+    }
+
+    .company-info h1 {
+        font-size: 13px;
+    }
+
+    .company-logo {
+        width: 36px;
+    }
+
+    .cards {
+        gap: 6px;
+    }
+
+    .card {
+        min-height: 92px;
+        padding: 8px;
+        gap: 5px;
+    }
+
+    .card .icon {
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+        font-size: 14px;
+    }
+
+    .card h3 {
+        font-size: 8px;
+    }
+
+    .card h1 {
+        font-size: 19px;
+    }
+
+    .roro-stat {
+        min-height: 90px;
+        padding: 8px;
+    }
+
+    .roro-stat-icon {
+        width: 29px;
+        height: 29px;
+        min-width: 29px;
+        font-size: 13px;
+    }
+
+    .roro-stat h4 {
+        font-size: 7px;
+    }
+
+    .roro-stat h1 {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================================
+   END OF AWANAD SOMS STYLE
+   ========================================================= */
