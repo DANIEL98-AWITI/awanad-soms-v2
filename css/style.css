@@ -1,13 +1,12 @@
 /* =========================================================
    AWANAD SOMS
-   FINAL RESPONSIVE ENTERPRISE STYLE
+   RESPONSIVE ENTERPRISE STYLE
    DESKTOP + TABLET + MOBILE
-========================================================= */
-
+   ========================================================= */
 
 /* =========================================================
    GLOBAL RESET
-========================================================= */
+   ========================================================= */
 
 * {
     margin: 0;
@@ -42,10 +41,9 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
-
 /* =========================================================
    HEADER
-========================================================= */
+   ========================================================= */
 
 .top-header {
     position: fixed;
@@ -53,17 +51,12 @@ a {
     left: 250px;
     right: 0;
     height: 82px;
-
     background: #ffffff;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 0 28px;
-
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
-
     z-index: 999;
 }
 
@@ -103,10 +96,9 @@ a {
     flex-shrink: 0;
 }
 
-
 /* =========================================================
    HEADER RIGHT
-========================================================= */
+   ========================================================= */
 
 .header-right {
     display: flex;
@@ -161,65 +153,47 @@ a {
     color: #888;
 }
 
-
 /* =========================================================
    SIDEBAR
-========================================================= */
+   ========================================================= */
 
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 250px;
     height: 100vh;
-
     background: linear-gradient(
         180deg,
         #06264d 0%,
         #0d3d73 50%,
         #1565c0 100%
     );
-
     overflow-y: auto;
-
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.15);
-
     z-index: 1000;
-
     padding-top: 20px;
 }
 
 .menu-title {
     padding: 18px 25px;
-
     font-size: 16px;
     font-weight: 800;
-
     letter-spacing: 2px;
-
     color: #ffffff;
-
     text-transform: uppercase;
 }
 
 .sidebar a {
     display: flex;
     align-items: center;
-
     gap: 13px;
-
     padding: 14px 23px;
-
     color: #ffffff;
-
     text-decoration: none;
-
     font-size: 14px;
     font-weight: 500;
-
     border-left: 4px solid transparent;
-
     transition: 0.2s;
 }
 
@@ -236,50 +210,38 @@ a {
     background: #ffffff;
     color: #1565c0;
     font-weight: 700;
-
     border-left-color: #1565c0;
-
     border-radius: 0 25px 25px 0;
 }
 
 .sidebar hr {
     border: 0;
-
     height: 1px;
-
     background: rgba(255, 255, 255, 0.15);
-
     margin: 15px 20px;
 }
 
-
 /* =========================================================
    MAIN CONTENT
-========================================================= */
+   ========================================================= */
 
 .main-content {
     margin-left: 250px;
     margin-top: 82px;
-
     padding: 28px;
-
     min-height: calc(100vh - 82px);
-
     background: #f4f7fb;
 }
 
-
 /* =========================================================
    PAGE HEADER
-========================================================= */
+   ========================================================= */
 
 .page-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     gap: 20px;
-
     margin-bottom: 28px;
 }
 
@@ -304,18 +266,12 @@ a {
 .header-btn {
     background: #1565c0;
     color: #ffffff;
-
     border: none;
-
     padding: 10px 17px;
-
     border-radius: 9px;
-
     font-size: 13px;
     font-weight: 600;
-
     cursor: pointer;
-
     transition: 0.2s;
 }
 
@@ -324,115 +280,81 @@ a {
     transform: translateY(-2px);
 }
 
-
 /* =========================================================
    MAIN DASHBOARD CARDS
-========================================================= */
+   ========================================================= */
 
 .cards {
     display: grid;
-
     grid-template-columns: repeat(4, minmax(0, 1fr));
-
     gap: 18px;
-
     margin-bottom: 28px;
-
     width: 100%;
 }
 
 .card {
     position: relative;
-
     overflow: hidden;
-
     display: flex;
     align-items: center;
-
     gap: 16px;
-
     width: 100%;
-
     min-height: 145px;
-
     padding: 20px;
-
     border-radius: 18px;
-
     color: #ffffff;
-
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
 }
 
 .card::before {
     content: "";
-
     position: absolute;
-
     top: -60px;
     right: -60px;
-
     width: 150px;
     height: 150px;
-
     background: rgba(255, 255, 255, 0.10);
-
     border-radius: 50%;
 }
 
 .card::after {
     content: "";
-
     position: absolute;
-
     bottom: -65px;
     left: -65px;
-
     width: 150px;
     height: 150px;
-
     background: rgba(255, 255, 255, 0.06);
-
     border-radius: 50%;
 }
 
 .card .icon {
     width: 58px;
     height: 58px;
-
     min-width: 58px;
-
     border-radius: 15px;
-
     background: rgba(255, 255, 255, 0.18);
-
     display: flex;
-
     justify-content: center;
     align-items: center;
-
     font-size: 27px;
-
     flex-shrink: 0;
 }
 
 .card h3 {
     font-size: 14px;
     font-weight: 700;
-
     margin-bottom: 6px;
 }
 
 .card h1 {
     font-size: 32px;
     font-weight: 800;
-
     margin: 0;
 }
 
 .card p {
     font-size: 12px;
-
     margin-top: 5px;
 }
 
@@ -456,52 +378,36 @@ a {
     background: linear-gradient(135deg, #00838f, #26c6da);
 }
 
-
 /* =========================================================
    TOP MINI CARDS
-========================================================= */
+   ========================================================= */
 
 .top-widgets {
     display: grid;
-
     grid-template-columns: repeat(3, minmax(0, 1fr));
-
     gap: 18px;
-
     margin-bottom: 28px;
 }
 
 .mini-card {
     display: flex;
-
     align-items: center;
-
     gap: 16px;
-
     padding: 20px;
-
     background: #ffffff;
-
     border-radius: 16px;
-
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
 }
 
 .mini-icon {
     width: 55px;
     height: 55px;
-
     min-width: 55px;
-
     border-radius: 15px;
-
     display: flex;
-
     justify-content: center;
     align-items: center;
-
     font-size: 25px;
-
     color: #ffffff;
 }
 
@@ -520,7 +426,6 @@ a {
 .mini-card h4 {
     font-size: 13px;
     color: #666;
-
     margin-bottom: 5px;
 }
 
@@ -533,67 +438,48 @@ a {
 .mini-card p {
     font-size: 12px;
     color: #888;
-
     margin-top: 3px;
 }
 
-
 /* =========================================================
    DASHBOARD GRID
-========================================================= */
+   ========================================================= */
 
 .dashboard-grid {
     display: grid;
-
     grid-template-columns: 2fr 1fr;
-
     gap: 20px;
-
     margin-bottom: 25px;
 }
 
 .analytics {
     display: grid;
-
     grid-template-columns: 2fr 1fr;
-
     gap: 20px;
-
     margin-top: 25px;
 }
 
-
 /* =========================================================
    PANELS
-========================================================= */
+   ========================================================= */
 
 .panel {
     background: #ffffff;
-
     border-radius: 17px;
-
     padding: 20px;
-
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
-
     position: relative;
-
     overflow: hidden;
-
     margin-bottom: 22px;
 }
 
 .panel::before {
     content: "";
-
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 4px;
-
     background: linear-gradient(
         90deg,
         #1565c0,
@@ -604,82 +490,59 @@ a {
 
 .panel-header {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
-
     gap: 15px;
-
     margin-bottom: 18px;
 }
 
 .panel-header h3 {
     font-size: 18px;
-
     font-weight: 700;
-
     color: #003366;
 }
 
-
 /* =========================================================
    BUTTONS
-========================================================= */
+   ========================================================= */
 
 .action-btn {
     background: #1565c0;
-
     color: #ffffff;
-
     border: none;
-
     padding: 9px 15px;
-
     border-radius: 8px;
-
     font-size: 12px;
-
     font-weight: 600;
-
     cursor: pointer;
 }
 
-
 /* =========================================================
    TABLES
-========================================================= */
+   ========================================================= */
 
 table {
     width: 100%;
-
     border-collapse: collapse;
 }
 
 thead {
     background: #1565c0;
-
     color: #ffffff;
 }
 
 th {
     padding: 12px;
-
     text-align: left;
-
     font-size: 12px;
-
     font-weight: 600;
-
     white-space: nowrap;
 }
 
 td {
     padding: 12px;
-
     font-size: 13px;
-
     border-bottom: 1px solid #edf2f7;
-
     vertical-align: middle;
 }
 
@@ -687,20 +550,16 @@ tbody tr:hover {
     background: #f5f9ff;
 }
 
-
 /* =========================================================
    TABLE WRAPPERS
-========================================================= */
+   ========================================================= */
 
 .table-wrapper,
 .table-responsive,
 .roro-table-wrapper {
     width: 100%;
-
     overflow-x: auto;
-
     overflow-y: hidden;
-
     -webkit-overflow-scrolling: touch;
 }
 
@@ -712,203 +571,141 @@ tbody tr:hover {
 
 .roro-table {
     width: 100%;
-
     min-width: 850px;
-
     border-collapse: collapse;
 }
 
-
 /* =========================================================
    STATUS
-========================================================= */
+   ========================================================= */
 
 .status {
     display: inline-block;
-
     padding: 5px 11px;
-
     border-radius: 25px;
-
     font-size: 11px;
-
     font-weight: 700;
-
     background: #eceff1;
-
     color: #455a64;
 }
 
 .blue-status {
     background: #e3f2fd;
-
     color: #1565c0;
 }
 
 .green-status {
     background: #e8f5e9;
-
     color: #18a957;
 }
 
 .status-pill {
     display: inline-flex;
-
     align-items: center;
-
     padding: 5px 10px;
-
     border-radius: 20px;
-
     font-size: 11px;
-
     font-weight: 700;
 }
 
 .status-discharged {
     background: #e7f8f1;
-
     color: #087f68;
 }
 
 .status-yard {
     background: #fff3df;
-
     color: #d66a00;
 }
 
 .status-evacuated {
     background: #eaf2ff;
-
     color: #1261b5;
 }
 
-
 /* =========================================================
    TAGS
-========================================================= */
+   ========================================================= */
 
 .tag {
     display: inline-block;
-
     padding: 5px 10px;
-
     border-radius: 20px;
-
     font-size: 11px;
-
     font-weight: 700;
 }
 
 .blue-tag {
     background: #e3f2fd;
-
     color: #1565c0;
 }
 
 .orange-tag {
     background: #fff3e0;
-
     color: #ef6c00;
 }
 
-
 /* =========================================================
    PROGRESS
-========================================================= */
+   ========================================================= */
 
 .progress {
     width: 100%;
-
     height: 7px;
-
     background: #e5eaf2;
-
     border-radius: 20px;
-
     overflow: hidden;
-
     margin-bottom: 5px;
 }
 
 .progress-bar {
     height: 100%;
-
-    background: linear-gradient(
-        90deg,
-        #1565c0,
-        #42a5f5
-    );
-
+    background: linear-gradient(90deg, #1565c0, #42a5f5);
     border-radius: 20px;
 }
 
 .progress-bar.green {
-    background: linear-gradient(
-        90deg,
-        #18a957,
-        #66bb6a
-    );
+    background: linear-gradient(90deg, #18a957, #66bb6a);
 }
-
 
 /* =========================================================
    LIVE ACTIVITY
-========================================================= */
+   ========================================================= */
 
 .live-badge {
     background: #18a957;
-
     color: #ffffff;
-
     padding: 5px 11px;
-
     border-radius: 20px;
-
     font-size: 10px;
-
     font-weight: 700;
-
     letter-spacing: 1px;
 }
 
 .activity-feed {
     display: flex;
-
     flex-direction: column;
-
     gap: 12px;
 }
 
 .activity-item {
     display: flex;
-
     gap: 13px;
-
     align-items: flex-start;
-
     padding: 13px;
-
     border-radius: 12px;
-
     background: #fafbfd;
 }
 
 .activity-icon {
     width: 42px;
     height: 42px;
-
     min-width: 42px;
-
     border-radius: 50%;
-
     display: flex;
-
     justify-content: center;
     align-items: center;
-
     font-size: 18px;
-
     color: #ffffff;
 }
 
@@ -934,28 +731,23 @@ tbody tr:hover {
 
 .activity-item h4 {
     font-size: 14px;
-
     margin-bottom: 3px;
-
     color: #003366;
 }
 
 .activity-item p {
     font-size: 12px;
-
     color: #666;
 }
 
 .activity-item small {
     font-size: 10px;
-
     color: #999;
 }
 
-
 /* =========================================================
    SEARCH
-========================================================= */
+   ========================================================= */
 
 .search {
     position: relative;
@@ -963,71 +755,49 @@ tbody tr:hover {
 
 .search input {
     width: 360px;
-
     height: 45px;
-
     padding: 0 18px;
-
     border: 1px solid #dce4ed;
-
     border-radius: 25px;
-
     outline: none;
-
     background: #f8fafc;
 }
 
 .search-bar {
     width: 100%;
-
     display: flex;
-
     justify-content: flex-end;
-
     margin: 12px 0;
 }
 
 .search-bar input {
     width: 380px;
-
     padding: 11px 15px;
-
     border: 1px solid #cfd8dc;
-
     border-radius: 8px;
-
     outline: none;
 }
 
-
 /* =========================================================
    CHART
-========================================================= */
+   ========================================================= */
 
 canvas {
     width: 100% !important;
-
     max-width: 100%;
-
     height: 300px !important;
 }
 
-
 /* =========================================================
    TREND
-========================================================= */
+   ========================================================= */
 
 .trend {
     margin-top: 8px;
-
     display: flex;
-
     align-items: center;
-
     gap: 7px;
-
     font-size: 12px;
-
     font-weight: 700;
 }
 
@@ -1043,330 +813,228 @@ canvas {
     color: #777;
 }
 
-
 /* =========================================================
    RORO DASHBOARD
-========================================================= */
+   ========================================================= */
 
 .roro-dashboard {
     width: 100%;
-
     max-width: 1400px;
-
     margin: auto;
 }
 
 .roro-header {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     gap: 20px;
-
     margin-bottom: 25px;
 }
 
 .roro-title h2 {
     margin: 0;
-
     font-size: 28px;
-
     color: #073b78;
 }
 
 .roro-title p {
     margin-top: 5px;
-
     color: #718096;
-
     font-size: 13px;
 }
 
 .department-badge {
     background: #eaf4ff;
-
     color: #1261b5;
-
     padding: 9px 14px;
-
     border-radius: 20px;
-
     font-size: 12px;
-
     font-weight: 700;
 }
 
-
 /* =========================================================
-   RORO STATISTICS
-========================================================= */
+   RORO STATS
+   ========================================================= */
 
 .roro-stats {
     display: grid;
-
     grid-template-columns: repeat(4, minmax(0, 1fr));
-
     gap: 18px;
-
     margin-bottom: 25px;
 }
 
 .roro-stat {
     position: relative;
-
     overflow: hidden;
-
     min-height: 135px;
-
     padding: 20px;
-
     border-radius: 17px;
-
     color: #ffffff;
-
     display: flex;
-
     align-items: center;
-
     gap: 15px;
-
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
 }
 
 .roro-stat::after {
     content: "";
-
     position: absolute;
-
     width: 130px;
     height: 130px;
-
     right: -45px;
     top: -45px;
-
     background: rgba(255,255,255,.10);
-
     border-radius: 50%;
 }
 
 .roro-stat-icon {
     width: 55px;
     height: 55px;
-
     min-width: 55px;
-
     border-radius: 15px;
-
     background: rgba(255,255,255,.18);
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     font-size: 25px;
 }
 
 .roro-stat h4 {
     margin: 0 0 6px;
-
     font-size: 13px;
 }
 
 .roro-stat h1 {
     margin: 0;
-
     font-size: 30px;
 }
 
 .roro-stat p {
     margin-top: 5px;
-
     font-size: 11px;
 }
 
 .roro-blue {
-    background: linear-gradient(
-        135deg,
-        #0758b5,
-        #1976d2
-    );
+    background: linear-gradient(135deg,#0758b5,#1976d2);
 }
 
 .roro-green {
-    background: linear-gradient(
-        135deg,
-        #087f68,
-        #19a866
-    );
+    background: linear-gradient(135deg,#087f68,#19a866);
 }
 
 .roro-orange {
-    background: linear-gradient(
-        135deg,
-        #e66a00,
-        #ff9800
-    );
+    background: linear-gradient(135deg,#e66a00,#ff9800);
 }
 
 .roro-purple {
-    background: linear-gradient(
-        135deg,
-        #6330a8,
-        #8e35b5
-    );
+    background: linear-gradient(135deg,#6330a8,#8e35b5);
 }
-
 
 /* =========================================================
    RORO QUICK ACTIONS
-========================================================= */
+   ========================================================= */
 
 .roro-actions {
     display: grid;
-
     grid-template-columns: repeat(3, minmax(0, 1fr));
-
     gap: 15px;
-
     margin-bottom: 25px;
 }
 
 .roro-action {
     background: #ffffff;
-
     border-radius: 15px;
-
     padding: 16px;
-
     border: 1px solid #e7edf5;
-
     display: flex;
-
     align-items: center;
-
     gap: 13px;
-
     text-decoration: none;
-
     color: #12365d;
-
     box-shadow: 0 6px 20px rgba(0,0,0,.05);
-
     transition: .2s;
 }
 
 .roro-action:hover {
     transform: translateY(-2px);
-
     box-shadow: 0 10px 25px rgba(0,0,0,.09);
 }
 
 .roro-action-icon {
     width: 43px;
     height: 43px;
-
     min-width: 43px;
-
     border-radius: 11px;
-
     background: #edf5ff;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     font-size: 20px;
 }
 
 .roro-action strong {
     display: block;
-
     font-size: 13px;
 }
 
 .roro-action span {
     display: block;
-
     font-size: 11px;
-
     color: #718096;
-
     margin-top: 3px;
 }
 
-
 /* =========================================================
    RORO REGISTER
-========================================================= */
+   ========================================================= */
 
 .roro-register {
     background: #ffffff;
-
     border-radius: 17px;
-
     box-shadow: 0 8px 25px rgba(0,0,0,.07);
-
     overflow: hidden;
-
     border: 1px solid #e8edf3;
 }
 
 .roro-register-header {
     padding: 18px 20px;
-
     border-bottom: 1px solid #edf0f5;
 }
 
 .roro-register-header h3 {
     margin: 0;
-
     color: #073b78;
-
     font-size: 17px;
 }
 
 .roro-register-header p {
     margin-top: 4px;
-
     color: #718096;
-
     font-size: 11px;
 }
 
-
 /* =========================================================
    FINANCE CARDS
-========================================================= */
+   ========================================================= */
 
 .finance-card {
     min-height: 145px !important;
-
     height: 145px !important;
-
     padding: 20px !important;
 }
 
 .finance-card h3 {
     font-size: 14px;
-
     margin-bottom: 5px;
 }
 
 .finance-card h1 {
     font-size: 30px;
-
     margin: 3px 0 7px;
 }
 
 .finance-card p {
     font-size: 12px;
-
     margin: 3px 0;
 }
 
@@ -1374,14 +1042,12 @@ canvas {
     font-size: 11px;
 }
 
-
 /* =========================================================
    LOGIN PAGE
-========================================================= */
+   ========================================================= */
 
 body.login-page {
     min-height: 100vh;
-
     background: linear-gradient(
         135deg,
         #003b73,
@@ -1389,134 +1055,94 @@ body.login-page {
         #0b6fb8,
         #0077b6
     );
-
     display: flex;
-
     justify-content: center;
     align-items: center;
-
     padding: 20px;
 }
 
 .login-container {
     width: 100%;
-
     display: flex;
-
     justify-content: center;
     align-items: center;
 }
 
 .login-card {
     width: 420px;
-
     max-width: 100%;
-
     background: #ffffff;
-
     border-radius: 22px;
-
     padding: 38px 35px;
-
     text-align: center;
-
     box-shadow: 0 25px 60px rgba(0,0,0,.30);
 }
 
 .login-logo {
     width: 230px;
-
     max-width: 75%;
-
     height: auto;
-
     margin: 0 auto 20px;
 }
 
 .login-card h1 {
     font-size: 30px;
-
     font-weight: 800;
-
     color: #0b376d;
-
     margin-bottom: 5px;
 }
 
 .login-card p {
     font-size: 14px;
-
     color: #607d8b;
-
     margin-bottom: 25px;
 }
 
 .login-card input {
     width: 100%;
-
     padding: 13px 15px;
-
     margin-bottom: 14px;
-
     border: 2px solid #dce6f1;
-
     border-radius: 10px;
-
     font-size: 14px;
-
     background: #f8fbff;
-
     outline: none;
 }
 
 .login-card input:focus {
     border-color: #1565c0;
-
     box-shadow: 0 0 0 3px rgba(21,101,192,.12);
 }
 
 .login-card button {
     width: 100%;
-
     padding: 13px;
-
     border: none;
-
     border-radius: 10px;
-
     background: #1565c0;
-
     color: #ffffff;
-
     font-size: 15px;
-
     font-weight: 700;
-
     cursor: pointer;
 }
 
 .login-message {
     margin-top: 10px;
-
     font-size: 13px;
 }
 
 .login-footer {
     margin-top: 20px;
-
     font-size: 11px;
-
     color: #7d8794;
 }
 
-
 /* =========================================================
    SCROLLBAR
-========================================================= */
+   ========================================================= */
 
 ::-webkit-scrollbar {
     width: 7px;
-
     height: 7px;
 }
 
@@ -1526,14 +1152,12 @@ body.login-page {
 
 ::-webkit-scrollbar-thumb {
     background: #1565c0;
-
     border-radius: 20px;
 }
 
-
 /* =========================================================
    TABLET
-========================================================= */
+   ========================================================= */
 
 @media (max-width: 1200px) {
 
@@ -1558,16 +1182,51 @@ body.login-page {
         width: 250px;
     }
 
+    .top-header {
+        padding: 0 20px;
+    }
+
     .main-content {
         padding: 22px;
     }
 }
 
+/* =========================================================
+   TABLET / SMALL DESKTOP
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .top-header {
+        left: 210px;
+        padding: 0 20px;
+    }
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .main-content {
+        margin-left: 210px;
+        padding: 22px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .roro-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .roro-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 
 /* =========================================================
-   MOBILE
-   768PX AND BELOW
-========================================================= */
+   MOBILE - 768PX
+   ========================================================= */
 
 @media (max-width: 768px) {
 
@@ -1578,46 +1237,30 @@ body.login-page {
         overflow-x: hidden;
     }
 
-
     /* =====================================================
-       MOBILE HEADER
-    ===================================================== */
+       HEADER
+       ===================================================== */
 
     .top-header {
         position: fixed;
-
         top: 0;
         left: 0;
         right: 0;
-
         width: 100%;
-
         height: 62px;
-
         padding: 7px 12px;
-
         display: flex;
-
         align-items: center;
-
         justify-content: space-between;
-
-        background: #ffffff;
-
-        box-shadow: 0 2px 12px rgba(0,0,0,.10);
-
         z-index: 5000;
+        box-shadow: 0 3px 15px rgba(0,0,0,.10);
     }
 
     .branding {
         display: flex;
-
         align-items: center;
-
-        gap: 9px;
-
+        gap: 8px;
         min-width: 0;
-
         flex: 1;
     }
 
@@ -1627,12 +1270,8 @@ body.login-page {
 
     .company-info h1 {
         font-size: 17px;
-
-        font-weight: 800;
-
-        line-height: 1.1;
-
         white-space: nowrap;
+        line-height: 1.1;
     }
 
     .company-info h2 {
@@ -1641,28 +1280,8 @@ body.login-page {
 
     .company-logo {
         width: 48px;
-
         height: auto;
-
         flex-shrink: 0;
-    }
-
-    .header-right {
-        display: flex;
-
-        align-items: center;
-
-        gap: 6px;
-    }
-
-    .header-icons {
-        display: flex;
-
-        align-items: center;
-
-        gap: 7px;
-
-        font-size: 16px;
     }
 
     .search,
@@ -1671,45 +1290,44 @@ body.login-page {
         display: none !important;
     }
 
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .header-icons {
+        display: flex;
+        gap: 7px;
+        font-size: 16px;
+    }
 
     /* =====================================================
        MOBILE BOTTOM NAVIGATION
-    ===================================================== */
+       ===================================================== */
 
     .sidebar {
         position: fixed;
-
         left: 0;
-        right: 0;
-
-        top: auto;
         bottom: 0;
-
+        top: auto;
         width: 100%;
-
         height: 58px;
-
         padding: 0;
-
         margin: 0;
-
         display: flex;
-
         flex-direction: row;
-
         align-items: stretch;
-
         justify-content: space-around;
-
         overflow: hidden;
-
-        background: #ffffff;
-
-        border-top: 1px solid #dce5ef;
-
-        box-shadow: 0 -3px 15px rgba(0,0,0,.10);
-
         z-index: 6000;
+        background: linear-gradient(
+            180deg,
+            #06264d 0%,
+            #0d3d73 50%,
+            #1565c0 100%
+        );
+        box-shadow: 0 -4px 18px rgba(0,0,0,.18);
     }
 
     .menu-title {
@@ -1718,35 +1336,20 @@ body.login-page {
 
     .sidebar a {
         flex: 1;
-
         min-width: 0;
-
         height: 58px;
-
         padding: 5px 2px !important;
-
         margin: 0;
-
         display: flex;
-
         flex-direction: column;
-
         justify-content: center;
-
         align-items: center;
-
-        gap: 3px;
-
+        gap: 2px;
         border: none !important;
-
         border-radius: 0 !important;
-
         background: transparent;
-
-        color: #5f7185;
-
+        color: #ffffff;
         font-size: 20px;
-
         line-height: 1;
     }
 
@@ -1755,64 +1358,46 @@ body.login-page {
     }
 
     .sidebar a.active {
-        background: #eaf3ff;
-
+        background: #ffffff;
         color: #1565c0;
-
-        border: none !important;
-
-        border-radius: 0 !important;
-
-        box-shadow: inset 0 3px 0 #1565c0;
+        box-shadow: none;
     }
 
     .sidebar a:hover {
-        background: #f3f7fb;
-
-        border: none !important;
+        padding-left: 2px !important;
+        background: rgba(255,255,255,.12);
     }
 
-
     /* =====================================================
-       MOBILE MAIN CONTENT
-    ===================================================== */
+       MAIN CONTENT
+       ===================================================== */
 
     .main-content {
         width: 100%;
-
         margin-left: 0 !important;
-
         margin-top: 62px !important;
-
         margin-bottom: 58px;
-
-        padding: 16px 12px 22px;
-
+        padding: 14px 12px 20px;
         min-height: calc(100vh - 120px);
-
         background: #f4f7fb;
     }
 
-
     /* =====================================================
-       MOBILE PAGE HEADER
-    ===================================================== */
+       PAGE HEADER
+       ===================================================== */
 
     .page-header {
         display: block;
-
         margin-bottom: 18px;
     }
 
     .page-header h2 {
         font-size: 22px;
-
         line-height: 1.2;
     }
 
     .page-header p {
         font-size: 12px;
-
         line-height: 1.4;
     }
 
@@ -1820,112 +1405,76 @@ body.login-page {
         display: none !important;
     }
 
-
     /* =====================================================
-       MOBILE STANDARD CARDS
-    ===================================================== */
+       DASHBOARD CARDS
+       ===================================================== */
 
     .cards {
         width: 100%;
-
         display: grid;
-
         grid-template-columns: repeat(2, minmax(0, 1fr));
-
         gap: 10px;
-
         margin-bottom: 18px;
     }
 
     .card {
         width: 100%;
-
         min-width: 0;
-
-        min-height: 105px;
-
+        min-height: 112px;
         padding: 13px;
-
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
         gap: 9px;
-
-        border-radius: 10px;
-
-        box-shadow: 0 4px 14px rgba(0,0,0,.07);
-    }
-
-    .card::before,
-    .card::after {
-        display: none;
     }
 
     .card .icon {
         width: 40px;
-
         height: 40px;
-
         min-width: 40px;
-
-        border-radius: 9px;
-
-        font-size: 18px;
+        border-radius: 11px;
+        font-size: 19px;
     }
 
     .card h3 {
         font-size: 10px;
-
         line-height: 1.25;
-
-        margin-bottom: 4px;
+        margin-bottom: 3px;
     }
 
     .card h1 {
         font-size: 24px;
-
         line-height: 1;
     }
 
     .card p {
         font-size: 9px;
-
         line-height: 1.2;
     }
 
-
     /* =====================================================
-       MOBILE MINI CARDS
-    ===================================================== */
+       MINI CARDS
+       ===================================================== */
 
     .top-widgets {
+        display: grid;
         grid-template-columns: 1fr;
-
         gap: 10px;
-
         margin-bottom: 18px;
     }
 
     .mini-card {
         width: 100%;
-
-        padding: 14px;
-
-        gap: 12px;
-
-        border-radius: 10px;
-
-        border: 1px solid #e2e8f0;
-
-        box-shadow: 0 4px 14px rgba(0,0,0,.05);
+        padding: 13px;
+        border-radius: 13px;
+        gap: 11px;
     }
 
     .mini-icon {
         width: 43px;
-
         height: 43px;
-
         min-width: 43px;
-
-        border-radius: 9px;
-
+        border-radius: 11px;
         font-size: 19px;
     }
 
@@ -1941,50 +1490,33 @@ body.login-page {
         font-size: 10px;
     }
 
-
     /* =====================================================
-       MOBILE DASHBOARD GRID
-    ===================================================== */
+       DASHBOARD GRIDS
+       ===================================================== */
 
     .dashboard-grid,
     .analytics {
         display: grid;
-
         grid-template-columns: 1fr;
-
-        gap: 14px;
-
+        gap: 12px;
         margin-top: 15px;
     }
 
-
     /* =====================================================
-       MOBILE PANELS
-    ===================================================== */
+       PANELS
+       ===================================================== */
 
     .panel {
         width: 100%;
-
-        padding: 14px;
-
-        border-radius: 10px;
-
+        padding: 13px;
+        border-radius: 14px;
         margin-bottom: 14px;
-
-        border: 1px solid #e1e7ef;
-
-        box-shadow: 0 4px 15px rgba(0,0,0,.05);
     }
 
     .panel-header {
         display: flex;
-
         flex-wrap: wrap;
-
-        align-items: center;
-
         gap: 8px;
-
         margin-bottom: 13px;
     }
 
@@ -1994,218 +1526,138 @@ body.login-page {
 
     .action-btn {
         padding: 7px 10px;
-
         font-size: 10px;
-
-        border-radius: 6px;
     }
 
-
     /* =====================================================
-       MOBILE RORO HEADER
-    ===================================================== */
+       RORO HEADER
+       ===================================================== */
 
     .roro-dashboard {
         width: 100%;
-
         max-width: none;
-
         margin: 0;
     }
 
     .roro-header {
         display: block;
-
         margin-bottom: 18px;
     }
 
     .roro-title h2 {
         font-size: 23px;
-
         line-height: 1.15;
     }
 
     .roro-title p {
         font-size: 12px;
-
         line-height: 1.45;
+        max-width: 100%;
     }
 
     .department-badge {
         display: inline-flex;
-
-        align-items: center;
-
         margin-top: 10px;
-
         padding: 7px 11px;
-
-        border-radius: 6px;
-
         font-size: 10px;
     }
 
-
     /* =====================================================
-       MOBILE RORO STATISTICS
-    ===================================================== */
+       RORO STATISTICS
+       ===================================================== */
 
     .roro-stats {
         width: 100%;
-
         display: grid;
-
         grid-template-columns: repeat(2, minmax(0, 1fr));
-
         gap: 10px;
-
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
 
     .roro-stat {
         width: 100%;
-
         min-width: 0;
-
-        min-height: 105px;
-
+        min-height: 112px;
         padding: 13px;
-
-        display: flex;
-
-        align-items: center;
-
+        border-radius: 15px;
         gap: 9px;
-
-        border-radius: 10px;
-
-        box-shadow: 0 5px 15px rgba(0,0,0,.08);
-    }
-
-    .roro-stat::after {
-        display: none;
+        box-shadow: 0 7px 18px rgba(0,0,0,.10);
     }
 
     .roro-stat-icon {
-        width: 39px;
-
-        height: 39px;
-
-        min-width: 39px;
-
-        border-radius: 9px;
-
-        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        border-radius: 11px;
+        font-size: 19px;
     }
 
     .roro-stat h4 {
         font-size: 10px;
-
         line-height: 1.2;
-
         margin-bottom: 4px;
     }
 
     .roro-stat h1 {
         font-size: 24px;
-
         line-height: 1;
     }
 
     .roro-stat p {
         font-size: 9px;
-
         line-height: 1.2;
-
         margin-top: 4px;
     }
 
-
     /* =====================================================
-       MOBILE RORO QUICK ACTIONS
-    ===================================================== */
+       RORO QUICK ACTIONS
+       ===================================================== */
 
     .roro-actions {
         width: 100%;
-
         display: grid;
-
-        grid-template-columns: 1fr;
-
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 9px;
-
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
 
     .roro-action {
         width: 100%;
-
         min-width: 0;
-
-        min-height: 58px;
-
-        padding: 12px 13px;
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 11px;
-
-        border-radius: 9px;
-
-        box-shadow: 0 3px 10px rgba(0,0,0,.04);
-
-        transition: none;
-    }
-
-    .roro-action:hover {
-        transform: none;
-
-        box-shadow: 0 3px 10px rgba(0,0,0,.04);
+        padding: 12px;
+        border-radius: 13px;
+        gap: 9px;
     }
 
     .roro-action-icon {
-        width: 38px;
-
-        height: 38px;
-
-        min-width: 38px;
-
-        border-radius: 8px;
-
-        font-size: 18px;
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        border-radius: 10px;
+        font-size: 17px;
     }
 
     .roro-action strong {
-        font-size: 12px;
-
+        font-size: 11px;
         line-height: 1.2;
     }
 
     .roro-action span {
         font-size: 9px;
-
-        line-height: 1.3;
+        line-height: 1.25;
     }
 
-
     /* =====================================================
-       MOBILE RORO REGISTER
-    ===================================================== */
+       RORO REGISTER
+       ===================================================== */
 
     .roro-register {
         width: 100%;
-
-        border-radius: 10px;
-
-        border: 1px solid #dfe6ee;
-
-        box-shadow: 0 4px 15px rgba(0,0,0,.05);
+        border-radius: 14px;
     }
 
     .roro-register-header {
-        padding: 14px;
+        padding: 13px;
     }
 
     .roro-register-header h3 {
@@ -2216,88 +1668,65 @@ body.login-page {
         font-size: 10px;
     }
 
-
     /* =====================================================
-       MOBILE TABLES
-    ===================================================== */
+       TABLES
+       ===================================================== */
 
     .roro-table-wrapper,
     .table-wrapper,
     .table-responsive {
         width: 100%;
-
         max-width: 100%;
-
         overflow-x: auto;
-
-        overflow-y: hidden;
-
         -webkit-overflow-scrolling: touch;
     }
 
     .roro-table {
-        width: 100%;
-
         min-width: 850px;
     }
 
     th {
-        padding: 10px;
-
+        padding: 9px;
         font-size: 10px;
-
-        white-space: nowrap;
     }
 
     td {
-        padding: 10px;
-
+        padding: 9px;
         font-size: 10px;
-
-        white-space: nowrap;
     }
 
-
     /* =====================================================
-       MOBILE CHART
-    ===================================================== */
+       CHART
+       ===================================================== */
 
     canvas {
         width: 100% !important;
-
         max-width: 100%;
-
         height: 220px !important;
     }
 
-
     /* =====================================================
-       MOBILE SEARCH
-    ===================================================== */
+       SEARCH
+       ===================================================== */
 
     .search-bar {
         width: 100%;
-
         display: block;
     }
 
     .search-bar input {
         width: 100%;
-
         max-width: 100%;
     }
 
-
     /* =====================================================
-       MOBILE FINANCE
-    ===================================================== */
+       FINANCE CARDS
+       ===================================================== */
 
     .finance-card {
-        min-height: 105px !important;
-
-        height: 105px !important;
-
-        padding: 13px !important;
+        min-height: 112px !important;
+        height: 112px !important;
+        padding: 12px !important;
     }
 
     .finance-card h3 {
@@ -2316,10 +1745,9 @@ body.login-page {
         font-size: 8px;
     }
 
-
     /* =====================================================
-       MOBILE LOGIN
-    ===================================================== */
+       LOGIN
+       ===================================================== */
 
     body.login-page {
         padding: 15px;
@@ -2327,17 +1755,13 @@ body.login-page {
 
     .login-card {
         width: 100%;
-
         max-width: 390px;
-
         padding: 28px 20px;
-
         border-radius: 18px;
     }
 
     .login-logo {
         width: 180px;
-
         max-width: 70%;
     }
 
@@ -2350,26 +1774,21 @@ body.login-page {
     }
 }
 
-
 /* =========================================================
-   SMALL PHONES
-   480PX AND BELOW
-========================================================= */
+   SMALL PHONES - 480PX
+   ========================================================= */
 
 @media (max-width: 480px) {
 
     .top-header {
         height: 58px;
-
-        padding: 6px 9px;
+        padding: 7px 10px;
     }
 
     .main-content {
         margin-top: 58px !important;
-
         margin-bottom: 58px;
-
-        padding: 13px 9px 20px;
+        padding: 12px 9px 18px;
     }
 
     .sidebar {
@@ -2378,7 +1797,6 @@ body.login-page {
 
     .sidebar a {
         height: 58px;
-
         font-size: 18px;
     }
 
@@ -2389,7 +1807,6 @@ body.login-page {
     .company-logo {
         width: 42px;
     }
-
 
     /* RORO */
 
@@ -2403,32 +1820,27 @@ body.login-page {
 
     .department-badge {
         font-size: 9px;
-
         padding: 6px 9px;
     }
 
     .roro-stats {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-
         gap: 8px;
     }
 
     .roro-stat {
-        min-height: 98px;
-
+        min-height: 102px;
         padding: 10px;
-
         gap: 7px;
+        border-radius: 13px;
     }
 
     .roro-stat-icon {
         width: 34px;
-
         height: 34px;
-
         min-width: 34px;
-
         font-size: 16px;
+        border-radius: 9px;
     }
 
     .roro-stat h4 {
@@ -2443,30 +1855,47 @@ body.login-page {
         font-size: 8px;
     }
 
+    .roro-actions {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
 
-    /* STANDARD CARDS */
+    .roro-action {
+        padding: 10px;
+    }
+
+    .roro-action-icon {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        font-size: 15px;
+    }
+
+    .roro-action strong {
+        font-size: 10px;
+    }
+
+    .roro-action span {
+        font-size: 8px;
+    }
+
+    /* GENERAL CARDS */
 
     .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
+        grid-template-columns: 1fr 1fr;
         gap: 8px;
     }
 
     .card {
-        min-height: 98px;
-
+        min-height: 102px;
         padding: 10px;
-
         gap: 7px;
     }
 
     .card .icon {
         width: 34px;
-
         height: 34px;
-
         min-width: 34px;
-
         font-size: 16px;
     }
 
@@ -2482,19 +1911,13 @@ body.login-page {
         font-size: 8px;
     }
 
-
-    /* PANELS */
-
     .panel {
-        padding: 11px;
+        padding: 10px;
     }
 
     .panel-header h3 {
         font-size: 12px;
     }
-
-
-    /* LOGIN */
 
     .login-card {
         padding: 24px 17px;
@@ -2503,13 +1926,28 @@ body.login-page {
     .login-logo {
         width: 165px;
     }
+
+    .login-card h1 {
+        font-size: 23px;
+    }
+
+    .login-card p {
+        font-size: 11px;
+        margin-bottom: 20px;
+    }
+
+    .login-card input {
+        padding: 12px;
+    }
+
+    .login-card button {
+        padding: 12px;
+    }
 }
 
-
 /* =========================================================
-   VERY SMALL PHONES
-   360PX AND BELOW
-========================================================= */
+   VERY SMALL PHONES - 360PX
+   ========================================================= */
 
 @media (max-width: 360px) {
 
@@ -2517,16 +1955,19 @@ body.login-page {
         height: 54px;
     }
 
-    .main-content {
-        margin-top: 54px !important;
-
-        margin-bottom: 58px;
-
-        padding: 10px 7px 18px;
+    .sidebar {
+        height: 54px;
     }
 
-    .sidebar {
-        height: 58px;
+    .sidebar a {
+        height: 54px;
+        font-size: 17px;
+    }
+
+    .main-content {
+        margin-top: 54px !important;
+        margin-bottom: 54px;
+        padding: 9px 7px 15px;
     }
 
     .company-info h1 {
@@ -2537,63 +1978,20 @@ body.login-page {
         width: 36px;
     }
 
-    .roro-title h2 {
-        font-size: 19px;
-    }
-
-    .roro-title p {
-        font-size: 10px;
-    }
-
-    .roro-stats {
+    .cards {
         gap: 6px;
     }
 
-    .roro-stat {
-        min-height: 90px;
-
-        padding: 8px;
-
-        gap: 5px;
-    }
-
-    .roro-stat-icon {
-        width: 30px;
-
-        height: 30px;
-
-        min-width: 30px;
-
-        font-size: 14px;
-    }
-
-    .roro-stat h4 {
-        font-size: 8px;
-    }
-
-    .roro-stat h1 {
-        font-size: 19px;
-    }
-
-    .roro-stat p {
-        font-size: 7px;
-    }
-
     .card {
-        min-height: 90px;
-
+        min-height: 92px;
         padding: 8px;
-
         gap: 5px;
     }
 
     .card .icon {
         width: 30px;
-
         height: 30px;
-
         min-width: 30px;
-
         font-size: 14px;
     }
 
@@ -2604,9 +2002,60 @@ body.login-page {
     .card h1 {
         font-size: 19px;
     }
-}
 
+    .card p {
+        font-size: 7px;
+    }
+
+    .roro-stats {
+        gap: 6px;
+    }
+
+    .roro-stat {
+        min-height: 90px;
+        padding: 8px;
+    }
+
+    .roro-stat-icon {
+        width: 29px;
+        height: 29px;
+        min-width: 29px;
+        font-size: 13px;
+    }
+
+    .roro-stat h4 {
+        font-size: 7px;
+    }
+
+    .roro-stat h1 {
+        font-size: 18px;
+    }
+
+    .roro-stat p {
+        font-size: 7px;
+    }
+
+    .roro-action {
+        padding: 8px;
+    }
+
+    .roro-action strong {
+        font-size: 9px;
+    }
+
+    .roro-action span {
+        font-size: 7px;
+    }
+
+    .panel {
+        padding: 8px;
+    }
+
+    .panel-header h3 {
+        font-size: 11px;
+    }
+}
 
 /* =========================================================
    END OF AWANAD SOMS STYLE
-========================================================= */
+   ========================================================= */
