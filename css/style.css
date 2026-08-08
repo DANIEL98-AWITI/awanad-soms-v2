@@ -1831,3 +1831,1198 @@ body.login-page {
 /* =========================================================
    END OF AWANAD SOMS STYLE
    ========================================================= */
+/* =========================================================
+   AWANAD SOMS - FINAL MOBILE OPTIMIZATION
+   DESKTOP REMAINS UNCHANGED
+========================================================= */
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .top-header {
+        left: 210px;
+        padding: 0 20px;
+    }
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .main-content {
+        margin-left: 210px;
+        padding: 22px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .roro-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .roro-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE - 768PX
+========================================================= */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .top-header {
+
+        position: fixed;
+
+        top: 0;
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        height: 62px;
+
+        padding: 7px 12px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        z-index: 5000;
+
+        box-shadow: 0 3px 15px rgba(0,0,0,.10);
+
+    }
+
+
+    .branding {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        min-width: 0;
+
+        flex: 1;
+
+    }
+
+
+    .company-info {
+
+        min-width: 0;
+
+    }
+
+
+    .company-info h1 {
+
+        font-size: 17px;
+
+        white-space: nowrap;
+
+        line-height: 1.1;
+
+    }
+
+
+    .company-info h2 {
+
+        display: none;
+
+    }
+
+
+    .company-logo {
+
+        width: 48px;
+
+        height: auto;
+
+        flex-shrink: 0;
+
+    }
+
+
+    /* Hide unnecessary desktop header information */
+
+    .search,
+    .live-time,
+    .user-box {
+
+        display: none !important;
+
+    }
+
+
+    .header-right {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 5px;
+
+    }
+
+
+    .header-icons {
+
+        display: flex;
+
+        gap: 7px;
+
+        font-size: 16px;
+
+    }
+
+
+    /* =====================================================
+       SIDEBAR → BOTTOM MOBILE NAVIGATION
+    ===================================================== */
+
+    .sidebar {
+
+        position: fixed;
+
+        left: 0;
+
+        bottom: 0;
+
+        top: auto;
+
+        width: 100%;
+
+        height: 58px;
+
+        padding: 0;
+
+        margin: 0;
+
+        display: flex;
+
+        flex-direction: row;
+
+        align-items: stretch;
+
+        justify-content: space-around;
+
+        overflow: hidden;
+
+        z-index: 6000;
+
+        background: linear-gradient(
+            180deg,
+            #06264d 0%,
+            #0d3d73 50%,
+            #1565c0 100%
+        );
+
+        box-shadow: 0 -4px 18px rgba(0,0,0,.18);
+
+    }
+
+
+    .menu-title {
+
+        display: none !important;
+
+    }
+
+
+    .sidebar a {
+
+        flex: 1;
+
+        min-width: 0;
+
+        height: 58px;
+
+        padding: 5px 2px !important;
+
+        margin: 0;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 2px;
+
+        border: none !important;
+
+        border-radius: 0 !important;
+
+        background: transparent;
+
+        color: #ffffff;
+
+        font-size: 20px;
+
+        line-height: 1;
+
+    }
+
+
+    .sidebar a span {
+
+        display: none !important;
+
+    }
+
+
+    .sidebar a.active {
+
+        background: #ffffff;
+
+        color: #1565c0;
+
+        box-shadow: none;
+
+    }
+
+
+    .sidebar a:hover {
+
+        padding-left: 2px !important;
+
+        background: rgba(255,255,255,.12);
+
+    }
+
+
+    /* =====================================================
+       MAIN CONTENT
+    ===================================================== */
+
+    .main-content {
+
+        width: 100%;
+
+        margin-left: 0 !important;
+
+        margin-top: 62px !important;
+
+        margin-bottom: 58px;
+
+        padding: 14px 12px 20px;
+
+        min-height: calc(100vh - 120px);
+
+        background: #f4f7fb;
+
+    }
+
+
+    /* =====================================================
+       NORMAL PAGE HEADER
+    ===================================================== */
+
+    .page-header {
+
+        display: block;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .page-header h2 {
+
+        font-size: 22px;
+
+        line-height: 1.2;
+
+    }
+
+
+    .page-header p {
+
+        font-size: 12px;
+
+        line-height: 1.4;
+
+    }
+
+
+    .header-buttons {
+
+        display: none !important;
+
+    }
+
+
+    /* =====================================================
+       NORMAL DASHBOARD CARDS
+    ===================================================== */
+
+    .cards {
+
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .card {
+
+        width: 100%;
+
+        min-width: 0;
+
+        min-height: 112px;
+
+        padding: 13px;
+
+        border-radius: 15px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 9px;
+
+    }
+
+
+    .card .icon {
+
+        width: 40px;
+
+        height: 40px;
+
+        min-width: 40px;
+
+        border-radius: 11px;
+
+        font-size: 19px;
+
+    }
+
+
+    .card h3 {
+
+        font-size: 10px;
+
+        line-height: 1.25;
+
+        margin-bottom: 3px;
+
+    }
+
+
+    .card h1 {
+
+        font-size: 24px;
+
+        line-height: 1;
+
+    }
+
+
+    .card p {
+
+        font-size: 9px;
+
+        line-height: 1.2;
+
+    }
+
+
+    /* =====================================================
+       MINI CARDS
+    ===================================================== */
+
+    .top-widgets {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .mini-card {
+
+        width: 100%;
+
+        padding: 13px;
+
+        border-radius: 13px;
+
+        gap: 11px;
+
+    }
+
+
+    .mini-icon {
+
+        width: 43px;
+
+        height: 43px;
+
+        min-width: 43px;
+
+        border-radius: 11px;
+
+        font-size: 19px;
+
+    }
+
+
+    .mini-card h4 {
+
+        font-size: 11px;
+
+    }
+
+
+    .mini-card h2 {
+
+        font-size: 21px;
+
+    }
+
+
+    .mini-card p {
+
+        font-size: 10px;
+
+    }
+
+
+    /* =====================================================
+       DASHBOARD GRIDS
+    ===================================================== */
+
+    .dashboard-grid,
+    .analytics {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 15px;
+
+    }
+
+
+    /* =====================================================
+       PANELS
+    ===================================================== */
+
+    .panel {
+
+        width: 100%;
+
+        padding: 13px;
+
+        border-radius: 14px;
+
+        margin-bottom: 14px;
+
+    }
+
+
+    .panel-header {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+
+        margin-bottom: 13px;
+
+    }
+
+
+    .panel-header h3 {
+
+        font-size: 14px;
+
+    }
+
+
+    .action-btn {
+
+        padding: 7px 10px;
+
+        font-size: 10px;
+
+    }
+
+
+    /* =====================================================
+       RORO HEADER
+    ===================================================== */
+
+    .roro-dashboard {
+
+        width: 100%;
+
+        max-width: none;
+
+        margin: 0;
+
+    }
+
+
+    .roro-header {
+
+        display: block;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .roro-title h2 {
+
+        font-size: 23px;
+
+        line-height: 1.15;
+
+    }
+
+
+    .roro-title p {
+
+        font-size: 12px;
+
+        line-height: 1.45;
+
+        max-width: 100%;
+
+    }
+
+
+    .department-badge {
+
+        display: inline-flex;
+
+        margin-top: 10px;
+
+        padding: 7px 11px;
+
+        font-size: 10px;
+
+    }
+
+
+    /* =====================================================
+       RORO STATISTICS - 2 COLUMNS
+    ===================================================== */
+
+    .roro-stats {
+
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .roro-stat {
+
+        width: 100%;
+
+        min-width: 0;
+
+        min-height: 112px;
+
+        padding: 13px;
+
+        border-radius: 15px;
+
+        gap: 9px;
+
+        box-shadow: 0 7px 18px rgba(0,0,0,.10);
+
+    }
+
+
+    .roro-stat-icon {
+
+        width: 40px;
+
+        height: 40px;
+
+        min-width: 40px;
+
+        border-radius: 11px;
+
+        font-size: 19px;
+
+    }
+
+
+    .roro-stat h4 {
+
+        font-size: 10px;
+
+        line-height: 1.2;
+
+        margin-bottom: 4px;
+
+    }
+
+
+    .roro-stat h1 {
+
+        font-size: 24px;
+
+        line-height: 1;
+
+    }
+
+
+    .roro-stat p {
+
+        font-size: 9px;
+
+        line-height: 1.2;
+
+        margin-top: 4px;
+
+    }
+
+
+    /* =====================================================
+       RORO QUICK ACTIONS
+    ===================================================== */
+
+    .roro-actions {
+
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 9px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .roro-action {
+
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 12px;
+
+        border-radius: 13px;
+
+        gap: 9px;
+
+    }
+
+
+    .roro-action-icon {
+
+        width: 36px;
+
+        height: 36px;
+
+        min-width: 36px;
+
+        border-radius: 10px;
+
+        font-size: 17px;
+
+    }
+
+
+    .roro-action strong {
+
+        font-size: 11px;
+
+        line-height: 1.2;
+
+    }
+
+
+    .roro-action span {
+
+        font-size: 9px;
+
+        line-height: 1.25;
+
+    }
+
+
+    /* =====================================================
+       RORO REGISTER
+    ===================================================== */
+
+    .roro-register {
+
+        width: 100%;
+
+        border-radius: 14px;
+
+    }
+
+
+    .roro-register-header {
+
+        padding: 13px;
+
+    }
+
+
+    .roro-register-header h3 {
+
+        font-size: 14px;
+
+    }
+
+
+    .roro-register-header p {
+
+        font-size: 10px;
+
+    }
+
+
+    /* Keep table usable by scrolling */
+
+    .roro-table-wrapper,
+    .table-wrapper,
+    .table-responsive {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        overflow-x: auto;
+
+        -webkit-overflow-scrolling: touch;
+
+    }
+
+
+    .roro-table {
+
+        min-width: 850px;
+
+    }
+
+
+    /* =====================================================
+       GENERAL TABLES
+    ===================================================== */
+
+    th {
+
+        padding: 9px;
+
+        font-size: 10px;
+
+    }
+
+
+    td {
+
+        padding: 9px;
+
+        font-size: 10px;
+
+    }
+
+
+    /* =====================================================
+       CHART
+    ===================================================== */
+
+    canvas {
+
+        width: 100% !important;
+
+        max-width: 100%;
+
+        height: 220px !important;
+
+    }
+
+
+    /* =====================================================
+       SEARCH
+    ===================================================== */
+
+    .search-bar {
+
+        width: 100%;
+
+        display: block;
+
+    }
+
+
+    .search-bar input {
+
+        width: 100%;
+
+        max-width: 100%;
+
+    }
+
+
+    /* =====================================================
+       LOGIN
+    ===================================================== */
+
+    body.login-page {
+
+        padding: 15px;
+
+    }
+
+
+    .login-card {
+
+        width: 100%;
+
+        max-width: 390px;
+
+        padding: 28px 20px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .login-logo {
+
+        width: 180px;
+
+        max-width: 70%;
+
+    }
+
+
+    .login-card h1 {
+
+        font-size: 25px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES - 480PX
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .top-header {
+
+        height: 58px;
+
+        padding: 7px 10px;
+
+    }
+
+
+    .main-content {
+
+        margin-top: 58px !important;
+
+        margin-bottom: 58px;
+
+        padding: 12px 9px 18px;
+
+    }
+
+
+    .sidebar {
+
+        height: 58px;
+
+    }
+
+
+    .sidebar a {
+
+        height: 58px;
+
+        font-size: 18px;
+
+    }
+
+
+    .company-info h1 {
+
+        font-size: 15px;
+
+    }
+
+
+    .company-logo {
+
+        width: 42px;
+
+    }
+
+
+    /* RORO */
+
+    .roro-title h2 {
+
+        font-size: 21px;
+
+    }
+
+
+    .roro-title p {
+
+        font-size: 11px;
+
+    }
+
+
+    .department-badge {
+
+        font-size: 9px;
+
+        padding: 6px 9px;
+
+    }
+
+
+    .roro-stats {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+
+    }
+
+
+    .roro-stat {
+
+        min-height: 102px;
+
+        padding: 10px;
+
+        gap: 7px;
+
+        border-radius: 13px;
+
+    }
+
+
+    .roro-stat-icon {
+
+        width: 34px;
+
+        height: 34px;
+
+        min-width: 34px;
+
+        font-size: 16px;
+
+        border-radius: 9px;
+
+    }
+
+
+    .roro-stat h4 {
+
+        font-size: 9px;
+
+    }
+
+
+    .roro-stat h1 {
+
+        font-size: 21px;
+
+    }
+
+
+    .roro-stat p {
+
+        font-size: 8px;
+
+    }
+
+
+    .roro-actions {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 8px;
+
+    }
+
+
+    .roro-action {
+
+        padding: 10px;
+
+    }
+
+
+    .roro-action-icon {
+
+        width: 32px;
+
+        height: 32px;
+
+        min-width: 32px;
+
+        font-size: 15px;
+
+    }
+
+
+    .roro-action strong {
+
+        font-size: 10px;
+
+    }
+
+
+    .roro-action span {
+
+        font-size: 8px;
+
+    }
+
+
+    /* GENERAL CARDS */
+
+    .cards {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 8px;
+
+    }
+
+
+    .card {
+
+        min-height: 102px;
+
+        padding: 10px;
+
+        gap: 7px;
+
+    }
+
+
+    .card .icon {
+
+        width: 34px;
+
+        height: 34px;
+
+        min-width: 34px;
+
+        font-size: 16px;
+
+    }
+
+
+    .card h3 {
+
+        font-size: 9px;
+
+    }
+
+
+    .card h1 {
+
+        font-size: 21px;
+
+    }
+
+
+    .card p {
+
+        font-size: 8px;
+
+    }
+
+
+    .panel {
+
+        padding: 10px;
+
+    }
+
+
+    .panel-header h3 {
+
+        font-size: 12px;
+
+    }
+
+
+    .login-card {
+
+        padding: 24px 17px;
+
+    }
+
+
+    .login-logo {
+
+        width: 165px;
+
+    }
+
+}
